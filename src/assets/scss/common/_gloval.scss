@@ -25,22 +25,22 @@ body{
     height: 100%;
     position: relative;
 }
-// a{
-//     color:$nav-link-color;
-//     text-decoration: none;
-//     cursor: pointer;
-//     &:hover{
-//         color:$nav-hover-color;
-//     }
-// }
 a{
     color:$nav-link-color;
     text-decoration: none;
     cursor: pointer;
     &:hover{
-      text-decoration: underline;
+        color:$nav-hover-color;
     }
 }
+// a{
+//     color:$nav-link-color;
+//     text-decoration: none;
+//     cursor: pointer;
+//     &:hover{
+//       text-decoration: underline;
+//     }
+// }
 
 
 

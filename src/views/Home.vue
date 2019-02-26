@@ -1,13 +1,9 @@
 <template>
   <div class="home container-fluid">
     <div class="homeWrap row">
-      <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-      <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-      <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
       <HeaderBar msg="HeaderBar"/>
       <HomeContent msg="HomeContent"/>
       <FooterBar msg="FooterBar"/>
-
     </div>
   </div>
 </template>

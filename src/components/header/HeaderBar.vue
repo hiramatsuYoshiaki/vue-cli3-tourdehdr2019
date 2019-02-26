@@ -4,35 +4,51 @@
         <dvi class="container-fluid">
             <div class="row">
                 <div class="col-4 ">
-                    <div class="nav-item d-flex-start-center">left:logo</div>
+                    <div class="nav-item d-flex-start-center">
+                        <a href="index.html" class="header-logo">
+                            <img :src="logoSvg" alt="logo">
+                        </a>
+                    </div>
                 </div>
                 <div class="col-4 ">
-                    <div class="nav-item d-flex-center-center">left:logo</div>
+                    <div class="nav-item d-flex-center-center">
+                        <a href="index.html" class="header-logo">
+                            <img :src="logoSvgHWorksWhite" alt="logo">
+                        </a>
+                    </div>
                 </div>
                 <div class="col-4 ">
-                    <div class="nav-item d-flex-end-center">right:menu</div>
+                    <div class="nav-item d-flex-end-center">
+                         <a href="index.html" class="header-logo">
+                            <img :src="logoSvgHWorksBlack" alt="logo">
+                        </a>
+                    </div>
                 </div>
             </div>
         </dvi>
-        <div class="mobile-menu">
-            
-        </div>
+        <MobileMenu />
     </nav>
   </div>
   
 </template>
 
 <script>
-//  import HeaderLogo from '@/components/header/HeaderLogo.vue' 
-//  import MobileMenu from '@/components/header/MobileMenu.vue' 
+ import MobileMenu from '@/components/header/NavComponent/MobileMenu.vue' 
  export default {
   name: 'HeaderBar',
   components: {
-    // MobileMenu,
-    // HeaderLogo,
+    MobileMenu,
   },
   props: {
     msg: String
+  },
+  data() {
+      return{
+        logoSvgHWorksWhite: require("../../assets/logo/h-works1200x600white.svg"),
+        logoSvgHWorksBlack: require("../../assets/logo/h-works1200x600black.svg"),
+        logoSvg: require("../../assets/logo/h-logo.svg"),
+
+      }
   }
 }
 </script>
@@ -54,16 +70,17 @@
 }
 .headerBar .nav-item{
     padding: 0 1rem;
+    span{
+        display: inline-block;
+        margin: .6rem  1rem 0 1rem;
+    }
 }
-.headerBar .mobile-menu{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 1rem;
-    height: 1rem;
-    border: 1px solid #fff;
-    background-color: pink;
-    color: #fff;
+
+.header-logo img{
+    width: 6rem;
+    height: 2rem;
 }
+
+
 
 </style>
