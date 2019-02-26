@@ -39,11 +39,14 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-// @import "../../assets/scss/common/thema.scss";
+@import "../../assets/scss/common/data/thema.scss";
 .headerBar{
     width:100%;
-    // height:$header-height; 
-    height:5rem; 
+    height:$header-height; 
+
+    border: 1px solid #fff;
+    background-color: green;
+    color: #fff;
 }
 .headerBar nav{
     position: relative;
