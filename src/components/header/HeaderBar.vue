@@ -1,22 +1,22 @@
 <template>
   <div class="headerBar">
     <nav>
-        <div>
-        <!-- nav-left -->
-        <!-- <HeaderLogo /> -->
-        left:{{msg}}
+        <dvi class="container-fluid">
+            <div class="row">
+                <div class="col-4 ">
+                    <div class="nav-item d-flex-start-center">left:logo</div>
+                </div>
+                <div class="col-4 ">
+                    <div class="nav-item d-flex-center-center">left:logo</div>
+                </div>
+                <div class="col-4 ">
+                    <div class="nav-item d-flex-end-center">right:menu</div>
+                </div>
+            </div>
+        </dvi>
+        <div class="mobile-menu">
+            
         </div>
-        <div>
-        <!-- nav-center -->
-        <!-- <HeaderMenu /> -->
-        center:{{msg}}
-        </div>
-        <div>
-        <!-- nav-right -->
-        HeaderMenu
-        </div>
-        <!-- <MobileMenu /> -->
-        <!-- MobileMenu -->
     </nav>
   </div>
   
@@ -42,19 +42,28 @@
 @import "../../assets/scss/common/data/thema.scss";
 .headerBar{
     width:100%;
-    height:$header-height; 
-
+    // height:$header-height; 
     border: 1px solid #fff;
     background-color: green;
     color: #fff;
 }
 .headerBar nav{
+    width:100%;
     position: relative;
-    padding: 0.5rem 1rem;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
+    border: 1px solid blue;
+}
+.headerBar .nav-item{
+    padding: 0 1rem;
+}
+.headerBar .mobile-menu{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid #fff;
+    background-color: pink;
+    color: #fff;
 }
 
 </style>
