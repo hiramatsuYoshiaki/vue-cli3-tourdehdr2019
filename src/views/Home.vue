@@ -1,18 +1,42 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="home container-fluid">
+    <div class="homeWrap row">
+      <HeaderBar msg="HeaderBar"/>
+      <HomeContent msg="HomeContent"/>
+      <FooterBar msg="FooterBar"/>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import HomeContent from '@/components/home/HomeContent.vue'
+import HeaderBar from '@/components/header/HeaderBar.vue'
+import FooterBar from '@/components/footer/FooterBar.vue'
 
 export default {
-  name: 'home',
+  name: 'Home',
   components: {
-    HelloWorld
+    HomeContent,
+    HeaderBar,
+    FooterBar,
   }
 }
 </script>
+<style scoped lang="scss">
+.home{
+  // position: relative;
+  width: 100vw;
+  // margin-right: auto;
+  // margin-left: auto;
+  // padding-right: 15px;
+  // padding-left: 15px;
+  overflow-x: hidden;
+}
+.homeWrap{
+  // margin-right: -15px;
+  // margin-left: -15px;
+  background-color: #000;
+  color: #fff;
+}
+</style>
