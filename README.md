@@ -67,7 +67,14 @@ Vue-cli3 でプロジェクトを作成し、そのプロジェクトを GitHub 
 　　git branch new-branch   
 3. 新しいbranchに移動し開発を行う。  
    git checkout new-branch  
-4. コミットしてGitHubにpushする  
+4. cloneしたリポジトリから別のリモートリポジトリのURLを変更する場合  
+    git remote -vでリモートリポジトリを確認する  
+    origin  https://github.com/hiramatsuYoshiaki/vue-cli3-unit.git (fetch)  
+    origin  https://github.com/hiramatsuYoshiaki/vue-cli3-unit.git (push)  
+    remote rm originで現在のリモートリポジトリを削除する  
+    git remote add originで新しいリモートリポジトリを追加する   
+    git remote add origin https://github.com/hiramatsuYoshiaki/vue-cli3-unit-alprime.git
+5. コミットしてGitHubにpushする  
    git add　-A  
    git commit -m "コメント"  
    git push -u origin new-branch  

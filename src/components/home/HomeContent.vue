@@ -6,7 +6,7 @@
             <div class="col-12">
               <div class="main-header">
                 <p>main header</p>
-                <h1>Vue-cli3 Template</h1>
+                <h1>Vue-cli3 Template Alprime</h1>
               </div>
             </div>
             <div class="col-12">
