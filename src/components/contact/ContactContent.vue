@@ -1,5 +1,5 @@
 <template>
-  <div class="homeContent">
+  <div class="contactContent">
     <main>
       <div class="container-fluid">
         <div class="row">
@@ -7,7 +7,7 @@
               <div class="main-header">
                 <div class="main-header-wrape">
                   <p>main header</p>
-                  <h1>Vue-cli3 Template Alprime</h1>
+                  <h1>Vue-cli3 Template Contact</h1>
                 </div>
                 
               </div>
@@ -30,7 +30,7 @@
             <div class="col-12">
               <div class="main-footer">
                 <p>main footer</p>
-                <h3>h-works vue tenplate v0.1</h3>
+                <h3>h-Works vue tenplate v0.1</h3>
               </div>
             </div>
         </div>
@@ -41,17 +41,16 @@
 
 <script>
 export default {
-  name: 'HomeContent',
+  name: 'ContactContent',
   props: {
     msg: String
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../../assets/scss/common/data/thema.scss";
-.homeContent{
+.contactContent{
     width: 100%;
     height: 100vh;
     // padding-top: $header-height;

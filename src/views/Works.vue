@@ -1,6 +1,6 @@
 <template>
-<div class="hoem">
-  <div class="homeWrap">
+<div class="works">
+  <div class="worksWrap">
       <HeaderBar msg="HeaderBar"
                  v-bind:headrScrollType="true"
                  v-bind:headrFixedType="false"
@@ -10,8 +10,7 @@
                  v-bind:logoPositionCenter="false"
                  v-bind:logoPositionRight="false"
       />
-      <HomeContent msg="HomeContent"/>
-      <!-- <FooterBar msg="FooterBar"/>  -->
+      <WorksContent msg="WorksContent"/>
   </div>
 </div>
 </template>
@@ -19,35 +18,25 @@
 
 <script>
 // @ is an alias to /src
-import HomeContent from '@/components/home/HomeContent.vue'
+import WorksContent from '@/components/works/WorksContent.vue'
 import HeaderBar from '@/components/header/HeaderBar.vue'
-// import FooterBar from '@/components/footer/FooterBar.vue'
 
 export default {
-  name: 'Home',
+  name: 'Works',
   components: {
-    HomeContent,
+    WorksContent,
     HeaderBar,
-    // FooterBar,
   }
 }
 </script>
 <style scoped lang="scss">
 @import "../assets/scss/common/data/thema.scss";
-.home{
+.works{
   position: relative;
-  // width: 100vw;
-  // margin-right: auto;
-  // margin-left: auto;
-  // padding-right: 15px;
-  // padding-left: 15px;
-  // overflow-x: hidden;
   margin: 0;
   padding:0;
 }
-.homeWrap{
-  // margin-right: -15px;
-  // margin-left: -15px;
+.worksWrap{
   background-color: $body-color;
   color: $body-text;
 }
