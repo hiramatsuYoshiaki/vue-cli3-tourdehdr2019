@@ -1,36 +1,50 @@
 <template>
   <div class="MobileMenu" >
-    <div class="m-bar ">
+    <div  class="m-menu-bg" v-bind:class="{ v_open_menu : active, v_close_menu : !active }"></div>
+    <div class="m-bar m-bar-position m-bar-display" v-bind:class="{ dsp_bar: !active }">
         <div class="m-bar-wrap" v-on:click="active = !active">
             <div class="upper-bar" v-bind:class="{ close_upper: active, open_upper: !active }"></div>
             <div class="under-bar" v-bind:class="{ close_under: active, open_under: !active }"></div>
         </div>
-        
-      <!-- <div class="menu-wrap" v-bind:class="{ menuExpanded: active }"> -->
-      <!-- <div class="menu-wrap" > -->
-          
-          <!-- <div class="menu" v-on:click="active = !active">
-              <div class="bar" v-bind:class="{ bar_expand_color: active, bar_color: !active }"></div>
-              <div class="menu-text" v-bind:class="{ menu_text_color_exp: active, menu_text_color: !active }">MENU</div>
-          </div> -->
-          <!-- <div class="menu" >
-              <div class="bar" ></div> -->
-              <!-- <div class="menu-text" >MENU</div> -->
-          <!-- </div> -->
-          <!-- <nav v-bind:class="{ on_nav: active }">
-            <div  id="nav_bg" v-bind:class="{ open_menu: active }"></div>
-            <section id="nav_body " >
-                <div class="nav-inner" v-on:click="active = false">
-                    <div class="nav_item" v-bind:class="{ on_item: active }">
-                      <span><router-link to="/" >HOME</router-link></span>
-                      <span><router-link to="/project" >STAGE</router-link></span>
-                      <span><router-link to="/awards" >AWARDS</router-link></span>
-                    </div>
-                </div>
-            </section>
-          </nav> -->
-      <!-- </div> -->
     </div>
+    <nav class="laptop-menu">
+      <div class="l-menu-bar l-menu-position l-menu-display" >
+        <div class="m-menu-wrap m-menu-position ">
+          <div class="menu_items" v-bind:class="{
+             'l-menu-items-left': mobileMenuPositionLeft, 
+             'l-menu-items-center': mobileMenuPositionCenter, 
+             'l-menu-items-right': mobileMenuPositionRight, 
+             }" >
+            <span><router-link to="/" >HOME</router-link></span>
+            <span><router-link to="/works" >WORKS</router-link></span>
+            <span><router-link to="/about" >ABOUT</router-link></span>
+            <span><router-link to="/contact" >CONTACT</router-link></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+   
+    <nav class="mobile-menu">
+      <div class="m-menu" v-bind:class="{ v_open_menu : active, v_close_menu : !active }">
+        <div class="m-menu-wrap m-menu-position ">
+          <section class="m-menu-section m-menu-section-start" v-bind:class="{ v_tran_slide_rightIn: !active }">
+            <div class="d-flex-center-center">
+              <h5>mobile menu</h5>
+            </div>
+          </section>
+          <section class="m-menu-section m-menu-section-start" v-bind:class="{ v_tran_slide_rightIn: !active }">
+            <div class="d-flex-center-center">
+              <div class="menu_items" >
+                <span><router-link to="/" >HOME</router-link></span>
+                <span><router-link to="/works" >WORKS</router-link></span>
+                <span><router-link to="/about" >ABOUT</router-link></span>
+                <span><router-link to="/contact" >CONTACT</router-link></span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </nav>
   </div>
 </template>
 
@@ -38,7 +52,12 @@
 export default {
   name: 'MobileMenu',
   props: {
-    msg: String
+    msg: String,
+    mobileBarType: String,
+    mobileBarAction: String,
+    mobileMenuPositionLeft: Boolean,
+    mobileMenuPositionCenter: Boolean,
+    mobileMenuPositionRight: Boolean,
   },
   data () {
       return {
@@ -46,7 +65,7 @@ export default {
           scrollY: 0,
           isScroll: false,
       }
- },
+  },
   mounted: function () {
     window.addEventListener('scroll', this.handleScroll);
   },
@@ -63,7 +82,6 @@ export default {
       }
    }
  },
-  
 }
 </script>
 
@@ -75,7 +93,7 @@ export default {
     height: 100%;
     // height:$header-height; //5rem;
     position: absolute;
-    z-index: 1000;
+    // z-index: 1000;
     display:block;
     top: 0;
     left: 0;
@@ -84,23 +102,52 @@ export default {
     // color: #fff;
     // border: 1px solid yellow;
 }
-// .fadeOut{
-//     display:none !important;
-// }
+//mobile menu background
+.m-menu-bg{
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  left :0;
+  background-color: red;
+  color: #fff;
+}
+.v_open_menu{
+  // opacity: 0;
+  transform: translateY(-101%) ; 
+  transition: .5s .5s all ease;
+}
+.v_close_menu{
+  // opacity: 1;
+  transform: translateY(0) ;
+  transition: .5s .5s all ease;
+}
 
 //menu-humberger-menu
+.m-bar-position{
+  position: absolute;
+  z-index: 110;
+  top: 0;
+  // left: 0 ;
+  right: 0 ;
+  margin:1rem 1rem;
+}
 .m-bar{
-    position: absolute;
-    top: 0;
-    left: 0 ;
     width:2rem;
     height:2rem;
-    margin:1rem 1rem;
-    z-index: 101;
     cursor: pointer;
-    // background-color: rgba(0,0,0,1);
-    // color: #fff;
 }
+.m-bar-display{
+  display: block;
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+.dsp_bar{
+  display:block;
+}
+
 .m-bar-wrap{
     position:relative;
     width:100%;
@@ -117,230 +164,104 @@ export default {
 }
 .close_upper{
     transform-origin: center center;
-    transform: translateY(-.25rem) ;  
+    transform: translateY(-.25rem) ;
+    transition: .5s all ease;  
 }
 .open_upper{
     transform-origin: center center;
-    transform: rotate(45deg) ; 
+    transform: rotate(45deg) ;
+    transition: .5s all ease;  
 }
 
 .close_under{
     transform-origin: center center;
     transform: translateY(.25rem) ; 
+    transition: .5s all ease;
 }
 .open_under{
     transform-origin: center center;
-    transform: rotate(-45deg) ; 
+    transform: rotate(-45deg) ;
+    transition: .5s all ease; 
 }
-// .upper-bar{
-//     position: absolute;
-//     top: 50%;
-//     left: 0;
-//     width: 2rem;
-//     height: 2px;
-//     margin-top: 33.3333%;
-//     background-color: yellow;
-//     transform-origin: center center;
-//     transform: rotate(-45deg) ;
-// }
-
-// .under-bar{
-//     position: absolute;
-//     top: 50%;
-//     left: 0;
-//     width: 2rem;
-//     height: 2px;
-//     margin-top: 66.6666%;
-//     background-color: red;
-//     transform-origin: center;
-//     transform: rotate(45deg) ;
-// }
-
-
-.menu-wrap {
-    transition: all .5s;
+//laptop menu
+.l-menu-position{
+  position: absolute;
+  z-index: 110;
+  top: 0;
+  left: 0 ;
+  // right: 0 ;
+}
+.l-menu-bar{
+    width:100%;
+    height:100%;
     cursor: pointer;
-    position: relative;
-    width: 100%;
-    display: flex;
-    // justify-content: flex-start;
-    justify-content: center;
-    // justify-content: flex-end;
- }
-.menu{
-    position: relative;
-    width: 6rem;
+    // border: 1px solid #000;
+}
+.l-menu-display{
+  display: none !important;
+  @media (min-width: 992px) {
+    display: block !important;
+  }
+}
+.l-menu-items-left{
+  margin: 0 auto 0 0;
+}
+.l-menu-items-center{
+  margin: 0 auto 0 auto;
+}
+.l-menu-items-right{
+  margin: 0 0 0 auto;
+}
+.a-a{
+  // margin: 0 0 0 auto;
+  // margin: 0 auto 0 auto;
+  margin: 0 auto 0 0;
+}
+
+// mobile menu
+.m-menu{
+  position:fixed;
+  z-index: 101;
+  top:0;
+  left:0; 
+  width:100%;
+  height:100%;
+}
+.m-menu-wrap{
+  position:relative;
+  width: 100%;
+  height: 100%;
+}
+.m-menu-position{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // flex-direction: row;
+  flex-direction: column;
+}
+.m-menu-section{
+ width: 100%;
+ margin: .5rem;
+ padding: .5rem;
+}
+.menu_items{
+  span a{
+    display: inline-block;
+    margin: 0 1rem;
+  } 
+}
+
+//section animatin right-in
+.m-menu-section-start{
+   transform: translateX(100%) ;
+   transition: .5s  all ease;
+   opacity: 0;
+}
+.v_tran_slide_rightIn{
+   transform: translateX(0) ;
+   transition: .5s .75s all ease;
+   opacity: 1;
 }
 
 
-// .menu-text{
-//     position: absolute;
-//     top: .2rem;
-//     left: 2rem;
-//     z-index: 100;
-//     color: $nav_icon;
-//     font-family: "Lato", "Open Sans", sans-serif;
-//     font-size: 1.2rem;
-//     font-weight: 400;
-//     line-height:  2.4rem;
-//     opacity:0;
-//     @media (min-width: 1024px) {
-//         opacity:1;
-//     }
-// }
-// .menu_text_color_exp{
-//     color: $nav_icon_exp !important;
-//     transition: color  .25s .5s ;
-// }
-// .menu_text_color{
-//     color: $nav_icon !important;
-//     transition: color  .25s 2s ;
-// }
-
-// .b-a {
-//     transition: all .5s;
-//     content: "";
-//     position: absolute;
-//     left:0;
-//     top:0;
-//     height: .2rem;
-//     width: 1.75rem;
-//     border:none;
-//  }
-//  .bar {
-//     @extend .b-a;
-//     position: absolute;
-//     top:1.125rem;
-//     z-index: 100;
-//     @media (min-width: 1024px) {
-//     }
-   
-//     &:before {
-//        @extend .b-a;
-//        top: -0.5625rem;
-//     }
-//     &:after {
-//        @extend .b-a;
-//        top: 0.5625rem;
-//     }
-//  }
- 
-//  .bar_expand_color{
-//     background-color: $nav_icon_exp;
-//     transition-delay: .5s !important;
-//     &:before, &:after{
-//         background-color: $nav_icon_exp;
-//         transition-delay: .5s !important;
-//     }
-//  }
-//  .bar_color{
-//     background-color: $nav_icon;
-//     transition-delay: 1.25s !important;
-    
-//     &:before, &:after {
-//         background-color: $nav_icon;
-//         transition-delay: 1.25s !important;
-//     }
-//  }
-//  .b-a-expanded {
-//     transition: all .25s;
-//     top: -0px;
-//  }
-//  .menuExpanded {
-//     transition: all .5s;
-//     line-height:  2.4rem;
-//     .bar {
-//         background-color: transparent !important;
-//         transition: all .5s;
-//         &:before {
-//            @extend .b-a-expanded;
-//            transform: rotate(45deg);
-//         }
-//         &:after {
-//            @extend .b-a-expanded;
-//            transform: rotate(-45deg);
-//         }
-//      }
-//  }
-
-
-//  nav {
-//     top: 0;
-//     left: 0;
-//     position: absolute;
-//     z-index: 1;
-//     width: 100%;
-//     height: 100%;
-//     left: -9999px;
-//     transition-delay: 1.25s; 
-//     &.on_nav{
-//         left: 0px ;
-//         transition-delay: .2s; 
-//     }
-//     #nav_bg {
-//          &::before{
-//              content: "";
-//              margin:-1rem;
-//              transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
-//              transform: scale(1, 1) translate(0%, -100%);
-//              display: block;
-//              width: 100vw;
-//              height: 100vh;
-//              border-radius: 0%;
-//              background-color:$nav_bg_color;
-//              position: fixed;
-//             z-index: 10;
-//             transform-origin: 0 0;
-//             opacity: 1;
-//          }
-//      }
-//      #nav_bg.open_menu{
-//          &::before{
-//             transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
-//             transform: scale(1, 1) translate(0%, 100%) ;
-//             transition-delay: .25s; 
-//          }
-//      }
-    
-//      #nav_body{
-//          position:absolute;
-//          top:0;
-//          left:0; 
-//          width:100%;
-//          height:100%;
-         
-//      }
-   
-//     .nav-inner{
-//         position: fixed;
-//         width: 100vw;
-//         height: 100vh;
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         flex-direction: column;
-//         background-color: $bg_color;
-//         margin: -1rem;
-       
-        
-//         .nav_item{
-//             transition: all .5s cubic-bezier(0.77, 0, 0.175, 1);
-//             opacity: 0;
-//             transform: translateX(100px);
-//             transition-delay: .0s; 
-//             &.on_item{
-//                opacity: 1;
-//                transform: translateX(0);
-//                transition-delay: .5s; 
-//             }
-//             span{
-//                 padding: 1rem;
-//                 display: block;
-//                 @media (min-width: 1024px){
-//                     display: inline-block;;
-//                 }
-//             }
-//         }
-//      }
-//  }
 </style>
