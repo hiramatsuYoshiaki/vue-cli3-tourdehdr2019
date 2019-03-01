@@ -3,20 +3,20 @@
                          scroll: headrScrollType,
                          fixed: headerFixedype,
                          fadeOut: isScroll && headrStikyType }">
-    <nav>
+    <nav class="nav-side-space">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-4 ">
                     <div class="nav-item d-flex-start-center">
                         <a href="index.html" class="header-logo" v-if="logoPositionLeft">
-                            <img :src="logoSvg" alt="logo">
+                             <img :src="logoSvgHWorksWhite" alt="logo">
                         </a>
                     </div>
                 </div>
                 <div class="col-4 ">
                     <div class="nav-item d-flex-center-center">
                         <a href="index.html" class="header-logo" v-if="logoPositionCenter">
-                            <img :src="logoSvgHWorksWhite" alt="logo">
+                            <img :src="logoSvg" alt="logo">
                         </a>
                     </div>
                 </div>
@@ -30,11 +30,16 @@
             </div>
         </div>
         <MobileMenu msg="mobileBar"
+                    menuVisible="home"
                     mobileBarType="fullScreen"
                     mobileBarAction="Down"
                     v-bind:mobileMenuPositionLeft="false"
                     v-bind:mobileMenuPositionCenter="false"
                     v-bind:mobileMenuPositionRight="true"/>
+                    <!-- menuVisible="home"             -->
+                    <!-- menuVisible="work"             -->
+                    <!-- menuVisible="about"             -->
+                    <!-- menuVisible="contact"             -->
     </nav>
   </div>
   
@@ -97,8 +102,11 @@
     width:100%;
     z-index: 100;
     height: $header-height;
-    background-color: $header-color;
+    // background-color: $header-color;
+    background-color: transparent;
     color: $header-text;
+    //確認用ライン
+    border-bottom:1px solid rgba(250,250,250,.1);
 }
 .scroll{
   position: absolute !important;
@@ -110,18 +118,21 @@
     display:none !important;
 }
 .headerBar nav{
+    position: relative;
     width:100%;
     height:100%;
-    position: relative;
+}
+.headerBar .nav-side-space{
+    padding: 0 10rem;
 }
 .headerBar .nav-item{
-    padding: 1.5rem 1rem;
+    padding: 1rem 1rem;
     a{
         display: block;
     }
 }
 .header-logo img{
     width: 6rem;
-    height: 2rem;
+    height: 3rem;
 }
 </style>

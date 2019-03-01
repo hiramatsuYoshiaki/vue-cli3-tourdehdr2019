@@ -1,5 +1,5 @@
 <template>
-  <div class="homeContent">
+  <div class="worksContent">
     <main>
       <div class="container-fluid">
         <div class="row">
@@ -7,7 +7,7 @@
               <div class="main-header">
                 <div class="main-header-wrape">
                   <p>main header</p>
-                  <h1>Vue-cli3 Template Alprime</h1>
+                  <h1>Vue-cli3 Template Works</h1>
                 </div>
                 
               </div>
@@ -41,7 +41,7 @@
 
 <script>
 export default {
-  name: 'HomeContent',
+  name: 'WorksContent',
   props: {
     msg: String
   }
@@ -51,7 +51,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../../assets/scss/common/data/thema.scss";
-.homeContent{
+.worksContent{
     width: 100%;
     height: 100vh;
     // padding-top: $header-height;

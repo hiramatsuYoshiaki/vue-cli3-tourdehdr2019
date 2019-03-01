@@ -8,17 +8,37 @@
         </div>
     </div>
     <nav class="laptop-menu">
-      <div class="l-menu-bar l-menu-position l-menu-display" >
+      <div class="l-menu-bar l-menu-position l-menu-display l-menu-bar-side-space" >
         <div class="m-menu-wrap m-menu-position ">
-          <div class="menu_items" v-bind:class="{
+          <div class="menu_items menu_items_row" v-bind:class="{
              'l-menu-items-left': mobileMenuPositionLeft, 
              'l-menu-items-center': mobileMenuPositionCenter, 
              'l-menu-items-right': mobileMenuPositionRight, 
              }" >
-            <span><router-link to="/" >HOME</router-link></span>
-            <span><router-link to="/works" >WORKS</router-link></span>
-            <span><router-link to="/about" >ABOUT</router-link></span>
-            <span><router-link to="/contact" >CONTACT</router-link></span>
+            <div class="menu-item-box">
+              <router-link to="/" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'home' }">
+                HOME
+              </router-link>
+              <div class="menu_underline"></div>
+            </div>
+            <div class="menu-item-box">
+              <router-link to="/works" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'work' }">
+                WORKS
+              </router-link>
+              <div class="menu_underline"></div>
+            </div>
+            <div class="menu-item-box">
+              <router-link to="/about" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'about' }">
+                ABOUT
+              </router-link>
+              <div class="menu_underline"></div>
+            </div>
+            <div class="menu-item-box">
+              <router-link to="/contact" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'contact' }">
+                CONTACT
+              </router-link>
+              <div class="menu_underline"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -34,11 +54,31 @@
           </section>
           <section class="m-menu-section m-menu-section-start" v-bind:class="{ v_tran_slide_rightIn: !active }">
             <div class="d-flex-center-center">
-              <div class="menu_items" >
-                <span><router-link to="/" >HOME</router-link></span>
-                <span><router-link to="/works" >WORKS</router-link></span>
-                <span><router-link to="/about" >ABOUT</router-link></span>
-                <span><router-link to="/contact" >CONTACT</router-link></span>
+              <div class="menu_items menu_items_column" >
+                <div class="menu-item-box">
+                  <router-link to="/" class="menu_link">
+                    HOME
+                  </router-link>
+                  <div class="menu_underline"></div>
+                </div>
+                <div class="menu-item-box">
+                  <router-link to="/works" class="menu_link">
+                    WORKS
+                  </router-link>
+                  <div class="menu_underline"></div>
+                </div>
+                <div class="menu-item-box">
+                  <router-link to="/about" class="menu_link">
+                    ABOUT
+                  </router-link>
+                  <div class="menu_underline"></div>
+                </div>
+                <div class="menu-item-box">
+                  <router-link to="/contact" class="menu_link">
+                    CONTACT
+                  </router-link>
+                  <div class="menu_underline"></div>
+                </div>
               </div>
             </div>
           </section>
@@ -53,6 +93,7 @@ export default {
   name: 'MobileMenu',
   props: {
     msg: String,
+    menuVisible: String,
     mobileBarType: String,
     mobileBarAction: String,
     mobileMenuPositionLeft: Boolean,
@@ -183,6 +224,55 @@ export default {
     transform: rotate(-45deg) ;
     transition: .5s all ease; 
 }
+
+//menu items --------
+.menu_items{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu_items_row{
+  flex-direction: row;
+}
+.menu_items_column{
+  flex-direction: column;
+}
+.menu-item-box{
+  position:relative;
+  overflow: hidden;
+  margin: 0 1rem;
+  padding: .3rem 0;
+  .menu_underline{
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 2px;
+    margin-top: .2rem;
+    transition: .5s all ease-in;
+    transform: translateX(-100%);
+  }
+  &:hover{
+    .menu_underline{
+      transition: .5s all ease-in;
+      transform: translateX(0);
+    }
+  }
+}
+.menu_link{
+    display: inline-block;
+    opacity: .5;
+    &:hover{
+      opacity: .75;
+    }
+}
+.menu_item_visible{
+  opacity: 1;
+  pointer-events: none;
+}
+
+
 //laptop menu
 .l-menu-position{
   position: absolute;
@@ -196,6 +286,9 @@ export default {
     height:100%;
     cursor: pointer;
     // border: 1px solid #000;
+}
+.l-menu-bar-side-space{
+    padding: 0 10rem;
 }
 .l-menu-display{
   display: none !important;
@@ -212,13 +305,11 @@ export default {
 .l-menu-items-right{
   margin: 0 0 0 auto;
 }
-.a-a{
-  // margin: 0 0 0 auto;
-  // margin: 0 auto 0 auto;
-  margin: 0 auto 0 0;
-}
 
-// mobile menu
+
+
+
+// mobile menu --------
 .m-menu{
   position:fixed;
   z-index: 101;
@@ -244,12 +335,7 @@ export default {
  margin: .5rem;
  padding: .5rem;
 }
-.menu_items{
-  span a{
-    display: inline-block;
-    margin: 0 1rem;
-  } 
-}
+
 
 //section animatin right-in
 .m-menu-section-start{
