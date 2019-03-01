@@ -1,20 +1,20 @@
 <template>
   <div class="footerBar" >
-    <footer>
-      <dvi class="container-fluid">
-        <div class="row">
-            <div class="col-4 ">
-                <div class="footer-item d-flex-start-center">left</div>
-            </div>
-            <div class="col-4 ">
-                <div class="footer-item d-flex-center-center">left</div>
-            </div>
-            <div class="col-4 ">
-                <div class="footer-item d-flex-end-center">right</div>
-            </div>
+      <footer>
+        <div class="container-fluid">
+          <div class="row">
+              <div class="col-12">
+                <div class="footer-header">footer header</div>
+              </div>
+              <div class="col-12">
+                <section class="footer-section">footer section</section>
+              </div>
+              <div class="col-12">
+                <div class="footer-footer">footer footer</div>
+              </div>
+          </div>
         </div>
-      </dvi>
-    </footer>
+      </footer>
   </div>
 </template>
 <script>
@@ -27,17 +27,17 @@
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "../../assets/scss/common/data/thema.scss";
 .footerBar{
   position: relative;
   width: 100%;
-  background-color: green;
+  height: $footer-height;
+  background-color: $footer-color;
+  color: $footer-text;
+  overflow: hidden;
 }
-.footerBar footer{
-    width:100%;
-    position: relative;
-    border: 1px solid blue;
+footer{
+  padding: 1rem 0;
 }
-.footerBar .nav-item{
-    padding: 0 1rem;
-}
+
 </style>
