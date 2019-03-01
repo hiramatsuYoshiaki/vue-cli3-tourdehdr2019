@@ -1,4 +1,16 @@
 # vue-cli3-unit
+1. 環境 
+   node:v8.11.1
+   npm:4.0.5
+   vue:3.0.1
+2. ページ構成 
+   home
+   works 
+   about 
+   contact 
+3. 
+4. 
+5. 
 
 
 # vue-cli3-unit 更新
