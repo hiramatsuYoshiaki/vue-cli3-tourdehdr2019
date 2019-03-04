@@ -1,41 +1,46 @@
 <template>
   <div class="headerBar" v-bind:class="{
-                         scroll: headrScrollType,
-                         fixed: headerFixedype,
-                         fadeOut: isScroll && headrStikyType }">
+                         scroll: headerScrollType,
+                         fixed: headerFixedType,
+                         fadeOut: isScroll && headerStikyType }">
+
     <nav class="nav-side-space">
-        <div class="container-fluid">
+        <!-- <div class="container-fluid">
             <div class="row">
                 <div class="col-4 ">
                     <div class="nav-item d-flex-start-center">
-                        <a href="index.html" class="header-logo" v-if="logoPositionLeft">
+                        <router-link to="/" class="header-logo" v-if="logoPositionLeft">
                              <img :src="logoSvgHWorksWhite" alt="logo">
-                        </a>
+                        </router-link>
                     </div>
                 </div>
                 <div class="col-4 ">
                     <div class="nav-item d-flex-center-center">
-                        <a href="index.html" class="header-logo" v-if="logoPositionCenter">
+                        <router-link to="/" class="header-logo" v-if="logoPositionCenter">
                             <img :src="logoSvg" alt="logo">
-                        </a>
+                        </router-link>
                     </div>
                 </div>
                 <div class="col-4 ">
                     <div class="nav-item d-flex-end-center">
-                        <a href="index.html" class="header-logo" v-if="logoPositionRight">
+                        <router-link to="/" class="header-logo" v-if="logoPositionRight">
                             <img :src="logoSvgHWorksBlack" alt="logo">
-                        </a>
+                        </router-link>
                     </div>
                 </div>
             </div>
-        </div>
-        <MobileMenu msg="mobileBar"
-                    menuVisible="home"
-                    mobileBarType="fullScreen"
-                    mobileBarAction="Down"
-                    v-bind:mobileMenuPositionLeft="false"
-                    v-bind:mobileMenuPositionCenter="false"
-                    v-bind:mobileMenuPositionRight="true"/>
+        </div> -->
+        <MobileMenu msg="mobileMenu"
+                    v-bind:menuVisible= navMenu
+                    mobileBarType= "fullScreen"
+                    mobileBarAction= "Down"
+                    v-bind:mobileMenuPositionLeft= "false"
+                    v-bind:mobileMenuPositionCenter= "false"
+                    v-bind:mobileMenuPositionRight= "true"
+                    v-bind:logPositionLeft= "true"
+                    v-bind:logPositionCenter= "false"
+                    v-bind:logPositionRight= "false"
+                    />
                     <!-- menuVisible="home"             -->
                     <!-- menuVisible="work"             -->
                     <!-- menuVisible="about"             -->
@@ -54,16 +59,18 @@
   },
   props: {
     msg: String,
-    headrScrollType: Boolean,
-    headrFixedType: Boolean,
-    headrStikyType: Boolean,
-    scroll: Number,
+    navMenu: String,
+    headerScrollType: Boolean,
+    headerFixedType: Boolean,
+    headerStikyType: Boolean,
+    // scroll: Number,
     logoPositionLeft: Boolean,
     logoPositionCenter: Boolean,
     logoPositionRight: Boolean,
   },
   data() {
       return{
+        scroll: 250,
         scrollY: 0,
         isScroll: false,
 
@@ -100,7 +107,7 @@
     top: 0;
     left: 0;
     width:100%;
-    z-index: 100;
+    z-index: 200;
     height: $header-height;
     // background-color: $header-color;
     background-color: transparent;
@@ -123,7 +130,10 @@
     height:100%;
 }
 .headerBar .nav-side-space{
-    padding: 0 10rem;
+    padding: 0 1rem;
+    @media (min-width: 576px){
+       padding: 0 10rem;
+    }
 }
 .headerBar .nav-item{
     padding: 1rem 1rem;
@@ -132,7 +142,7 @@
     }
 }
 .header-logo img{
-    width: 6rem;
-    height: 3rem;
+    width: 12rem;
+    height: 6rem;
 }
 </style>

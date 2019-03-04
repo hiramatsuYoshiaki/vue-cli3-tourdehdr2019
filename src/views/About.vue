@@ -2,14 +2,16 @@
 <div class="about">
   <div class="aboutWrap">
       <HeaderBar msg="HeaderBar"
+                 navMenu="about"
                  v-bind:headrScrollType="true"
                  v-bind:headrFixedType="false"
                  v-bind:headrStikyType="false"
-                 scroll=250
+                
                  v-bind:logoPositionLeft="true"
                  v-bind:logoPositionCenter="false"
                  v-bind:logoPositionRight="false"
       />
+      <BgImageFull msg="bgImage" v-bind:img= bgImage />
       <AboutContent msg="AboutContent"/>
   </div>
 </div>
@@ -20,13 +22,20 @@
 // @ is an alias to /src
 import AboutContent from '@/components/about/AboutContent.vue'
 import HeaderBar from '@/components/header/HeaderBar.vue'
+import BgImageFull from '@/components/background/BgImageFull.vue'
 
 export default {
   name: 'About',
   components: {
     AboutContent,
     HeaderBar,
-  }
+    BgImageFull,
+  },
+    data () {
+      return {
+        bgImage: require("../assets/img/img4130b.jpg"),
+      }
+ },
 }
 </script>
 <style scoped lang="scss">

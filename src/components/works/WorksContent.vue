@@ -1,7 +1,19 @@
 <template>
   <div class="worksContent">
     <main>
-      <div class="container-fluid">
+      <div class="main-header">
+        <section class="main-header-text">head-line</section>
+      </div>
+      <div class="main-content">
+        <section class="main-content-title">head-line</section>
+        <section class="main-content-body">body-line</section>
+      </div>
+      <div class="main-footer">
+        <section class="main-footer-logo">head-line</section>
+        <section class="main-footer-menu">body-line</section>
+        <section class="main-footer-police">head-line</section>
+      </div>
+      <!-- <div class="container-fluid">
         <div class="row">
             <div class="col-12">
               <div class="main-header">
@@ -9,7 +21,6 @@
                   <p>main header</p>
                   <h1>Vue-cli3 Template Works</h1>
                 </div>
-                
               </div>
             </div>
             <div class="col-12">
@@ -34,7 +45,7 @@
               </div>
             </div>
         </div>
-      </div>
+      </div> -->
     </main>
   </div>
 </template>
@@ -43,41 +54,39 @@
 export default {
   name: 'WorksContent',
   props: {
-    msg: String
-  }
+    msg: String,
+  },
 }
 </script>
 
 <style scoped lang="scss">
 @import "../../assets/scss/common/data/thema.scss";
 .worksContent{
+    position: relative;
     width: 100%;
-    height: 100vh;
-    // padding-top: $header-height;
-    overflow: hidden;
+    height: auto;
+    padding-top: $header-height;
 }
 main{
   margin: 0;
   padding: 0;
 }
-.main-header-wrape{
-  margin: 5rem 0;
-}
 .main-header{
-  padding: 1rem 0;
   width:100%;
-  height: 25rem;
+  height: 25vh;
+  padding: 1rem 1rem;
   border: 1px solid green;
 }
-.main-section{
-  padding: 1rem 0;
+.main-content{
+  width:100%;
+  height: auto;
+  padding: 1rem 1rem;
   border: 1px solid lightblue;
 }
-
 .main-footer{
-  padding: 1rem 0;
+  padding: 1rem 1rem;
   width:100%;
-  height: 20rem;
+  height: 20vh;
   border: 1px solid yellow;
 }
 

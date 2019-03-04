@@ -1,20 +1,37 @@
 <template>
   <div class="MobileMenu" >
     <div  class="m-menu-bg" v-bind:class="{ v_open_menu : active, v_close_menu : !active }"></div>
-    <div class="m-bar m-bar-position m-bar-display" v-bind:class="{ dsp_bar: !active }">
+    <div class="m-bar m-bar-position m-bar-display"
+                v-bind:class="{ dsp_bar: !active, 
+                                'b-menu-items-left': mobileMenuPositionLeft, 
+                                'b-menu-items-center': mobileMenuPositionCenter, 
+                                'b-menu-items-right': mobileMenuPositionRight,
+                }">
         <div class="m-bar-wrap" v-on:click="active = !active">
             <div class="upper-bar" v-bind:class="{ close_upper: active, open_upper: !active }"></div>
             <div class="under-bar" v-bind:class="{ close_under: active, open_under: !active }"></div>
         </div>
     </div>
+    <!-- logo -->
+    <div class="log-bar log-bar-positon log-side-space"
+         v-bind:class="{'b-menu-items-left': logPositionLeft, 
+                        'b-menu-items-center': logPositionCenter, 
+                        'b-menu-items-right': logPositionRight,
+    }">
+      <router-link to="/" class="header-logo" >
+            <img :src="logoSvgHWorksWhite" alt="logo"> 
+      </router-link>
+    </div>
     <nav class="laptop-menu">
-      <div class="l-menu-bar l-menu-position l-menu-display l-menu-bar-side-space" >
+      <div class="l-menu-bar l-menu-position l-menu-display l-menu-bar-side-space " 
+           v-bind:class="{
+            'l-menu-items-left': mobileMenuPositionLeft, 
+            'l-menu-items-center': mobileMenuPositionCenter, 
+            'l-menu-items-right': mobileMenuPositionRight, 
+           }"
+      >
         <div class="m-menu-wrap m-menu-position ">
-          <div class="menu_items menu_items_row" v-bind:class="{
-             'l-menu-items-left': mobileMenuPositionLeft, 
-             'l-menu-items-center': mobileMenuPositionCenter, 
-             'l-menu-items-right': mobileMenuPositionRight, 
-             }" >
+          <div class="menu_items menu_items_row" >
             <div class="menu-item-box">
               <router-link to="/" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'home' }">
                 HOME
@@ -99,12 +116,18 @@ export default {
     mobileMenuPositionLeft: Boolean,
     mobileMenuPositionCenter: Boolean,
     mobileMenuPositionRight: Boolean,
+    logPositionLeft: Boolean,
+    logPositionCenter: Boolean,
+    logPositionRight: Boolean,
   },
   data () {
       return {
           active: true,
           scrollY: 0,
           isScroll: false,
+          logoSvgHWorksWhite: require("../../../assets/logo/h-works1200x600white.svg"),
+          logoSvgHWorksBlack: require("../../../assets/logo/h-works1200x600black.svg"),
+          logoSvg: require("../../../assets/logo/h-logo.svg"),
       }
   },
   mounted: function () {
@@ -134,16 +157,11 @@ export default {
     height: 100%;
     // height:$header-height; //5rem;
     position: absolute;
-    // z-index: 1000;
     display:block;
     top: 0;
-    left: 0;
+    right: 0;
     z-index: 100;
-    // background-color: rgba(256,256,256,.8);
-    // color: #fff;
-    // border: 1px solid yellow;
 }
-//mobile menu background
 .m-menu-bg{
   position: fixed;
   z-index: 100;
@@ -164,15 +182,59 @@ export default {
   transform: translateY(0) ;
   transition: .5s .5s all ease;
 }
-
-//menu-humberger-menu
-.m-bar-position{
+//logo bar------------------------------------
+.log-bar-positon{
   position: absolute;
   z-index: 110;
   top: 0;
   // left: 0 ;
-  right: 0 ;
+  // right: 0 ;
+  // left: 50% ;
+  // transform: translateX(-50%);
   margin:1rem 1rem;
+}
+.log-bar{
+  width: 6rem;
+  height: 3rem;
+  cursor: pointer;
+  
+}
+.log-side-space{
+  margin: 1rem 1rem;
+  @media (min-width: 576px){
+    margin: 1rem 10rem;
+  }
+}
+.header-logo img{
+    width: 6rem;
+    height: 3rem;
+}
+//menu-humberger-menu
+.m-bar-position{
+  position: absolute;
+  z-index: 110;
+  // top: 0;
+  // left: 0 ;
+  // right: 0 ;
+  margin:1rem 1rem;
+}
+.b-menu-items-left{
+  // margin: 0 auto 0 0;
+  top:0;
+  left: 0;
+}
+.b-menu-items-center{
+  // margin: 0 auto 0 auto;
+  top: 0;
+  // left: 0 ;
+  // right: 0 ;
+  left: 50% ;
+  transform: translateX(-50%);
+}
+.b-menu-items-right{
+  // margin: 0 0 0 auto;
+  top:0;
+  right: 0 ;
 }
 .m-bar{
     width:2rem;
@@ -185,6 +247,7 @@ export default {
     display: none;
   }
 }
+//ウインドウ表示の間にウインドウサイズ変更対応
 .dsp_bar{
   display:block;
 }
@@ -250,8 +313,8 @@ export default {
     width: 100%;
     height: 2px;
     margin-top: .2rem;
-    transition: .5s all ease-in;
-    transform: translateX(-100%);
+    // transition: .1s all ease-in;
+    transform: translateX(-101%);
   }
   &:hover{
     .menu_underline{
@@ -277,18 +340,35 @@ export default {
 .l-menu-position{
   position: absolute;
   z-index: 110;
+  
+}
+.l-menu-items-left{
+  // margin: 0 auto 0 0;
+  top:0;
+  left: 0;
+}
+.l-menu-items-center{
+  // margin: 0 auto 0 auto;
   top: 0;
-  left: 0 ;
+  // left: 0 ;
   // right: 0 ;
+  left: 50% ;
+  transform: translateX(-50%);
+}
+.l-menu-items-right{
+  // margin: 0 0 0 auto;
+  top:0;
+  right: 0 ;
 }
 .l-menu-bar{
-    width:100%;
+    width:33.33%;
     height:100%;
     cursor: pointer;
-    // border: 1px solid #000;
+    background-color: rega(250,250,250,.5);
 }
 .l-menu-bar-side-space{
     padding: 0 10rem;
+    
 }
 .l-menu-display{
   display: none !important;
@@ -296,15 +376,7 @@ export default {
     display: block !important;
   }
 }
-.l-menu-items-left{
-  margin: 0 auto 0 0;
-}
-.l-menu-items-center{
-  margin: 0 auto 0 auto;
-}
-.l-menu-items-right{
-  margin: 0 0 0 auto;
-}
+
 
 
 
