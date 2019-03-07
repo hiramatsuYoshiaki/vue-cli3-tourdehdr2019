@@ -86,12 +86,18 @@ main{
   height: calc( 100vh - #{ $header-height } );
   padding: 1rem 1rem;
   border: 1px solid lightblue;
+  background-color: $main-contents-color;
+  color: $main-contents-text;
 }
 // .main-footer{
 //   padding: 1rem 1rem;
 //   width:100%;
 //   height: 20vh;
 //   border: 1px solid yellow;
+//   background-color: $footer-color-color;
+//   color: $footer-color-text;
 // }
+
+
 
 </style>

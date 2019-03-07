@@ -1,19 +1,22 @@
 <template>
 <div class="hoem">
   <div class="homeWrap">
-      <HeaderBar msg="HeaderBar"
-                 navMenu="home"
-                 v-bind:headerScrollType="true"
-                 v-bind:headerFixedType="false"
-                 v-bind:headerStikyType="false"
-                 
-                 v-bind:logoPositionLeft="true"
-                 v-bind:logoPositionCenter="false"
-                 v-bind:logoPositionRight="false"
-      />
-       <BgImageFull msg="bgImage" v-bind:img= bgImage />
-      <HomeContent msg="HomeContent"/>
-      <!-- <FooterBar msg="FooterBar"/>  -->
+
+    <TransitionScreen msg="bgImage" v-bind:img= bgImage pageView="home"  />
+
+    <HeaderBar msg="HeaderBar"
+                navMenu="home"
+                v-bind:headerScrollType="true"
+                v-bind:headerFixedType="false"
+                v-bind:headerStikyType="false"
+                
+                v-bind:logoPositionLeft="true"
+                v-bind:logoPositionCenter="false"
+                v-bind:logoPositionRight="false"
+    />
+    <BgImageFull msg="bgImage" v-bind:img= bgImage />
+    <HomeContent msg="HomeContent"/>
+    <!-- <FooterBar msg="FooterBar"/>  -->
   </div>
 </div>
 </template>
@@ -23,19 +26,30 @@
 // @ is an alias to /src
 import HomeContent from '@/components/home/HomeContent.vue'
 import HeaderBar from '@/components/header/HeaderBar.vue'
-// import FooterBar from '@/components/footer/FooterBar.vue'
 import BgImageFull from '@/components/background/BgImageFull.vue'
+// import Spinner from '@/components/transition/Spinner.vue'
+// import LoadingCounterBar2 from '@/components/transition/LoadingCounterBar2.vue'
+
+// import LoadingWrite from '@/components/transition/LoadingWrite.vue'
+
+import TransitionScreen from '@/components/transition/TransitionScreen.vue'
 
 export default {
   name: 'Home',
   components: {
     HomeContent,
     HeaderBar,
-    // FooterBar,
     BgImageFull,
+    // Spinner,
+    // LoadingCounterBar2,
+    // LoadingWrite,
+    TransitionScreen,
   },
   data () {
       return {
+        isLoading: true, 
+        isShow: true, 
+        progress: 0,
         bgImage: require("../assets/img/img1578.jpg"),
         // home: require("../../assets/img/img3698z.jpg"),
         // works: require("../../assets/img/fuji1.jpg"),
@@ -53,7 +67,28 @@ export default {
         // bgImageHotaruna: require("../../assets/img/img3698z.jpg"),
         // bgImageHotaluna2: require("../../assets/img/img3668.jpg"),
       }
- },
+  },
+  mounted: function () {
+    // this.isLoading = true;
+    // this.counter = 0;
+    // this.loading();
+
+    
+  },
+  methods: {
+    
+    // loading: function() {
+    //     setInterval(() => {
+    //         this.progress += 1;
+    //         if (this.progress === 101) {
+    //          this.progress = 100; 
+    //          setInterval(() => {
+    //              this.isLoading = false;
+    //          }, 300);
+    //         }
+    //     }, 30);
+    // },
+  }
   
 }
 </script>
@@ -75,5 +110,25 @@ export default {
   color: $body-text;
   // margin-right: -15px;
   // margin-left: -15px;
+  width: 100%;
+  height:100%;
 }
+// .v-enter-active, .v-leave-active {
+//     transition: all .5s 3.5s;
+// }
+// .v-enter, .v-leave-to {
+//     opacity: 1;
+//     transform: translateX(0);
+// }
+
+// .slideOut-enter-active {
+//   transition: all .3s ease;
+// }
+// .slideOut-leave-active {
+//   transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+// }
+// .slideOut-enter, .slideOut-leave-to {
+//   transform: translateX(-100%);
+//   opacity: 0;
+// }
 </style>

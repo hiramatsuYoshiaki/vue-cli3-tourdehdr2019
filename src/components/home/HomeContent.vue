@@ -1,8 +1,39 @@
 <template>
   <div class="homeContent">
     <main>
+
+      <!-- <transition appear >
+        <div class="pageChenge" v-if="isChenge"></div>
+      </transition> -->
+
       <div class="main-header">
         <section class="main-header-text">head-line</section>
+       
+        <!-- <transition name="home">
+          <div class="test enter" v-if="page === 'home' ">
+              <h1 >page transition</h1>
+          </div>
+        </transition > -->
+       
+        <!-- <transition name="works">
+          <div class="test leave" v-if="page === !'home' ">
+              <h1 >page transition</h1>
+          </div>
+        </transition> -->
+        
+        <!-- <p>page: {{ page }}</p> -->
+        <!-- <p>
+          <button @click="clickHome" style="color: black">home</button>
+          <button @click="clickWorks" style="color: black">works</button>
+        </p> -->
+
+        <!-- <p>{{ count }}</p> -->
+
+        <!-- <p>
+          <button @click="increment">+</button>
+          <button @click="decrement">-</button>
+        </p> -->
+
       </div>
       <div class="main-content">
         <section class="main-content-title">head-line</section>
@@ -35,7 +66,6 @@
           </div>
         </div>
       </div>
-
       <div class="nav-btn btn-prev" v-on:click="next_page()">prev</div>
       <div class="nav-btn btn-back"><router-link to="/works" >back</router-link></div> -->
     </main>
@@ -50,12 +80,83 @@ export default {
   props: {
     msg: String,
   },
+  data: function(){
+    return {
+      isChenge: true,
+    }
+  },
+  //test storexxxxxxxxxxxxxxxxxxxxxxxx
+  computed: {
+    count () {
+    return this.$store.state.count
+    },
+    
+    page () {
+    return this.$store.state.page
+    },
+  },
+  //test storexxxxxxxxxxxxxxxxxxxxxxxx
+   methods: {
+    increment () {
+      this.$store.commit('increment')
+    },
+    decrement () {
+     this.$store.commit('decrement')
+    },
+    clickHome () {
+     this.$store.commit('clickHome')
+    },
+    clickWorks () {
+     this.$store.commit('clickWorks')
+    }
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../../assets/scss/common/data/thema.scss";
+// .test{
+//   position: absolute;
+//   top: 25%;
+//   left: 0;
+//   width: 100%;
+//   height: 25%;
+//   background: green;
+//   color: white;
+//   display: flex;
+//   justify-content: center;
+//   align-items:center;
+// }
+// .enter{
+//   top: 15%;
+//   background: green;
+//   transform: translateX(100%);
+// }
+// .leave{
+//   top: 45%;
+//   background: yellow;
+//   transform: translateX(0);
+// }
+// .home-enter-active, .home-leave-active {
+//     transition: all .5s;
+// }
+// .home-enter {
+//     opacity: 1;
+//     transform: translateX(0);
+// }
+// .home-leave-to {
+//     opacity: 1;
+//     transform: translateX(0);
+// }
+// .works-enter-active, .works-leave-active {
+//     transition: all 1.5s ;
+// }
+// .works-enter, .works-leave-to {
+//     opacity: 1;
+//     transform: translateX(-100%);
+// }
+
 .homeContent{
     position: relative;
     width: 100%;
@@ -66,9 +167,46 @@ main{
   margin: 0;
   padding: 0;
 }
+// .pageChenge{
+//   position:absolute;
+//   top: 0;
+//   left: 0;
+//   z-index: 300;
+//   width: 100vw;
+//   height: 100vh;
+//   background-color: rgba(9,0,51,1);
+//   background-color: #212121;
+//   opacity: 1;
+//   transform: translateX(100%);
+// }
+// .v-enter-active, .v-leave-active {
+//     transition: all .5s 3.5s;
+// }
+// .v-enter, .v-leave-to {
+//     opacity: 1;
+//     transform: translateX(0);
+// }
+
+// .v-enter-active, .v-leave-active {
+//     animation: pagechenge 2s ease 1.5s 3.5s;
+//   }
+// @keyframes pagechenge {
+//   0% {
+//     transform: translateX(0);
+//   }
+
+//   50% {
+//     transform: translateX(0);
+//   }
+
+//   100% {
+//     transform: translateX(0);
+//   }
+// }
+
 .main-header{
   width:100%;
-  height: 25vh;
+  height: calc( 100vh - #{ $header-height } ) ;
   padding: 1rem 1rem;
   border: 1px solid green;
 }
@@ -77,12 +215,16 @@ main{
   height: auto;
   padding: 1rem 1rem;
   border: 1px solid lightblue;
+  background-color: $main-contents-color;
+  color: $main-contents-text;
 }
 .main-footer{
   padding: 1rem 1rem;
   width:100%;
   height: 20vh;
   border: 1px solid yellow;
+  background-color: $footer-color-color;
+  color: $footer-color-text;
 }
 // .slider-content{
 //   padding: 0;
