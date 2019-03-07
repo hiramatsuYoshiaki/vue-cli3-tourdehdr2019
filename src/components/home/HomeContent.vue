@@ -8,32 +8,32 @@
 
       <div class="main-header">
         <section class="main-header-text">head-line</section>
-        <!-- //test storexxxxxxxxxxxxxxxxxxxxxxxx -->
-        <transition name="home">
+       
+        <!-- <transition name="home">
           <div class="test enter" v-if="page === 'home' ">
               <h1 >page transition</h1>
           </div>
-        </transition >
-        <transition name="works">
+        </transition > -->
+       
+        <!-- <transition name="works">
           <div class="test leave" v-if="page === !'home' ">
               <h1 >page transition</h1>
           </div>
-        </transition>
+        </transition> -->
         
-        <p>page: {{ page }}</p>
-        <p>
+        <!-- <p>page: {{ page }}</p> -->
+        <!-- <p>
           <button @click="clickHome" style="color: black">home</button>
           <button @click="clickWorks" style="color: black">works</button>
-        </p>
+        </p> -->
 
+        <!-- <p>{{ count }}</p> -->
 
-
-
-        <p>{{ count }}</p>
-        <p>
+        <!-- <p>
           <button @click="increment">+</button>
           <button @click="decrement">-</button>
-        </p>
+        </p> -->
+
       </div>
       <div class="main-content">
         <section class="main-content-title">head-line</section>
@@ -116,47 +116,46 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../../assets/scss/common/data/thema.scss";
-.test{
-  position: absolute;
-  top: 25%;
-  left: 0;
-  width: 100%;
-  height: 25%;
-  background: green;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items:center;
-}
-.enter{
-  top: 15%;
-  background: green;
-  transform: translateX(100%);
-}
-.leave{
-  top: 45%;
-  background: yellow;
-  transform: translateX(0);
-}
-.home-enter-active, .home-leave-active {
-    // transition: all .5s forwards;
-    transition: all .5s;
-}
-.home-enter {
-    opacity: 1;
-    transform: translateX(0);
-}
-.home-leave-to {
-    opacity: 1;
-    transform: translateX(0);
-}
-.works-enter-active, .works-leave-active {
-    transition: all 1.5s ;
-}
-.works-enter, .works-leave-to {
-    opacity: 1;
-    transform: translateX(-100%);
-}
+// .test{
+//   position: absolute;
+//   top: 25%;
+//   left: 0;
+//   width: 100%;
+//   height: 25%;
+//   background: green;
+//   color: white;
+//   display: flex;
+//   justify-content: center;
+//   align-items:center;
+// }
+// .enter{
+//   top: 15%;
+//   background: green;
+//   transform: translateX(100%);
+// }
+// .leave{
+//   top: 45%;
+//   background: yellow;
+//   transform: translateX(0);
+// }
+// .home-enter-active, .home-leave-active {
+//     transition: all .5s;
+// }
+// .home-enter {
+//     opacity: 1;
+//     transform: translateX(0);
+// }
+// .home-leave-to {
+//     opacity: 1;
+//     transform: translateX(0);
+// }
+// .works-enter-active, .works-leave-active {
+//     transition: all 1.5s ;
+// }
+// .works-enter, .works-leave-to {
+//     opacity: 1;
+//     transform: translateX(-100%);
+// }
 
 .homeContent{
     position: relative;

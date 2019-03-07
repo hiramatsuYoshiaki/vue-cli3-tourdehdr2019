@@ -1,5 +1,6 @@
 <template>
   <div class="MobileMenu" >
+    <!-- mobile menu -->
     <div  class="m-menu-bg" v-bind:class="{ v_open_menu : active, v_close_menu : !active }"></div>
     <div class="m-bar m-bar-position m-bar-display"
                 v-bind:class="{ dsp_bar: !active, 
@@ -18,10 +19,14 @@
                         'b-menu-items-center': logPositionCenter, 
                         'b-menu-items-right': logPositionRight,
     }">
-      <router-link to="/" class="header-logo" >
+      <!-- <router-link to="/" class="header-logo" >
             <img :src="logoSvgHWorksWhite" alt="logo"> 
-      </router-link>
+      </router-link> -->
+      <a v-on:click="linkHome" class="header-logo" >
+                <img :src="logoSvgHWorksWhite" alt="logo">
+      </a>
     </div>
+    <!-- laptop menu -->
     <nav class="laptop-menu">
       <div class="l-menu-bar l-menu-position l-menu-display l-menu-bar-side-space " 
            v-bind:class="{
@@ -45,7 +50,7 @@
               <!-- <router-link to="/works" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'work' }">
                 WORKS
               </router-link> -->
-              <a v-on:click="linkWorks" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'work' }">
+              <a v-on:click="linkWorks" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'works' }">
                 WORKS
               </a>
               <div class="menu_underline"></div>
@@ -161,25 +166,25 @@ export default {
      this.$store.commit('clickHome');
      setTimeout(() => {
         this.$router.push('/');
-     }, 1000);
+     }, 500);
    },
    linkWorks() {
      this.$store.commit('clickWorks')
      setTimeout(() => {
         this.$router.push('/works');
-     }, 1000);
+     }, 500);
    },
    linkAbout() {
      this.$store.commit('clickAbout')
      setTimeout(() => {
         this.$router.push('/about');
-     }, 1000);
+     }, 500);
    },
    linkContact() {
      this.$store.commit('clickContact')
      setTimeout(() => {
         this.$router.push('/contact');
-     }, 1000);
+     }, 500);
    }
  },
 }

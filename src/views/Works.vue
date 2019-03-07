@@ -1,6 +1,7 @@
 <template>
 <div class="works">
   <div class="worksWrap">
+      <TransitionScreen msg="bgImage" v-bind:img= bgImage pageView="works"  />
       <HeaderBar msg="HeaderBar"
                  navMenu="works"
                  v-bind:headrScrollType="true"
@@ -23,6 +24,7 @@
 import WorksContent from '@/components/works/WorksContent.vue'
 import HeaderBar from '@/components/header/HeaderBar.vue'
 import BgImageFull from '@/components/background/BgImageFull.vue'
+import TransitionScreen from '@/components/transition/TransitionScreen.vue'
 
 export default {
   name: 'Works',
@@ -30,6 +32,7 @@ export default {
     WorksContent,
     HeaderBar,
     BgImageFull,
+    TransitionScreen, 
   },
   data () {
     return {

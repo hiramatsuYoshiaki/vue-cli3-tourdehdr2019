@@ -1,6 +1,7 @@
 <template>
 <div class="contact">
   <div class="contactWrap">
+    <TransitionScreen msg="bgImage" v-bind:img= bgImage pageView="contact"  />
       <HeaderBar msg="HeaderBar"
                  navMenu="contact"
                  v-bind:headrScrollType="true"
@@ -24,6 +25,8 @@
 import ContactContent from '@/components/contact/ContactContent.vue'
 import HeaderBar from '@/components/header/HeaderBar.vue'
 import BgImageFull from '@/components/background/BgImageFull.vue'
+import TransitionScreen from '@/components/transition/TransitionScreen.vue'
+
 
 export default {
   name: 'Contact',
@@ -31,6 +34,8 @@ export default {
     ContactContent,
     HeaderBar,
     BgImageFull,
+    TransitionScreen,
+
   },
   data () {
     return {

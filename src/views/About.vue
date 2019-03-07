@@ -1,6 +1,7 @@
 <template>
 <div class="about">
   <div class="aboutWrap">
+    <TransitionScreen msg="bgImage" v-bind:img= bgImage pageView="about"  />
       <HeaderBar msg="HeaderBar"
                  navMenu="about"
                  v-bind:headrScrollType="true"
@@ -23,6 +24,8 @@
 import AboutContent from '@/components/about/AboutContent.vue'
 import HeaderBar from '@/components/header/HeaderBar.vue'
 import BgImageFull from '@/components/background/BgImageFull.vue'
+import TransitionScreen from '@/components/transition/TransitionScreen.vue'
+
 
 export default {
   name: 'About',
@@ -30,6 +33,8 @@ export default {
     AboutContent,
     HeaderBar,
     BgImageFull,
+    TransitionScreen,
+
   },
     data () {
       return {

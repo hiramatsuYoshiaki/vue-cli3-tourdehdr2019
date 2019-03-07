@@ -2,28 +2,7 @@
 <div class="hoem">
   <div class="homeWrap">
 
-    <!-- <div v-if="isLoading">
-      <Spinner/>
-    </div> -->
-   
-    <!-- <div  v-if="isLoading">
-      <LoadingCounterBar2 :cnt="progress" />
-    </div> -->
-
-    <!-- <div  v-if="isLoading">
-      <LoadingWrite />
-    </div> -->
-
-    <!-- <div  v-if="isChengPage">
-      <LoadingWrite />
-    </div> -->
-
-
-    <!-- <transition appear >
-      <TransitionScreen msg="bgImage" v-bind:img= bgImage v-if="isShow"/> 
-    </transition> -->
-
-
+    <TransitionScreen msg="bgImage" v-bind:img= bgImage pageView="home"  />
 
     <HeaderBar msg="HeaderBar"
                 navMenu="home"
@@ -53,7 +32,7 @@ import BgImageFull from '@/components/background/BgImageFull.vue'
 
 // import LoadingWrite from '@/components/transition/LoadingWrite.vue'
 
-// import TransitionScreen from '@/components/transition/TransitionScreen.vue'
+import TransitionScreen from '@/components/transition/TransitionScreen.vue'
 
 export default {
   name: 'Home',
@@ -64,7 +43,7 @@ export default {
     // Spinner,
     // LoadingCounterBar2,
     // LoadingWrite,
-    // TransitionScreen,
+    TransitionScreen,
   },
   data () {
       return {
@@ -90,25 +69,25 @@ export default {
       }
   },
   mounted: function () {
-    this.isLoading = true;
-    this.counter = 0;
-    this.loading();
+    // this.isLoading = true;
+    // this.counter = 0;
+    // this.loading();
 
     
   },
   methods: {
     
-    loading: function() {
-        setInterval(() => {
-            this.progress += 1;
-            if (this.progress === 101) {
-             this.progress = 100; 
-             setInterval(() => {
-                 this.isLoading = false;
-             }, 300);
-            }
-        }, 30);
-    },
+    // loading: function() {
+    //     setInterval(() => {
+    //         this.progress += 1;
+    //         if (this.progress === 101) {
+    //          this.progress = 100; 
+    //          setInterval(() => {
+    //              this.isLoading = false;
+    //          }, 300);
+    //         }
+    //     }, 30);
+    // },
   }
   
 }
@@ -134,13 +113,13 @@ export default {
   width: 100%;
   height:100%;
 }
-.v-enter-active, .v-leave-active {
-    transition: all .5s 3.5s;
-}
-.v-enter, .v-leave-to {
-    opacity: 1;
-    transform: translateX(0);
-}
+// .v-enter-active, .v-leave-active {
+//     transition: all .5s 3.5s;
+// }
+// .v-enter, .v-leave-to {
+//     opacity: 1;
+//     transform: translateX(0);
+// }
 
 // .slideOut-enter-active {
 //   transition: all .3s ease;
