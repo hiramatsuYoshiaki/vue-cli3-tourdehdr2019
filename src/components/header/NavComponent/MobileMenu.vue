@@ -33,27 +33,39 @@
         <div class="m-menu-wrap m-menu-position ">
           <div class="menu_items menu_items_row" >
             <div class="menu-item-box">
-              <router-link to="/" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'home' }">
+              <!-- <router-link to="/" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'home' }">
                 HOME
-              </router-link>
+              </router-link> -->
+              <a v-on:click="linkHome" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'home' }">
+                HOME
+              </a>
               <div class="menu_underline"></div>
             </div>
             <div class="menu-item-box">
-              <router-link to="/works" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'work' }">
+              <!-- <router-link to="/works" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'work' }">
                 WORKS
-              </router-link>
+              </router-link> -->
+              <a v-on:click="linkWorks" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'work' }">
+                WORKS
+              </a>
               <div class="menu_underline"></div>
             </div>
             <div class="menu-item-box">
-              <router-link to="/about" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'about' }">
+              <!-- <router-link to="/about" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'about' }">
                 ABOUT
-              </router-link>
+              </router-link> -->
+              <a v-on:click="linkAbout" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'about' }">
+                ABOUT
+              </a>
               <div class="menu_underline"></div>
             </div>
             <div class="menu-item-box">
-              <router-link to="/contact" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'contact' }">
+              <!-- <router-link to="/contact" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'contact' }">
                 CONTACT
-              </router-link>
+              </router-link> -->
+              <a v-on:click="linkContact" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'contact' }">
+                CONTACT
+              </a>
               <div class="menu_underline"></div>
             </div>
           </div>
@@ -144,6 +156,30 @@ export default {
       }else{
         this.isScroll = false;
       }
+   },
+   linkHome() {
+     this.$store.commit('clickHome');
+     setTimeout(() => {
+        this.$router.push('/');
+     }, 1000);
+   },
+   linkWorks() {
+     this.$store.commit('clickWorks')
+     setTimeout(() => {
+        this.$router.push('/works');
+     }, 1000);
+   },
+   linkAbout() {
+     this.$store.commit('clickAbout')
+     setTimeout(() => {
+        this.$router.push('/about');
+     }, 1000);
+   },
+   linkContact() {
+     this.$store.commit('clickContact')
+     setTimeout(() => {
+        this.$router.push('/contact');
+     }, 1000);
    }
  },
 }
@@ -376,10 +412,6 @@ export default {
     display: block !important;
   }
 }
-
-
-
-
 
 // mobile menu --------
 .m-menu{

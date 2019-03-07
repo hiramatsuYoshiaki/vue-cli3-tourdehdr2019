@@ -2,7 +2,10 @@
   <div class="worksContent">
     <main>
       <div class="main-header">
-        <section class="main-header-text">head-line</section>
+        <section class="main-header-text">
+          head-line
+          <h1 class="test">page transition</h1>
+        </section>
       </div>
       <div class="main-content">
         <section class="main-content-title">head-line</section>
@@ -79,15 +82,20 @@ main{
 }
 .main-content{
   width:100%;
-  height: auto;
+  // height: auto;
+  height: 75vh;
   padding: 1rem 1rem;
-  border: 1px solid lightblue;
+  // border: 1px solid lightblue;
+  background-color: $main-contents-color;
+  color: $main-contents-text;
 }
 .main-footer{
   padding: 1rem 1rem;
   width:100%;
   height: 20vh;
-  border: 1px solid yellow;
+  // border: 1px solid yellow;
+  background-color: $footer-color-color;
+  color: $footer-color-text;
 }
 
 </style>
