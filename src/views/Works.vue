@@ -7,7 +7,6 @@
                  v-bind:headrScrollType="true"
                  v-bind:headrFixedType="false"
                  v-bind:headrStikyType="false"
-                
                  v-bind:logoPositionLeft="true"
                  v-bind:logoPositionCenter="false"
                  v-bind:logoPositionRight="false"

@@ -1,27 +1,85 @@
 # vue-cli3-unit
-1. 環境 
-  node:v8.11.1
-  npm:4.0.5
-  vue:3.0.1
-2. ページ構成 
-  home /
+1. 環境  
+  node:v8.11.1 
+  npm:4.0.5 
+  vue:3.0.1 
+2. ページ構成  
+  home / 
   works /works 
   about /about 
-  contact  /contact
-3. 
-  app.vue
-  main.js
-  router.js
-  store.js
-  assets
+  contact  /contact 
+3.  
+  app.vue 
+  main.js 
+  router.js 
+  store.js 
+  assets 
 
 
 
-4. transition
-  loading
-  page transition
-  main-contents transition
+4. transition 
+  loading 
+  page transition 
+  main-contents transition 
 
+5. scroll-bar 
+
+## 常時垂直スクロールバーを表示させる。
+<style> 
+    html{ overflow-y: scroll; } 
+</style> 
+
+## 垂直スクロールバーのスタイリングを変更する。
+  スクロールバーの横のサイズ 
+  <style> 
+    ::-webkit-scrollbar { 
+        width: 16px; 
+        // width: 6px; 
+    } 
+  </style> 
+ 
+  スクロールバーの軌道を非表にする 
+  <style> 
+    ::-webkit-scrollbar-track { 
+      // background: transparent; 
+      border-radius: 10px; 
+      box-shadow: inset 0 0 6px rgba(33, 33, 33, .1); 
+      display: none ; 
+    } 
+  </style> 
+
+  クロールバーの動く部分を透明度0.3のグレイにする。 
+  <style> 
+    ::-webkit-scrollbar-thumb { 
+      background-color: rgba(105, 105, 105, 0.5); 
+      border-radius: 30px; 
+      // box-shadow:0 0 0 1px rgba(255, 255, 255, .3); 
+    } 
+  </style> 
+
+## 垂直スクロールバーのスタイリングを変更する。
+<template> 
+  <div class="Content"> 
+      <div class="main"> 
+        <section > 
+            垂直スクロールバーの下まで表示される領域 
+        </section> 
+      </div> 
+  </div> 
+</template> 
+## 親要素はwidth:100%、子要素はwidth:100vwを指定する。
+<style> 
+  .Content{ 
+      position: relative; 
+      width: 100%; 
+      height: auto; 
+  } 
+  .main{ 
+    //横スクロール処理 
+    width: auto; 
+    min-width: 100vw; 
+  }  
+</style> 
 
 
 # vue-cli3-unit 更新

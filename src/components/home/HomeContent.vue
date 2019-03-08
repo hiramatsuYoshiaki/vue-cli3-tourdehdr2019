@@ -35,6 +35,7 @@
         </p> -->
 
       </div>
+
       <div class="main-content">
         <section class="main-content-title">head-line</section>
         <section class="main-content-body">body-line</section>
@@ -44,6 +45,10 @@
         <section class="main-footer-menu">body-line</section>
         <section class="main-footer-police">head-line</section>
       </div>
+
+
+
+      
       <!-- <div class="slider-content"> -->
         <!-- <div class="slider-wrap1">
           <CarouselFullScreenBasic />
@@ -162,6 +167,7 @@ export default {
     width: 100%;
     height: auto;
     padding-top: $header-height;
+    
 }
 main{
   margin: 0;
@@ -209,6 +215,10 @@ main{
   height: calc( 100vh - #{ $header-height } ) ;
   padding: 1rem 1rem;
   border: 1px solid green;
+  
+//横スクロール処理
+  width: auto;
+  min-width: 100vw;
 }
 .main-content{
   width:100%;
@@ -217,6 +227,10 @@ main{
   border: 1px solid lightblue;
   background-color: $main-contents-color;
   color: $main-contents-text;
+
+//横スクロール処理
+  width: auto;
+  min-width: 100vw;
 }
 .main-footer{
   padding: 1rem 1rem;
@@ -225,6 +239,10 @@ main{
   border: 1px solid yellow;
   background-color: $footer-color-color;
   color: $footer-color-text;
+
+//横スクロール処理
+  width: auto;
+  min-width: 100vw;
 }
 // .slider-content{
 //   padding: 0;
