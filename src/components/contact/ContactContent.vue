@@ -80,6 +80,9 @@ main{
 //   height: 25vh;
 //   padding: 1rem 1rem;
 //   border: 1px solid green;
+//横スクロール処理
+  // width: auto;
+  // min-width: 100vw;
 // }
 .main-content{
   width:100%;
@@ -88,6 +91,9 @@ main{
   border: 1px solid lightblue;
   background-color: $main-contents-color;
   color: $main-contents-text;
+  //横スクロール処理
+  width: auto;
+  min-width: 100vw;
 }
 // .main-footer{
 //   padding: 1rem 1rem;
@@ -96,6 +102,9 @@ main{
 //   border: 1px solid yellow;
 //   background-color: $footer-color-color;
 //   color: $footer-color-text;
+//横スクロール処理
+  // width: auto;
+  // min-width: 100vw;
 // }
 
 

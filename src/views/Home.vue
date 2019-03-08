@@ -98,20 +98,22 @@ export default {
   position: relative;
   margin: 0;
   padding:0;
+
   // width: 100vw;
   // margin-right: auto;
   // margin-left: auto;
   // padding-right: 15px;
   // padding-left: 15px;
-  // overflow-x: hidden;
 }
 .homeWrap{
   background-color: $body-color;
   color: $body-text;
-  // margin-right: -15px;
-  // margin-left: -15px;
   width: 100%;
   height:100%;
+
+  // width: 100vw;
+  // margin-right: -15px;
+  // margin-left: -15px;
 }
 // .v-enter-active, .v-leave-active {
 //     transition: all .5s 3.5s;
