@@ -1,50 +1,49 @@
 <template>
   <div class="homeContent">
+  <div class="home-wrapper">
     <main>
+      <CarouselFullScreenBasic />
+      <!-- <CarouselSimple /> -->
 
       <!-- <transition appear >
         <div class="pageChenge" v-if="isChenge"></div>
       </transition> -->
 
       <div class="main-header">
-        <section class="main-header-text">head-line</section>
-       
+        <!-- <section class="main-header-text">head-line</section> -->
+      </div>
+
+      <!-- <div class="main-content">
+        <section class="main-content-title">head-line</section>
+        <section class="main-content-body">body-line</section> -->
+
         <!-- <transition name="home">
           <div class="test enter" v-if="page === 'home' ">
               <h1 >page transition</h1>
           </div>
         </transition > -->
-       
         <!-- <transition name="works">
           <div class="test leave" v-if="page === !'home' ">
               <h1 >page transition</h1>
           </div>
         </transition> -->
-        
         <!-- <p>page: {{ page }}</p> -->
         <!-- <p>
           <button @click="clickHome" style="color: black">home</button>
           <button @click="clickWorks" style="color: black">works</button>
         </p> -->
-
         <!-- <p>{{ count }}</p> -->
-
         <!-- <p>
           <button @click="increment">+</button>
           <button @click="decrement">-</button>
         </p> -->
 
-      </div>
-
-      <div class="main-content">
-        <section class="main-content-title">head-line</section>
-        <section class="main-content-body">body-line</section>
-      </div>
-      <div class="main-footer">
+      <!-- </div> -->
+      <!-- <div class="main-footer">
         <section class="main-footer-logo">head-line</section>
         <section class="main-footer-menu">body-line</section>
         <section class="main-footer-police">head-line</section>
-      </div>
+      </div> -->
 
 
 
@@ -75,46 +74,51 @@
       <div class="nav-btn btn-back"><router-link to="/works" >back</router-link></div> -->
     </main>
   </div>
+  </div>
 </template>
 
 <script>
-// import CarouselBasic from '@/components/carousel/CarouselBasic.vue'
-// import CarouselFullScreenBasic from '@/components/carousel/CarouselFullScreenBasic.vue'
+import CarouselFullScreenBasic from '@/components/carousel/CarouselFullScreenBasic.vue'
+// import CarouselSimple from '@/components/carousel/CarouselSimple.vue'
 export default {
   name: 'HomeContent',
   props: {
     msg: String,
   },
-  data: function(){
-    return {
-      isChenge: true,
-    }
+  components: {
+    CarouselFullScreenBasic,
+    // CarouselSimple,
   },
+  // data: function(){
+  //   return {
+  //     isChenge: true,
+  //   }
+  // },
   //test storexxxxxxxxxxxxxxxxxxxxxxxx
-  computed: {
-    count () {
-    return this.$store.state.count
-    },
+  // computed: {
+  //   count () {
+  //   return this.$store.state.count
+  //   },
     
-    page () {
-    return this.$store.state.page
-    },
-  },
+  //   page () {
+  //   return this.$store.state.page
+  //   },
+  // },
   //test storexxxxxxxxxxxxxxxxxxxxxxxx
-   methods: {
-    increment () {
-      this.$store.commit('increment')
-    },
-    decrement () {
-     this.$store.commit('decrement')
-    },
-    clickHome () {
-     this.$store.commit('clickHome')
-    },
-    clickWorks () {
-     this.$store.commit('clickWorks')
-    }
-  }
+  //  methods: {
+  //   increment () {
+  //     this.$store.commit('increment')
+  //   },
+  //   decrement () {
+  //    this.$store.commit('decrement')
+  //   },
+  //   clickHome () {
+  //    this.$store.commit('clickHome')
+  //   },
+  //   clickWorks () {
+  //    this.$store.commit('clickWorks')
+  //   }
+  // }
 }
 </script>
 
@@ -167,7 +171,12 @@ export default {
     width: 100%;
     height: auto;
     padding-top: $header-height;
-    
+}
+.home-wrapper{
+  position:relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0, .5);
 }
 main{
   margin: 0;
@@ -214,8 +223,7 @@ main{
   width:100%;
   height: calc( 100vh - #{ $header-height } ) ;
   padding: 1rem 1rem;
-  border: 1px solid green;
-  
+  // border: 1px solid green;
 //横スクロール処理
   width: auto;
   min-width: 100vw;
@@ -227,7 +235,6 @@ main{
   border: 1px solid lightblue;
   background-color: $main-contents-color;
   color: $main-contents-text;
-
 //横スクロール処理
   width: auto;
   min-width: 100vw;

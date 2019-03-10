@@ -9,7 +9,6 @@
                 v-bind:headerScrollType="true"
                 v-bind:headerFixedType="false"
                 v-bind:headerStikyType="false"
-                
                 v-bind:logoPositionLeft="true"
                 v-bind:logoPositionCenter="false"
                 v-bind:logoPositionRight="false"
@@ -17,7 +16,7 @@
     <BgImageFull msg="bgImage" v-bind:img= bgImage />
     <HomeContent msg="HomeContent"/>
     <!-- <FooterBar msg="FooterBar"/>  -->
-  </div>
+  <!-- </div> -->
 </div>
 </template>
 

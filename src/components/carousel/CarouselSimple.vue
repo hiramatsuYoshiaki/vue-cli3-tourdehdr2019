@@ -1,7 +1,7 @@
 <template>
-  <div class="carouselFullScreenBasic">
-    <div class="carousel-wrapper">
-      <div id="vue-carousel" class="vue-carousel ">
+  <div class="carouselSimple">
+    <div class="home-wrapper">
+      <div id="vue-carousel" class="vue-carousel layer-index2">
           <!-- nav -->
           <div class="fixed-layer">
             <div class="nav-position">
@@ -12,31 +12,24 @@
             </div>
           </div>
           <!-- slider -->
-          <transition-group  v-bind:name="transition_name" >
-            <div class="vue-carousel_body" :key="index"
-                v-for="(content, index) in contents"
-                v-if="visible_content == index">
-                <!-- fullscreen-img -->
-                <div class="full-img-wrap"
-                    v-bind:style="{ 'background-image' : 'url(' + contents[index].imgURL + ')' }"
-                    
-                >
-                  <!-- <img v-bind:src="contents[index].imgURL" alt="slide image" id="section1"> -->
+          <div class="vue-carousel_body " :key="index"
+               v-for="(content, index) in contents">
+            <!-- <transition name="fade"> -->
+            <transition name="slideIn">
+                <div v-if="visible_content == index" >
+                        <img v-bind:src="contents[index].imgURL" alt="slide image" id="section1">
                 </div>
-                 <!-- <div class="full-img-Wrap">
-                  <img v-bind:src="contents[index].imgURL" alt="slide image" id="section1">
-                </div> -->
-
-            </div>
-          </transition-group>
+            </transition>
+          </div>
       </div>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
+ 
  export default {
-  name: 'CarouselFullScreenBasic',
+  name: 'CarouselSimple',
   props: {
     msg: String
   },
@@ -89,23 +82,23 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../../assets/scss/common/data/thema.scss";
-.carouselFullScreenBasic{
+.carouselSimple{
   position: absolute;
   width: 100%;
   height: 100%;
   margin-top: calc( #{ $header-height } * -1 );
 }
-.carousel-wrapper{
+.home-wrapper{
+  background-color: rgba(0,0,0, .5);
   position:relative;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0, .5);
 }
 .vue-carousel {
-  position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,24 +112,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-   }
 }
-.img-wrap{
-  width: 50%;
-  height:  auto;
-}
-.full-img-wrap{
-  width: 100vw;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  
 }
 img{
   width: 100%;
   height: auto;
   display:block;
+  opacity: 1;
 }
 .bg_filter{
       background-color: rgba(0,0,0,.6);
@@ -159,6 +141,7 @@ img{
   z-index: 10;
   width: 100%;
   height: 100%;
+  
 }
 .fixed-layer{
   .nav-position{
