@@ -1,6 +1,6 @@
 <template>
 <div class="hoem">
-  <div class="homeWrap">
+  <!-- <div class="homeWrap"> -->
 
     <TransitionScreen msg="bgImage" v-bind:img= bgImage pageView="home"  />
 
@@ -17,6 +17,7 @@
     <HomeContent msg="HomeContent"/>
     <!-- <FooterBar msg="FooterBar"/>  -->
   <!-- </div> -->
+<!-- </div> -->
 </div>
 </template>
 

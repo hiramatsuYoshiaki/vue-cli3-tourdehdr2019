@@ -2,12 +2,11 @@
   <div class="homeContent">
   <div class="home-wrapper">
     <main>
-      <CarouselFullScreenBasic />
+      <CarouselFullScreenAlprime />
+      <!-- <CarouselFullScreenBasic /> -->
       <!-- <CarouselSimple /> -->
 
-      <!-- <transition appear >
-        <div class="pageChenge" v-if="isChenge"></div>
-      </transition> -->
+     
 
       <div class="main-header">
         <!-- <section class="main-header-text">head-line</section> -->
@@ -78,7 +77,8 @@
 </template>
 
 <script>
-import CarouselFullScreenBasic from '@/components/carousel/CarouselFullScreenBasic.vue'
+import CarouselFullScreenAlprime from '@/components/carousel/CarouselFullScreenAlprime.vue'
+// import CarouselFullScreenBasic from '@/components/carousel/CarouselFullScreenBasic.vue'
 // import CarouselSimple from '@/components/carousel/CarouselSimple.vue'
 export default {
   name: 'HomeContent',
@@ -86,7 +86,8 @@ export default {
     msg: String,
   },
   components: {
-    CarouselFullScreenBasic,
+    CarouselFullScreenAlprime,
+    // CarouselFullScreenBasic,
     // CarouselSimple,
   },
   // data: function(){
@@ -175,7 +176,7 @@ export default {
 .home-wrapper{
   position:relative;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - #{ $header-height } );
   background-color: rgba(0,0,0, .5);
 }
 main{
