@@ -13,7 +13,7 @@
                 v-bind:logoPositionCenter="false"
                 v-bind:logoPositionRight="false"
     />
-    <BgImageFull msg="bgImage" v-bind:img= bgImage />
+    <!-- <BgImageFull msg="bgImage" v-bind:img= bgImage /> -->
     <HomeContent msg="HomeContent"/>
     <!-- <FooterBar msg="FooterBar"/>  -->
   <!-- </div> -->

@@ -52,46 +52,46 @@
 //slider prev Alprime
 .show-prev-alprime-enter-active {
     // transition: all 1s cubic-bezier(0.545, 0.080, 0.520, 0.975);//soft
-    animation: alprime-slide-prev-enter 3s linear; 
+    animation: alprime-slide-prev-enter 2s .1s ease-in; 
 }
 .show-prev-alprime-leave-active {
     // transition: all 1s cubic-bezier(0.545, 0.080, 0.520, 0.975);//soft
-    animation: alprime-slide-prev-leave 3s linear; 
+    animation: alprime-slide-prev-leave 2s ease-in; 
 }
 @keyframes alprime-slide-prev-enter {
     0% {
         transform-origin: center;
-        transform: translateX(100%) scale(.85) skewX(-10deg);
+        transform: translateX(100%) scale(.90) skewX(-10deg);
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     30% {
         transform-origin: center;
-        transform: translateX(100%) scale(.85) skewX(-10deg);
+        transform: translateX(100%) scale(.90) skewX(-10deg);
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     55% {
         transform-origin: center;
-        transform: translateX(20%) scale(.85) skewX(-10deg);
+        transform: translateX(5%) scale(.90) skewX(-10deg);
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     60% {
         transform-origin: center;
-        transform: translateX(0) scale(.85) ;
+        transform: translateX(0) scale(.90) ;
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     75% {
         transform-origin: center;
-        transform: translateX(0) scale(.85) ;
+        transform: translateX(0) scale(.90) ;
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     80% {
         transform-origin: center;
-        transform: translateX(0) scale(.85) ;
+        transform: translateX(0) scale(.90) ;
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     85% {
         transform-origin: center;
-        transform: translateX(0) scale(.85) ;
+        transform: translateX(0) scale(.90) ;
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     100% {
@@ -106,27 +106,27 @@
     }
     15% {
         transform-origin: center;
-        transform: translateX(0) scale(.85) ;
+        transform: translateX(0) scale(.90) ;
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     30% {
         transform-origin: center;
-        transform: translateX(0) scale(.85);
+        transform: translateX(0) scale(.90);
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     35% {
         transform-origin: center;
-        transform: translateX(-20%) scale(.85) skewX(-10deg);
+        transform: translateX(-5%) scale(.90) skewX(-10deg);
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     60% {
         transform-origin: center;
-        transform: translateX(-100%) scale(.85) skewX(-10deg);
+        transform: translateX(-100%) scale(.90) skewX(-10deg);
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     100% {
         transform-origin: center;
-        transform: translateX(-100%) scale(.85) skewX(-10deg);
+        transform: translateX(-100%) scale(.90) skewX(-10deg);
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
 }
@@ -134,45 +134,45 @@
 
 //slider next Alprime
 .show-next-alprime-enter-active {
-    animation: alprime-slide-next-enter 3s linear; 
+    animation: alprime-slide-next-enter 2s .1s ease-in; 
 }
 .show-next-alprime-leave-active {
-    animation: alprime-slide-next-leave 3s linear;
+    animation: alprime-slide-next-leave 2s ease-in;
 }
 @keyframes alprime-slide-next-enter {
     0% {
         transform-origin: center;
-        transform: translateX(-100%) scale(.85) skewX(10deg);
+        transform: translateX(-100%) scale(.90) skewX(10deg);
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     30% {
         transform-origin: center;
-        transform: translateX(-100%) scale(.85) skewX(10deg);
+        transform: translateX(-100%) scale(.90) skewX(10deg);
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     55% {
         transform-origin: center;
-        transform: translateX(-20%) scale(.85) skewX(10deg);
+        transform: translateX(-5%) scale(.90) skewX(10deg);
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     60% {
         transform-origin: center;
-        transform: translateX(0) scale(.85) ;
+        transform: translateX(0) scale(.90) ;
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     75% {
         transform-origin: center;
-        transform: translateX(0) scale(.85) ;
+        transform: translateX(0) scale(.90) ;
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     80% {
         transform-origin: center;
-        transform: translateX(0) scale(.85) ;
+        transform: translateX(0) scale(.90) ;
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     85% {
         transform-origin: center;
-        transform: translateX(0) scale(.85) ;
+        transform: translateX(0) scale(.90) ;
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     100% {
@@ -187,28 +187,65 @@
     }
     15% {
         transform-origin: center;
-        transform: translateX(0) scale(.85) ;
+        transform: translateX(0) scale(.90) ;
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     30% {
         transform-origin: center;
-        transform: translateX(0) scale(.85);
+        transform: translateX(0) scale(.90);
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     35% {
         transform-origin: center;
-        transform: translateX(20%) scale(.85) skewX(10deg);
+        transform: translateX(5%) scale(.90) skewX(10deg);
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     60% {
         transform-origin: center;
-        transform: translateX(100%) scale(.85) skewX(10deg);
+        transform: translateX(100%) scale(.90) skewX(10deg);
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
     }
     100% {
         transform-origin: center;
-        transform: translateX(100%) scale(.85) skewX(10deg);
+        transform: translateX(100%) scale(.90) skewX(10deg);
         box-shadow: 0 0 10px rgba(75, 75, 75, .8);
+    }
+}
+
+
+//slider next Alprime link -------------------
+.show-next-alprime-link-enter-active {
+    animation: alprime-link-slide-next-enter 2s .1s ease-in; 
+}
+.show-next-alprime-link-leave-active {
+    animation: alprime-link-slide-next-leave 2s ease-in;
+}
+@keyframes alprime-link-slide-next-enter {
+    0% {
+        transform: translateX(-100%) ;
+    }
+    30% {
+        transform: translateX(-100%) ;
+    }
+    60% {
+        transform: translateX(0)  ;
+    }
+    100% {
+        transform: translateX(0) ;
+    }
+}
+@keyframes alprime-link-slide-next-leave {
+    0% {
+        transform: translateX(0) ;
+    }
+    30% {
+        transform: translateX(0) ;
+    }
+    60% {
+        transform: translateX(100%) ;
+    }
+    100% {
+        transform: translateX(100%) ;
     }
 }
 
