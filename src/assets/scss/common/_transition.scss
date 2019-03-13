@@ -134,7 +134,7 @@
 
 //slider next Alprime
 .show-next-alprime-enter-active {
-    animation: alprime-slide-next-enter 2s .1s ease-in; 
+    animation: alprime-slide-next-enter 2s  ease-in; 
 }
 .show-next-alprime-leave-active {
     animation: alprime-slide-next-leave 2s ease-in;
@@ -215,7 +215,7 @@
 
 //slider next Alprime link -------------------
 .show-next-alprime-link-enter-active {
-    animation: alprime-link-slide-next-enter 2s .1s ease-in; 
+    animation: alprime-link-slide-next-enter 2s  ease-in; 
 }
 .show-next-alprime-link-leave-active {
     animation: alprime-link-slide-next-leave 2s ease-in;
@@ -250,12 +250,45 @@
 }
 
 
-// .v-enter-active, .v-leave-active {
-//     transition: all .5s;
-// }
-// .v-enter, .v-leave-to {
-//     opacity: 1;
-// }
+.carousel-pop-up-enter-active, .carousel-pop-up-leave-active {
+    transition: all .5s 2s;
+}
+.carousel-pop-up-enter, .carousel-pop-up-leave-to {
+    opacity: 1;
+    transform: translateY(100%);
+}
+.carousel-fade-slideLeft-enter-active, .carousel-fade-slideLeft-leave-active {
+    transition: all .5s 2s;
+}
+.carousel-fade-slideLeft-enter, .carousel-fade-slideLeft-leave-to {
+    opacity: 1;
+    transform: translateX(-100%);
+}
+
+.link-circleMotion-enter-active, .link-circleMotion-leave-active {
+    animation: circle 2s 2.8s ;
+}
+@keyframes circle {
+    0% { stroke-dasharray: 0 377; opacity: 1;}
+    99.9%,to { stroke-dasharray: 377 377; opacity: 1;}
+}
+
+.link-lineMotion-enter-active, .link-lineMotion-leave-active {
+    transition: all .5s 2s;
+}
+.link-lineMotion-enter, .link-lineMotion-leave-to {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+
+.v-enter-active, .v-leave-active {
+    transition: all 3s 1s;
+}
+.v-enter, .v-leave-to {
+    opacity: 0;
+    color: red;
+}
 
 
 // .tScreen-enter-active {

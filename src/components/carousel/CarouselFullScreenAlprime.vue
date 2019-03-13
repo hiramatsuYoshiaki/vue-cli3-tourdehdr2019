@@ -1,13 +1,24 @@
 <template>
   <div class="carouselFullScreenAlprime">
+   
     <div class="carousel-wrapper">
       <!-- nav -->
       <div class="carousel-nav">
         <div class="nav-position">
-          <span v-on:click="back_page()"><i class="fas fa-angle-left"></i></span>
+          <div class="nav-link-arrow" v-on:click="back_page()"><i class="fas fa-angle-left"></i></div>
+          <div class="nav-link-circle"   v-on:click="back_page()">
+            <svg width="60" height="60">
+              <circle cx="30" cy="30" r="24" />
+            </svg>               
+          </div>
         </div>
         <div class="nav-position" >
-          <span v-on:click="next_page()"><p><i class="fas fa-angle-right"></i></p></span>
+          <div class="nav-link-arrow" v-on:click="next_page()"><p><i class="fas fa-angle-right"></i></p></div>
+          <div class="nav-link-circle" v-on:click="next_page()">
+            <svg width="60" height="60">
+              <circle cx="30" cy="30" r="24" />
+            </svg>               
+          </div>
         </div>
       </div>
       <!-- pagination -->
@@ -85,12 +96,57 @@
             <div class="vue-carousel_body_link" :key="content.id"
                 v-for="(content) in contents"
                 v-if="visible_content == content.id">
-                <div class="carousel link">
-                <div class="link-position">
-                      <div class="vue-carousel-title"><h1>{{content.title }}</h1></div>
-                      <div class="vue-carousel-detail"><p>{{content.detail }}</p></div>
-                      <div class="vue-carousel-link" v-on:click="next_page()"><p>Image link Next:{{content.link }} <span ><i class="fas fa-angle-right"></i></span></p></div>
-                </div>
+
+                <div class="carousel-link">
+                  <div class="link-position">
+                    
+                    <div class="transiton-box ">
+                      <transition name="carousel-pop-up" appear>
+                        <h1>{{content.titel }}</h1>
+                      </transition>
+                    </div>
+                    
+                    <div class="transiton-box ">
+                      <transition name="carousel-pop-up" appear>
+                      <p>{{content.detail }}</p>
+                      </transition>
+                    </div>
+
+                    <transition name="carousel-fade-slideLeft" appear>
+                      
+                        <div class="link-unit">
+                          <transition name="link-lineMotion" appear>
+
+                            <div class="link-nextPage">
+                              <router-link to="/works" >
+                                <span>{{content.link }}</span>
+                              </router-link > 
+                            </div>
+
+                          </transition>
+                          <transition name="link-lineMotion" appear>
+                            <div class="link-arrow" >
+                               <router-link to="/works" >
+                                <svg width="80" height="60" >
+                                  <line x1="0" y1="30" x2="80" y2="30"  />
+                                  <polygon  points="76,26 76,34 80,30"/>
+                                </svg>
+                              </router-link > 
+                            </div>
+                          </transition>
+                          <transition name="link-circleMotion" appear>
+                            <div class="link-circle" >
+                              <router-link to="/works" >
+                                <svg width="60" height="60">
+                                  <circle cx="30" cy="30" r="24" />
+                                </svg> 
+                              </router-link > 
+                            </div>
+                          </transition>
+                       </div>
+                     
+                    </transition>
+                  </div>
                 </div>
             </div>
            </transition-group>
@@ -117,33 +173,33 @@
               title: 'img1',
               bg_color: '#7bbff9',
               imgURL: require("../../assets/img/img1578.jpg"),
-              titel: 'title1',
-              detail: 'detail1',
-              link: 'link1',
+              titel: 'TOKYO STATION ',
+              detail: 'MARUNOUCHI',
+              link: 'HOME',
             },{
               id:1,
               title: 'img2',
               bg_color: '#f16972',
               imgURL: require("../../assets/img/fuji1.jpg"),
-              titel: 'title2',
-              detail: 'detail2',
-              link: 'link2',
+              titel: 'FIJI TV ',
+              detail: 'ODAIBA',
+              link: 'WORKS',
             },{
               id:2,
               title: 'img3',
               bg_color: '#f16972',
               imgURL: require("../../assets/img/img4130b.jpg"),
-              titel: 'title3',
-              detail: 'detail3',
-              link: 'link3',
+              titel: 'TOKYO BIGSITE ',
+              detail: 'ARIAKE',
+              link: 'ABOUT',
             },{
               id:3,
               title: 'img4',
               bg_color: '#20d2d3',
               imgURL: require("../../assets/img/img3668.jpg"),
-              titel: 'title4',
-              detail: 'detail4',
-              link: 'link4',
+              titel: 'TOKYO CRUZE HOTARUNA ',
+              detail: 'TOKYOU BAY',
+              link: 'CONTACT',
             }],
         transition_name: 'show-next',
         transition_name_link: 'show-next-link',
@@ -248,12 +304,14 @@
   width: 10%;
   height: 50%;
   border: 1px solid  red;
+  
 }
 .carousel-nav{
   .nav-position{
     border: 1px solid  yellow;
-    // transform: rotate(-90deg);
+    position: relative;
     width:100%;
+    height: 100px;
     margin: 3rem 2rem 3rem 0 ;
     @media(min-width: 996px){
       margin: 3rem 10rem 3rem 0;
@@ -265,6 +323,45 @@
     }
   }
 }
+.nav-link-arrow{
+ position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: -2px;
+}
+.nav-link-circle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  // opacity: 0;
+  border: 1px solid green;
+  
+}
+.nav-link-circle svg {
+  transform: rotate(-90deg);
+  opacity: 0;
+  cursor: pointer;
+  transition: all .5s ease;
+  &:hover{
+    // animation: link-hoverAction 1s ;
+    opacity: 1;
+    transition: all .5s ease;
+  }
+  circle {
+    fill: transparent;
+    stroke: rgba(250,250,250,1);
+    stroke-width: 1;
+  }
+}
+
+
+
+
+
+
+
 //pagination
 .carousel-pagination{
   position:fixed;
@@ -346,20 +443,20 @@
 //   border: 1px solid white;
 // }
 // .carousel-link{
-  .link-position{
-    border: 1px solid  yellow;
-    // transform: rotate(-90deg);
-    width:100%;
-    height:100%;
-    margin: 0 1rem;
-    @media(min-width: 996px){
-      margin: 0 10rem ;
-    }
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction:column;
-  }
+  // .link-position{
+  //   border: 1px solid  yellow;
+  //   transform: rotate(-90deg);
+  //   width:100%;
+  //   height:100%;
+  //   margin: 0 1rem;
+  //   @media(min-width: 996px){
+  //     margin: 0 10rem ;
+  //   }
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: flex-start;
+  //   flex-direction:column;
+  // }
 // }
 
 
@@ -387,6 +484,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    // z-index: 10;
     height: 100%;
     width: 100%;
     display: flex;
@@ -394,11 +492,13 @@
     align-items: center;
     border: 1px solid  green;
  }
-
-// .carousel-link{
-  .link-position{
+}
+.carousel-link{
+  width:50%;
+  height: 50%;
+}
+.link-position{
     border: 1px solid  yellow;
-    // transform: rotate(-90deg);
     width:100%;
     height:100%;
     margin: 0 1rem;
@@ -409,8 +509,89 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction:column;
+}
+.transiton-box{
+  border: 1px solid red;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  // opacity: .2;
+  cursor: pointer;
+}
+.link-unit{
+  position:relative;
+  width: 100%;
+}
+.link-nextPage{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:10;
+  cursor: pointer;
+  // margin: 1rem auto 1rem 0;
+  border: 1px solid pink;
+  width: 120px;
+  height: 70px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.link-arrow{
+  position: absolute;
+  top: 0;
+  left: 120px;
+  z-index: 10;
+  cursol:pointer;
+  // margin: 1rem auto 1rem 0;
+  border: 1px solid blue;
+}
+
+.link-arrow svg {
+  // &:hover{
+  //   animation: link-hoverAction 1s ;
+  // }
+  line {
+    fill: rgba(250,250,250,1);
+    stroke: rgba(250,250,250,1);
+    stroke-width: 1;
+  }
+  polygon {
+    fill: rgba(250,250,250,1);
+    stroke: rgba(250,250,250,1);
+    stroke-width: 1;
   }
 }
+.link-circle{
+  position: absolute;
+  top: 0;
+  left: 168px;
+  z-index: 10;
+  // margin: 1rem auto 1rem 0;
+  opacity: 0;
+  border: 1px solid green;
+  cursor: pointer;
+}
+.link-circle svg {
+  transform: rotate(-90deg);
+  &:hover{
+    animation: link-hoverAction 1s ;
+  }
+  circle {
+    fill: transparent;
+    stroke: rgba(250,250,250,1);
+    stroke-width: 1;
+  }
+}
+@keyframes link-hoverAction {
+  0% { opacity: 1; transform: scale(1); }
+  45% { opacity: 0; transform: scale(1.2);}
+  50% { opacity: 0; transform: scale(.6);}
+  100% { opacity: 1; transform: scale(1);}
+}
+
+
 
 
 
@@ -461,6 +642,8 @@
   //横スクロール処理
   min-width: 100vw;
 }
+
+
 
 
 
