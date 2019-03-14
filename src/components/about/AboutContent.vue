@@ -2,7 +2,23 @@
   <div class="aboutContent">
     <main>
       <div class="main-header">
-        <section class="main-header-text">head-line</section>
+        <section class="main-header-wrape">
+          <div class="transiton-box ">
+            <transition name="carousel-pop-up" appear>
+              <h1>ABOUT COMPONENT </h1>
+            </transition>
+          </div>
+          <div class="transiton-box ">
+            <transition name="carousel-pop-up" appear>
+            <p>HEADER TITLE</p>
+            </transition>
+          </div>
+          <div class="transiton-box ">
+            <transition name="carousel-pop-up" appear>
+            <p>path:/About </p>
+            </transition>
+          </div>
+        </section>
       </div>
       <transition name="mainCon" appear>
         <div class="main-content">
@@ -42,20 +58,29 @@ main{
 }
 .main-header{
   width:100%;
-  height: 25vh;
-  // height: calc( 100vh - #{ $header-height } ) ;//full header
+  height: 35vh;
   padding: 1rem 1rem;
   // border: 1px solid green;
   //横スクロール処理
   width: auto;
   min-width: 100vw;
 }
+.main-header-wrape{
+  border: 1px solid green;
+  position: relative;
+  width: 100%;
+}
+.transiton-box{
+  border: 1px solid red;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  // cursor: pointer;
+}
 .main-content{
   width:100%;
   // height: auto;
   height: 75vh;
-
-
   padding: 1rem 1rem;
   border: 1px solid lightblue;
   background-color: $main-contents-color;
@@ -64,16 +89,16 @@ main{
   width: auto;
   min-width: 100vw;
 }
-.main-footer{
-  padding: 1rem 1rem;
-  width:100%;
-  height: 20vh;
-  border: 1px solid yellow;
-  background-color: $footer-color-color;
-  color: $footer-color-text;
+// .main-footer{
+//   padding: 1rem 1rem;
+//   width:100%;
+//   height: 20vh;
+//   border: 1px solid yellow;
+//   background-color: $footer-color-color;
+//   color: $footer-color-text;
   //横スクロール処理
-  width: auto;
-  min-width: 100vw;
-}
+//   width: auto;
+//   min-width: 100vw;
+// }
 
 </style>

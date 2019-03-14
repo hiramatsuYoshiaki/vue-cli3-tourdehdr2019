@@ -17,13 +17,9 @@
     <div class="log-bar log-bar-positon log-side-space"
          v-bind:class="{'b-menu-items-left': logPositionLeft, 
                         'b-menu-items-center': logPositionCenter, 
-                        'b-menu-items-right': logPositionRight,
-    }">
-      <!-- <router-link to="/" class="header-logo" >
-            <img :src="logoSvgHWorksWhite" alt="logo"> 
-      </router-link> -->
-      <a v-on:click="linkHome" class="header-logo" >
-                <img :src="logoSvgHWorksWhite" alt="logo">
+                        'b-menu-items-right': logPositionRight,}">
+      <a v-on:click="link_commit('home', '/')" class="header-logo">
+          <img :src="logoSvgHWorksWhite" alt="logo">
       </a>
     </div>
     <!-- laptop menu -->
@@ -37,38 +33,26 @@
       >
         <div class="m-menu-wrap m-menu-position ">
           <div class="menu_items menu_items_row" >
-            <div class="menu-item-box">
-              <!-- <router-link to="/" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'home' }">
-                HOME
-              </router-link> -->
-              <a v-on:click="linkHome" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'home' }">
+            <!-- <div class="menu-item-box">
+              <a v-on:click="link_commit('home', '/')" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'home' }">
                 HOME
               </a>
               <div class="menu_underline"></div>
-            </div>
+            </div> -->
             <div class="menu-item-box">
-              <!-- <router-link to="/works" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'work' }">
-                WORKS
-              </router-link> -->
-              <a v-on:click="linkWorks" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'works' }">
+              <a v-on:click="link_commit('works', '/works')" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'works' }">
                 WORKS
               </a>
               <div class="menu_underline"></div>
             </div>
             <div class="menu-item-box">
-              <!-- <router-link to="/about" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'about' }">
-                ABOUT
-              </router-link> -->
-              <a v-on:click="linkAbout" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'about' }">
+              <a v-on:click="link_commit('about', '/about')" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'about' }">
                 ABOUT
               </a>
               <div class="menu_underline"></div>
             </div>
             <div class="menu-item-box">
-              <!-- <router-link to="/contact" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'contact' }">
-                CONTACT
-              </router-link> -->
-              <a v-on:click="linkContact" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'contact' }">
+              <a v-on:click="link_commit('contact', '/contact')" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'contact' }">
                 CONTACT
               </a>
               <div class="menu_underline"></div>
@@ -89,28 +73,28 @@
           <section class="m-menu-section m-menu-section-start" v-bind:class="{ v_tran_slide_rightIn: !active }">
             <div class="d-flex-center-center">
               <div class="menu_items menu_items_column" >
-                <div class="menu-item-box">
-                  <router-link to="/" class="menu_link">
+                <!-- <div class="menu-item-box">
+                  <a v-on:click="link_commit('home', '/')" class="menu_link" >
                     HOME
-                  </router-link>
+                  </a>
                   <div class="menu_underline"></div>
-                </div>
+                </div> -->
                 <div class="menu-item-box">
-                  <router-link to="/works" class="menu_link">
+                  <a v-on:click="link_commit('works', '/works')" class="menu_link" >
                     WORKS
-                  </router-link>
+                  </a>
                   <div class="menu_underline"></div>
                 </div>
                 <div class="menu-item-box">
-                  <router-link to="/about" class="menu_link">
+                  <a v-on:click="link_commit('about', '/about')" class="menu_link" >
                     ABOUT
-                  </router-link>
+                  </a>
                   <div class="menu_underline"></div>
                 </div>
                 <div class="menu-item-box">
-                  <router-link to="/contact" class="menu_link">
+                  <a v-on:click="link_commit('contact', '/contact')" class="menu_link" >
                     CONTACT
-                  </router-link>
+                  </a>
                   <div class="menu_underline"></div>
                 </div>
               </div>
@@ -119,6 +103,7 @@
         </div>
       </div>
     </nav>
+  
   </div>
 </template>
 
@@ -162,30 +147,12 @@ export default {
         this.isScroll = false;
       }
    },
-   linkHome() {
-     this.$store.commit('clickHome');
-     setTimeout(() => {
-        this.$router.push('/');
-     }, 500);
+   link_commit(link, link_path) {
+    this.$store.commit( link );
+    setTimeout( () => {
+      this.$router.push({ path: link_path });
+    }, 500);
    },
-   linkWorks() {
-     this.$store.commit('clickWorks')
-     setTimeout(() => {
-        this.$router.push('/works');
-     }, 500);
-   },
-   linkAbout() {
-     this.$store.commit('clickAbout')
-     setTimeout(() => {
-        this.$router.push('/about');
-     }, 500);
-   },
-   linkContact() {
-     this.$store.commit('clickContact')
-     setTimeout(() => {
-        this.$router.push('/contact');
-     }, 500);
-   }
  },
 }
 </script>
@@ -210,7 +177,7 @@ export default {
   height: 100%;
   top: 0;
   left :0;
-  background-color: red;
+  background-color: gray;
   color: #fff;
 }
 .v_open_menu{
@@ -367,6 +334,7 @@ export default {
 .menu_link{
     display: inline-block;
     opacity: .5;
+    text-transform: uppercase;
     &:hover{
       opacity: .75;
     }
