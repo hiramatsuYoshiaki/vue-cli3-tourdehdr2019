@@ -1,9 +1,27 @@
 <template>
   <div class="worksContent">
     <main>
+
       <div class="main-header">
-        <section class="main-header-text">head-line</section>
+        <section class="main-header-wrape">
+          <div class="transiton-box ">
+            <transition name="carousel-pop-up" appear>
+              <h1>WORKS COMPONENT </h1>
+            </transition>
+          </div>
+          <div class="transiton-box ">
+            <transition name="carousel-pop-up" appear>
+            <p>HEADER TITLE</p>
+            </transition>
+          </div>
+          <div class="transiton-box ">
+            <transition name="carousel-pop-up" appear>
+            <p>path:/works </p>
+            </transition>
+          </div>
+        </section>
       </div>
+
       <transition name="mainCon" appear>
         <div  class="main-content">
             <section class="main-content-title">head-line</section>
@@ -72,24 +90,33 @@ main{
 }
 .main-header{
   width:100%;
-  height: 25vh;
-  // height: calc( 100vh - #{ $header-height } ) ;//full header
+  height: 35vh;
   padding: 1rem 1rem;
   // border: 1px solid green;
   //横スクロール処理
   width: auto;
   min-width: 100vw;
 }
+.main-header-wrape{
+  border: 1px solid green;
+  position: relative;
+  width: 100%;
+}
+.transiton-box{
+  border: 1px solid red;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  // cursor: pointer;
+}
 .main-content{
   // position: absolute;
   // top: 30vh;
   // left: 0;
-  // width:100%;
+  width:100%;
   // height: 200vh;
-
   height: 75vh;
   padding: 1rem 1rem;
-  
   background-color: $main-contents-color;
   color: $main-contents-text;
   //横スクロール処理

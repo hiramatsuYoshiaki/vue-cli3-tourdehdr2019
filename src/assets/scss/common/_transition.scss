@@ -290,6 +290,18 @@
     color: red;
 }
 
+//pagenation active line
+.pagenationActiveLine-enter-active {
+    transition: all 4.5s .25s ease-in;
+}
+.pagenationActiveLine-leave-active {
+    transition: all .5s ease-out;
+}
+.pagenationActiveLine-enter, .pagenationActiveLine-leave-to {
+    // opacity: 0;
+    color: #fff;
+    transform:translateX(-100%);
+}
 
 // .tScreen-enter-active {
 //     animation: pageSlideEnter 1s ease-in ;

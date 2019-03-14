@@ -1,7 +1,8 @@
 <template>
 <div class="contact">
   <div class="contactWrap">
-    <TransitionScreen msg="bgImage" v-bind:img= bgImage pageView="contact"  />
+    <TransitionScreen msg="bgImage" 
+    v-bind:img= bgImage pageView="contact"  />
       <HeaderBar msg="HeaderBar"
                  navMenu="contact"
                  v-bind:headrScrollType="true"

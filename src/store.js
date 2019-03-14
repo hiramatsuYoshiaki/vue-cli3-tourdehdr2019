@@ -11,10 +11,12 @@ export default new Vuex.Store({
   mutations: {
     increment: state => state.count++,
     decrement: state => state.count--,
-    clickHome: state => { state.page = "home"},
-    clickWorks: state => { state.page = "works"},
-    clickAbout: state => { state.page = "about"},
-    clickContact: state => { state.page = "contact"},
+    home: state => { state.page = "home"},
+    works: state => { state.page = "works"},
+    about: state => { state.page = "about"},
+    contact: state => { state.page = "contact"},
+    // project: state => { state.page = "project"},
+    // studio: state => { state.page = "studio"},
   },
   actions: {
 

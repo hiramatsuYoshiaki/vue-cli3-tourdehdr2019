@@ -4,10 +4,12 @@
       <!-- <div class="main-header">
         <section class="main-header-text">head-line</section>
       </div> -->
-      <div class="main-content">
-        <section class="main-content-title">head-line</section>
-        <section class="main-content-body">body-line</section>
-      </div>
+      <transition name="mainCon" appear>
+        <div class="main-content">
+          <section class="main-content-title">head-line</section>
+          <section class="main-content-body">body-line</section>
+        </div>
+      </transition>
       <!-- <div class="main-footer">
         <section class="main-footer-logo">head-line</section>
         <section class="main-footer-menu">body-line</section>

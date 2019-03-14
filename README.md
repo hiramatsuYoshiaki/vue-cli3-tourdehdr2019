@@ -19,10 +19,18 @@
 
 4. transition 
   loading 
-  page transition 
+  page transition store muttation 
   main-contents transition 
 
 5. scroll-bar 
+6. carousel unit 
+    navigation 
+    pagenations
+    auto slide 
+
+7. svg 
+    link animation unit 
+
 
 ## 常時垂直スクロールバーを表示させる。
 <style> 
