@@ -109,7 +109,7 @@
 }
 
 .bg_filter{
-    //   background-colorgba(9, 0, 51, 0.575)1);
+    //   background-colorgba(9, 0, 51, 0.575);
       background-color: #212121;
       opacity: 1;
       position: fixed;

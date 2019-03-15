@@ -266,10 +266,11 @@
 }
 
 .link-circleMotion-enter-active, .link-circleMotion-leave-active {
-    animation: circle 2s 2.8s ;
+    animation: circle 3s  ;
 }
 @keyframes circle {
-    0% { stroke-dasharray: 0 377; opacity: 1;}
+    0% {  stroke-dasharray: 0 377; opacity: 0;}
+    80% { stroke-dasharray: 0 377; opacity: 1;}
     99.9%,to { stroke-dasharray: 377 377; opacity: 1;}
 }
 
@@ -278,7 +279,7 @@
 }
 .link-lineMotion-enter, .link-lineMotion-leave-to {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(-25px);
 }
 
 
