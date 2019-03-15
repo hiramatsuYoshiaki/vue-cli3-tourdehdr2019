@@ -34,7 +34,7 @@
                v-on:click="skip_page(index)">
             <div class="pagination-text">{{index}}</div>
             <transition name="pagenationActiveLine">
-              <div class="active-line" v-if="visible_content === 0"></div>
+              <div class="active-line" v-if="visible_content === content.id"></div>
             </transition>
             <div class="pagination-mark"></div>
           </div>
@@ -78,7 +78,45 @@
                       <p>{{content.detail }}</p>
                       </transition>
                     </div>
-                    <transition name="carousel-fade-slideLeft" appear>
+
+                    <div class="link-unit">
+                      <transition name="link-lineMotion" appear>
+                        <div class="link-nextPage">
+                            <a v-on:click="link_commit(content.link, content.link_path)" >
+                              <div class="next-text">
+                                 {{content.link }}
+                              </div>
+                            </a>
+                            <a v-on:click="link_commit(content.link, content.link_path)" >
+                              <div class="link-arrow" >
+                                <svg width="60" height="60" >
+                                  <line x1="0" y1="30" x2="60" y2="30"  />
+                                  <polygon  points="56,26 56,34 60,30"/>
+                                </svg>
+                              </div>
+                            </a>
+                            <a v-on:click="link_commit(content.link, content.link_path)" >
+                              <div class="link-circle" >
+                                <svg width="60" height="60">
+                                  <circle cx="30" cy="30" r="24" />
+                                </svg> 
+                              </div>
+                            </a>
+                        </div>
+                      </transition>
+                      <!-- <transition name="link-circleMotion" appear>
+                        <div class="link-circle" >
+                          <a v-on:click="link_commit(content.link, content.link_path)" >
+                            <svg width="60" height="60">
+                              <circle cx="30" cy="30" r="24" />
+                            </svg> 
+                          </a>
+                        </div>
+                      </transition> -->
+                      
+                    </div>
+                  
+                    <!-- <transition name="carousel-fade-slideLeft" appear>
                         <div class="link-unit">
                           <transition name="link-lineMotion" appear>
                             <div class="link-nextPage">
@@ -95,7 +133,6 @@
                                   <polygon  points="76,26 76,34 80,30"/>
                                 </svg>
                               </a>
-                              
                             </div>
                           </transition>
                           <transition name="link-circleMotion" appear>
@@ -108,7 +145,7 @@
                             </div>
                           </transition>
                        </div>
-                    </transition>
+                    </transition> -->
                   </div>
                 </div>
             </div>
@@ -271,12 +308,12 @@
   z-index: 10;
   width: 10%;
   height: 50%;
-  border: 1px solid  red;
+  // border: 1px solid  red;
   
 }
 .carousel-nav{
   .nav-position{
-    border: 1px solid  yellow;
+    // border: 1px solid  yellow;
     position: relative;
     width:100%;
     height: 100px;
@@ -303,7 +340,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 1px solid green;
+  // border: 1px solid green;
   
 }
 .nav-link-circle svg {
@@ -332,11 +369,11 @@
   height: 20%;
   justify-content: flex-start;
   align-items: center;
-  border: 1px solid white;
+  // border: 1px solid white;
 }
 .carousel-pagination{
   .pagination-position{
-    border: 1px solid  yellow;
+    // border: 1px solid  yellow;
     width:100%;
     height:6rem;
     margin: 0 1rem;
@@ -350,7 +387,7 @@
     .pagination-box{
       position: relative;
       overflow: hidden;
-      border: 1px solid  #fff;;
+      // border: 1px solid  #fff;
       width: 5rem;
       height:5rem;
       margin-right: 1rem;
@@ -421,15 +458,16 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border: 1px solid  green;
+    // border: 1px solid  green;
  }
 }
 .carousel-link{
   width:50%;
   height: 50%;
+  
 }
 .link-position{
-    border: 1px solid  yellow;
+    // border: 1px solid  yellow;
     width:100%;
     height:100%;
     margin: 0 1rem;
@@ -442,12 +480,13 @@
     flex-direction:column;
 }
 .transiton-box{
-  border: 1px solid red;
+  // border: 1px solid red;
   width: 100%;
   overflow: hidden;
   margin-bottom: 0.5rem;
   cursor: pointer;
 }
+// link-unit--------------------
 .link-unit{
   position:relative;
   width: 100%;
@@ -458,25 +497,27 @@
   left: 0;
   z-index:10;
   cursor: pointer;
-  border: 1px solid pink;
-  width: 120px;
-  height: 70px;
+  // border: 1px solid pink;
+  width: 300px;
+  height: 60px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 1rem ;
+  &:hover{
+    animation: link-hoverActionSlide .25s ease-in forwards ;
+    .link-circle svg {
+      animation: link-hoverAction .5s  ease-in forwards;
+    }
+  }
 }
-
-.link-arrow{
-  position: absolute;
-  top: 0;
-  left: 120px;
-  z-index: 10;
-  cursol:pointer;
-  border: 1px solid blue;
+.link-nextPage a .next-text{
+   width:100px;
+   margin-right: 0.4rem;
+   text-transform: uppercase;
+   text-align: right;
 }
-
-.link-arrow svg {
+.link-nextPage a .link-arrow svg {
   line {
     fill: rgba(250,250,250,1);
     stroke: rgba(250,250,250,1);
@@ -488,25 +529,23 @@
     stroke-width: 1;
   }
 }
-.link-circle{
-  position: absolute;
-  top: 0;
-  left: 168px;
-  z-index: 10;
-  opacity: 0;
-  border: 1px solid green;
+.link-nextPage a .link-circle{
+  opacity: 1;
+  // border: 1px solid green;
   cursor: pointer;
+  margin-left: -32px;
 }
 .link-circle svg {
   transform: rotate(-90deg);
-  &:hover{
-    animation: link-hoverAction 1s ;
-  }
   circle {
     fill: transparent;
     stroke: rgba(250,250,250,1);
     stroke-width: 1;
   }
+}
+@keyframes link-hoverActionSlide {
+  0% {  transform: translateX(0); }
+  100% { transform: translateX(25px);}
 }
 @keyframes link-hoverAction {
   0% { opacity: 1; transform: scale(1); }
@@ -514,6 +553,7 @@
   50% { opacity: 0; transform: scale(.6);}
   100% { opacity: 1; transform: scale(1);}
 }
+
 // .img-wrap{
 //   width: 50%;
 //   height:  auto;
@@ -538,12 +578,12 @@
   width: 50vw;
   height: 50vh;
   transform: translate(-50%, -50%);
-  border: 1px solid  white;
+  // border: 1px solid  white;
   display: flex;
   justify-content: center;
   align-items: center;
   &_wrap{
-    border: 1px solid  yellow;
+    // border: 1px solid  yellow;
   }
 }
 .vue-carousel-link{
