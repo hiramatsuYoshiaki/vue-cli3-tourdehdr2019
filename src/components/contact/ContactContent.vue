@@ -6,51 +6,33 @@
       </div> -->
       <transition name="mainCon" appear>
         <div class="main-content">
-          <section class="main-content-title">head-line</section>
-          <section class="main-content-body">body-line</section>
+          <!-- section component -->
+            <div class="col2-content">
+              <div class="col-block left-block">
+                <div class="section-block left-section">
+                  <div class="contact-title">
+                    <h1>Please contact us for </h1>
+                    <h1>further information </h1>
+                    <h1>about Alprime Capital </h1>
+                    <h1>and the products we can </h1>
+                    <h1> offer to you.</h1>
+                  </div> 
+                </div>
+              </div>
+              <div class="col-block right-block">
+                <div class="section-block left-section">
+                  <p>hiramatsu3300@gmail.com</p>
+                  <p>03-82-3300</p>
+                  <p>azabu 143</p>
+                  <p>minato ku</p>
+                  <p>tokyo</p>
+                  <p>japan</p>
+                  <p>view on map</p>
+                </div>
+              </div>
+            </div>
         </div>
       </transition>
-      <!-- <div class="main-footer">
-        <section class="main-footer-logo">head-line</section>
-        <section class="main-footer-menu">body-line</section>
-        <section class="main-footer-police">head-line</section>
-      </div> -->
-
-     
-      <!-- <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-              <div class="main-header">
-                <div class="main-header-wrape">
-                  <p>main header</p>
-                  <h1>Vue-cli3 Template Contact</h1>
-                </div>
-                
-              </div>
-            </div>
-            <div class="col-12">
-              <section class="main-section">
-                <p>main section</p>
-                <h1>Vue-cli3 Template Detail</h1>
-                <ul>
-                  <li>
-                    <p>unit</p>
-                    <p>unit</p>
-                    <p>unit</p>
-                    <p>unit</p>
-                    <p>unit</p>
-                  </li>
-                </ul>
-              </section>
-            </div>
-            <div class="col-12">
-              <div class="main-footer">
-                <p>main footer</p>
-                <h3>h-Works vue tenplate v0.1</h3>
-              </div>
-            </div>
-        </div>
-      </div> -->
     </main>
   </div>
 </template>
@@ -76,27 +58,64 @@ main{
   margin: 0;
   padding: 0;
 }
-
-// .main-header{
-//   width:100%;
-//   height: 25vh;
-//   padding: 1rem 1rem;
-//   border: 1px solid green;
-//横スクロール処理
-  // width: auto;
-  // min-width: 100vw;
-// }
 .main-content{
   width:100%;
   height: calc( 100vh - #{ $header-height } );
   padding: 1rem 1rem;
-  border: 1px solid lightblue;
+  // border: 1px solid lightblue;
   background-color: $main-contents-color;
   color: $main-contents-text;
   //横スクロール処理
   width: auto;
   min-width: 100vw;
 }
+//section-2col
+.col2-content{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display:flex;
+  flex-wrap: wrap;
+}
+.col-block{
+  width: 100%;
+  @media (min-width: 992px){
+    width: 50%;
+    height: 100%;
+  }
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  // flex-direction: column; 
+  padding: 1.6rem;
+  @media (min-width: 992px){
+    padding: 8rem ;
+  }
+}
+.left-block{
+  background-color: rgba(0,0,0,.1);
+  border:  2px solid red;
+}
+.right-block{
+  background-color: rgba(0,0,0,.3);
+  border:  2px solid green;
+}
+.section-block{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.left-section{
+  border:  3px dotted red;
+}
+.right-section{
+  border:  3px dotted yellow;
+}
+// .contact-title{
+//   width:100%;
+//   height:50%;
+// }
 // .main-footer{
 //   padding: 1rem 1rem;
 //   width:100%;
