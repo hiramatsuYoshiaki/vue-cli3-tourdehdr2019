@@ -20,10 +20,16 @@
           </div>
         </section>
       </div>
+
+
       <transition name="mainCon" appear>
         <div class="main-content">
-          <section class="main-content-title">head-line</section>
-          <section class="main-content-body">body-line</section>
+          <!-- <section class="main-content-title">head-line</section>
+          <section class="main-content-body">body-line</section> -->
+        
+        
+        
+        
         </div>
       </transition>  
       <!-- <div class="main-footer">
