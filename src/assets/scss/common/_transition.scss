@@ -297,50 +297,67 @@
 
 
 .text-pop-up1-enter-active, .text-pop-up1-leave-active {
-    transition: all .5s cubic-bezier(0.545, 0.080, 0.520, 0.975);;
+    transition: all .5s 1s cubic-bezier(0.545, 0.080, 0.520, 0.975);;
 }
 .text-pop-up1-enter, .text-pop-up1-leave-to {
     opacity: 1;
     transform: translateY(100%);
 }
 .text-pop-up2-enter-active, .text-pop-up2-leave-active {
-    transition: all .5s .25s cubic-bezier(0.545, 0.080, 0.520, 0.975);;
+    transition: all .5s 1.25s cubic-bezier(0.545, 0.080, 0.520, 0.975);;
 }
 .text-pop-up2-enter, .text-pop-up2-leave-to {
     opacity: 1;
     transform: translateY(100%);
 }
 .text-pop-up3-enter-active, .text-pop-up3-leave-active {
-    transition: all .5s .5s cubic-bezier(0.545, 0.080, 0.520, 0.975);;
+    transition: all .5s 1.5s cubic-bezier(0.545, 0.080, 0.520, 0.975);;
 }
 .text-pop-up3-enter, .text-pop-up3-leave-to {
     opacity: 1;
     transform: translateY(100%);
 }
 .text-pop-up4-enter-active, .text-pop-up4-leave-active {
-    transition: all .5s .75s cubic-bezier(0.545, 0.080, 0.520, 0.975);
+    transition: all .5s 1.75s cubic-bezier(0.545, 0.080, 0.520, 0.975);
 }
 .text-pop-up4-enter, .text-pop-up4-leave-to {
     opacity: 1;
     transform: translateY(100%);
 }
 
-.ripple-enter-active, .ripple-leave-active {
-    transition: all .5s .75s cubic-bezier(0.545, 0.080, 0.520, 0.975);
+.rippleRight-enter-active, .rippleRight-leave-active {
+    transition: all .25s .75s cubic-bezier(0.545, 0.080, 0.520, 0.975);
 }
-.ripple-enter, .ripple-leave-to {
+.rippleRight-enter, .rippleRight-leave-to {
     opacity: 0;
     clip-path: circle(0% at 0 100%) !important;
 }
-.box-shadow-move-enter-active {
-    // transition: all .5s 2s cubic-bezier(0.545, 0.080, 0.520, 0.975);
-    // animation: boxShadowLeftMove .25s  forwards 1s cubic-bezier(0.545, 0.080, 0.520, 0.975);
-    animation: boxShadowLeftMove 2s forwards; 
+
+.rippleLeft-enter-active, .rippleLeft-leave-active {
+    transition: all .25s .75s cubic-bezier(0.545, 0.080, 0.520, 0.975);
+}
+.rippleLeft-enter, .rippleLeft-leave-to {
+    opacity: 1;
+    clip-path: circle(0% at 100% 100%) !important;
+}
+
+
+
+.box-shadow-moveRight-enter-active {
+    animation: boxShadowRightMove 3s  cubic-bezier(0.320, 0.625, 0.580, 1.000);//sharp; 
+}
+@keyframes boxShadowRightMove {
+    0% {  transform: translate(0, 0); opacity: 0;}
+    50% {  transform: translate(0, 0); opacity: 0;}
+    100% { transform: translate(-100px, 100px); opacity: 1;}
+}
+.box-shadow-moveLeft-enter-active {
+    animation: boxShadowLeftMove 3s  cubic-bezier(0.320, 0.625, 0.580, 1.000);//sharp; 
 }
 @keyframes boxShadowLeftMove {
     0% {  transform: translate(0, 0); opacity: 0;}
     50% {  transform: translate(0, 0); opacity: 0;}
-    100% { transform: translate(-100px, 100px); opacity: 1;}
+    100% { transform: translate(100px, 100px); opacity: 1;}
 }
 
 
@@ -363,6 +380,13 @@
 .link-lineMotion-enter, .link-lineMotion-leave-to {
     opacity: 0;
     transform: translateX(-25px);
+}
+.link-lineMotion-works-enter-active, .link-lineMotion-works-leave-active {
+    transition: all .5s 3.5s;
+}
+.link-lineMotion-works-enter, .link-lineMotion-works-leave-to {
+    opacity: 0;
+    transform: translateX(-125px);
 }
 
 

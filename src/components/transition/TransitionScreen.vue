@@ -115,6 +115,7 @@
       position: fixed;
       top: 0;
       left: 0;
+      z-index: 1001;
       min-width: 100%;
       min-height: 100%;
       width: auto;
