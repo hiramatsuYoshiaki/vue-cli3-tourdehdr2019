@@ -7,6 +7,28 @@ Vue.use(Router)
 export default new Router({
   // mode: 'history',
   base: process.env.BASE_URL,
+  scrollBehavior (to, from, savedPosition) {
+    // return { x: 0, y: 0 }
+    // if (savedPosition) {
+    //   return savedPosition
+    // } else {
+    //   return { x: 0, y: 0 }
+    // }
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      if (to.hash) {
+        return { selector: to.hash  }
+      }else{
+        return  { x: 0, y: 0 } 
+      }
+    }
+    // if (to.hash) {
+    //   return { selector: to.hash  }
+    // }else{
+    //   return  { x: 0, y: 10 } 
+    // }
+  },
   routes: [
     {
       path: '/',

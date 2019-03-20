@@ -42,6 +42,7 @@
 10. works component
   transition text
   transition image
+  footer
 
 
 

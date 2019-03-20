@@ -48,7 +48,7 @@ export default {
   padding:0;
 }
 .worksWrap{
-  background-color: $body-color;
-  color: $body-text;
+  background-color: $works-body-color;
+  color: $works-body-text;
 }
 </style>
