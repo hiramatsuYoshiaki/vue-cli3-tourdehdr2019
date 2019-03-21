@@ -3,17 +3,17 @@
     <main>
       <div class="main-header">
         <section class="main-header-wrape">
-          <div class="transiton-box ">
+          <div class="transition-box">
             <transition name="carousel-pop-up" appear>
               <h1>WORKS COMPONENT </h1>
             </transition>
           </div>
-          <div class="transiton-box ">
+          <div class="transition-box">
             <transition name="carousel-pop-up" appear>
             <p>HEADER TITLE</p>
             </transition>
           </div>
-          <div class="transiton-box ">
+          <div class="transition-box">
             <transition name="carousel-pop-up" appear>
             <p>path:/works </p>
             </transition>
@@ -103,13 +103,6 @@
                     </div>
                   
                   </div>
-
-
-
-
-
-
-
 
                 </div>
               </div>
@@ -228,7 +221,7 @@
           <nav class="laptop-menu">
               <div class="m-menu-wrap  ">
                
-                <div class="menu_items menu_items_row" >
+                <div class="menu_items " >
                   <div class="menu-item-box">
                     <a v-on:click="link_commit('works', '/works')" 
                     class="menu_link" 
@@ -353,13 +346,13 @@ export default {
   methods: {
     handleScroll() {
       this.img1Captionblock = document.getElementById('img1Captionblock').getBoundingClientRect().top
-                          + window.scrollY  - (window.innerHeight*0.7) ;
+                          + window.scrollY  - (window.innerHeight*0.8) ;
       this.img1Imageblock = document.getElementById('img1Imageblock').getBoundingClientRect().top
-                          + window.scrollY  - (window.innerHeight*0.7)  ;
+                          + window.scrollY  - (window.innerHeight*0.8)  ;
       this.img2Captionblock = document.getElementById('img2Captionblock').getBoundingClientRect().top
-                          + window.scrollY  - (window.innerHeight*0.7) ;
+                          + window.scrollY  - (window.innerHeight*0.8) ;
       this.img2Imageblock = document.getElementById('img2Imageblock').getBoundingClientRect().top
-                          + window.scrollY  - (window.innerHeight*0.7)  ;
+                          + window.scrollY  - (window.innerHeight*0.8)  ;
       this.innerHeight = window.innerHeight;
       this.scrollY = window.scrollY;
       if(this.scrollY > this.MaxScrollY) {
@@ -440,6 +433,18 @@ main{
 .main-header h1,  .main-header p{
   color: $header-text;
 }
+// .main-header h1{
+//   font-size: 2.5rem;
+//   @media (min-width: 992px){
+//     font-size: 4rem;
+//   }
+// }
+// .main-header p{
+//   font-size: 1.6rem;
+//   @media (min-width: 992){
+//     font-size: 2rem;;
+//   }
+// }
 .main-content{
   // height: 75vh;
   height:100%;
@@ -488,7 +493,7 @@ main{
   padding: 1.6rem;
   @media (min-width: 992px){
     // margin: 8rem ;
-    padding: 8rem ;
+    padding: 16rem ;
   } 
 }
 .image-section-block{
@@ -718,7 +723,7 @@ main{
 
 //main-footer--------------------------------------
 .main-footer{
-  border: 3px solid green;
+  // border: 3px solid green;
   padding: 1rem 1rem;
   width:100%;
   // height: 50vh;
@@ -742,7 +747,6 @@ main{
   transform: translate(-50%,-100%);
   width: 17rem;
   height: 7rem;
-  // padding: 2rem;
   // border: 3px solid red;
   cursor: pointer;
   display: flex;
@@ -757,7 +761,10 @@ main{
 .laptop-menu{
   position: relative;
   width:100%;
-  height: 5rem;
+  height: 15rem;
+  @media (min-width: 992px){
+    height: 5rem;
+  }
   // border: 3px solid white;
 }
 .m-menu-wrap{
@@ -780,13 +787,17 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.menu_items_row{
-  flex-direction: row;
-}
-.menu_items_column{
   flex-direction: column;
+  @media (min-width: 992px){
+    flex-direction: row;
+  }
 }
+// .menu_items_row{
+//   flex-direction: row;
+// }
+// .menu_items_column{
+//   flex-direction: column;
+// }
 .menu-item-box{
   position:relative;
   overflow: hidden;
@@ -801,7 +812,7 @@ main{
     height: 2px;
     margin-top: .2rem;
     // transition: .1s all ease-in;
-    transform: translateX(-101%);
+    transform: translateX(-102%);
   }
   &:hover{
     .menu_underline{
@@ -838,22 +849,36 @@ main{
 }
 .main-footer-police{
   position: relative;
- width:100%;
- height: 10rem;
+  width:100%;
+  height: 20rem;
+  @media (min-width: 992px){
+    height: 10rem;
+  }
 //  border: 3px solid white;
 }
 .main-footer-police-wrap{
   position: absolute;
-  top: 50%;
+  top: 0%;
   left: 50%;
+  transform: translate(-50%,0%);
+  @media ( min-width: 992px){
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
   z-index:1;
-  transform: translate(-50%,-50%);
   // border: 3px solid red;
   width:80%;
-  height: 10rem;
+  height: 100%;
   cursor: pointer;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  @media ( min-width: 992px){
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+  }
 }
 </style>

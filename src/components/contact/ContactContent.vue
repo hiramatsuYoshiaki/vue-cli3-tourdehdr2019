@@ -22,12 +22,13 @@
               <div class="col-block right-block">
                 <div class="section-block left-section">
                   <p>hiramatsu3300@gmail.com</p>
-                  <p>03-82-3300</p>
-                  <p>azabu 143</p>
-                  <p>minato ku</p>
-                  <p>tokyo</p>
+                  <p>111-222-33333</p>
+                  <!-- <p></p> -->
+                  <br>
+                  <p>Minami 444-55</p>
+                  <p>Okayama </p>
                   <p>japan</p>
-                  <p>view on map</p>
+                  <!-- <p>view on map</p> -->
                 </div>
               </div>
             </div>
@@ -60,14 +61,16 @@ main{
 }
 .main-content{
   width:100%;
-  height: calc( 100vh - #{ $header-height } );
-  padding: 1rem 1rem;
-  // border: 1px solid lightblue;
-  background-color: $main-contents-color;
-  color: $main-contents-text;
+  // height: calc( 100vh - #{ $header-height } );
+  height: 100vh;
+  margin-top: -5rem;
   //横スクロール処理
   width: auto;
   min-width: 100vw;
+  padding: 1rem 1rem;
+  // border: 1px solid lightblue;
+  background-color: $footer-color-color;
+  color: $footer-color-text;
 }
 //section-2col
 .col2-content{
@@ -89,28 +92,28 @@ main{
   // flex-direction: column; 
   padding: 1.6rem;
   @media (min-width: 992px){
-    padding: 8rem ;
+    padding: 16rem ;
   }
 }
-.left-block{
-  background-color: rgba(0,0,0,.1);
-  border:  2px solid red;
-}
-.right-block{
-  background-color: rgba(0,0,0,.3);
-  border:  2px solid green;
-}
+// .left-block{
+  // background-color: rgba(0,0,0,.1);
+  // border:  2px solid red;
+// }
+// .right-block{
+  // background-color: rgba(0,0,0,.3);
+  // border:  2px solid green;
+// }
 .section-block{
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 .left-section{
-  border:  3px dotted red;
+  // border:  3px dotted red;
 }
 .right-section{
-  border:  3px dotted yellow;
+  // border:  3px dotted yellow;
 }
 // .contact-title{
 //   width:100%;

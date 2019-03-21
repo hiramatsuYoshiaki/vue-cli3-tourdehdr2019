@@ -270,6 +270,7 @@
       this.transition_text = 'show-next-text';
       this.visible_content =  (this.visible_content + 1) % this.contents_number;
     },
+    
    link_commit(link, link_path) {
     this.$store.commit( link );
     setTimeout( () => {
@@ -486,6 +487,7 @@
   margin-bottom: 0.5rem;
   cursor: pointer;
 }
+
 // link-unit--------------------
 .link-unit{
   position:relative;
