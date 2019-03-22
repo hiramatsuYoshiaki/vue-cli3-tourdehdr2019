@@ -248,14 +248,11 @@
       this.arr_interval.push(this.bg_acrInterval);
     },
     skip_page(skip) {
-      alert('slip: ' + skip + '  visible:  '+ this.visible_content + '  last: ' + this.contents_number );
       if(skip > this.visible_content){
-        alert('next');
         this.visible_content = skip - 1;
         this.next_page();
       }
       else if(skip < this.visible_content){
-        alert('prev');
         this.visible_content = skip + 1;
         this.back_page();
       }

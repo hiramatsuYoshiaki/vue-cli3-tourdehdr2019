@@ -48,7 +48,7 @@
                 </div>
               </div>
             </div>
-<!-- about team aboutaboutaboutaboutaboutaboutaboutabout--------------------------------->
+<!-- about team aboutaboutaboutaboutaboutaboutaboutabout -->
             <div class="card-content">
               <div class="card-section card-row">
                 <div class="card-container col2-block" v-for=" (cardData, index) in cardDatas" v-bind:key="index">
@@ -71,49 +71,7 @@
               </div>
             </div>
             
-              <!-- <div id="img1Captionblock" class="col2-block" >
-                <div class="container">
-                  <div class="image-box">
-                    <img v-bind:src="imgURL1" >
-                  </div>
-                  <div class="subscription-box">
-                    <div class="title">title</div>
-                    <div class="subscription">subscription</div>
-                  </div>
-                </div> -->
-                <!-- <div  class="section-block caption-section"> -->
-                  
-                  <!-- <div class="caption-group caption-group-right" v-if="page==='about'">
-                    <div v-for="(img1Arrey, index ) in img1Arreys " :key="index">
-                      <div class="transition-box" >
-                        <transition v-bind:name="img1Arrey.tName" >
-                            <h2 v-if="MaxScrollY > img1Captionblock"
-                                v-bind:style="{color: img1Arrey.tColor}"  >
-                              {{img1Arrey.tText}}
-                            </h2>
-                        </transition>
-                      </div>
-                    </div>
-
-                  </div> -->
-
-                <!-- </div> -->
-              <!-- </div>
-              
-              <div id="img1Imageblock" class="col2-block "> -->
-                 <!-- <div class="image-section-block  image-section " >
-                  
-                  <transition name="box-shadow-moveRight" >
-                    <div class="box-shadow box-shadow-right" v-if="MaxScrollY > img1Imageblock">
-                      <img v-bind:src="imgURL1" >
-                    </div>
-                  </transition>
-                  <transition name="rippleRight" >
-                    <img v-bind:src="imgURL1" v-if="MaxScrollY > img1Imageblock"  alt="img1">
-                  </transition>
-                  
-                </div> -->
-              <!-- </div> -->
+             
               
             
 
