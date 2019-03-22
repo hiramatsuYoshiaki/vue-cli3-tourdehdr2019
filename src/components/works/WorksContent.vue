@@ -177,6 +177,34 @@
                         </transition>
                       </div>
                     </div>
+                    <div class="link-group">
+                      <div class="link-unit">
+                        <transition name="link-lineMotion-works" >
+                          <div class="link-nextPage" v-if="MaxScrollY > img2Captionblock">
+                              <a v-on:click="link_commit('contact', '/contact')" >
+                                <div class="next-text">
+                                    Contact
+                                </div>
+                              </a>
+                              <a v-on:click="link_commit('contact', '/contact')" >
+                                <div class="link-arrow" >
+                                  <svg width="60" height="60" >
+                                    <line x1="0" y1="30" x2="60" y2="30"  />
+                                    <polygon  points="56,26 56,34 60,30"/>
+                                  </svg>
+                                </div>
+                              </a>
+                              <a v-on:click="link_commit('contact', '/contact')" >
+                                <div class="link-circle" >
+                                  <svg width="60" height="60">
+                                    <circle cx="30" cy="30" r="24" />
+                                  </svg> 
+                                </div>
+                              </a>
+                          </div>
+                        </transition>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -256,7 +284,7 @@
         </div>
         <div class="main-footer-police">
           <div class="main-footer-police-wrap">
-            <div>© 2018 Alprime. All Rights Reserved</div>
+            <div class="copy-light">© 2018 h-works. All Rights Reserved</div>
             <div>Terms of Use</div>
             <div>Privacy Policy</div>
             <div>Disclaimer</div>
@@ -328,7 +356,7 @@ export default {
           {tName: "text-pop-up4",  tText: "risk and performance.", tColor:"rgba(0,0,0,.6)" },
         ],
         img2Captionblock: 0,
-        img2Imagelock: 0,
+        img2Imageblock: 0,
       }
   },
   computed: {
@@ -486,20 +514,21 @@ main{
 }
 
 .section-block{
+  // border:  1px solid green;
   position: relative;
   width:100;
   height:100%;
-  // margin: 1.6rem;
   padding: 1.6rem;
   @media (min-width: 992px){
-    // margin: 8rem ;
-    padding: 16rem ;
+    padding: 6rem 0 6rem 6rem ;
+  } 
+  @media (min-width: 1200px){
+    padding: 6rem 0 6rem 12rem ;
   } 
 }
 .image-section-block{
   position: relative;
   @media (min-width: 992px){
-    // margin: 8rem 0;
     padding: 12rem 0;
   } 
 }
@@ -526,7 +555,9 @@ main{
 .caption-group-right{
   left: 0%;
   padding-left: 0;
+  text-align:left;
   @media (min-width: 992px){
+    text-align:left;
     left: 50%;
     padding-left: 0%;
   }
@@ -534,7 +565,9 @@ main{
 .caption-group-left{
   left: 0%;
   padding-left: 0;
+  text-align:right;
   @media (min-width: 992px){
+    text-align:left;
     left: -8%;
     padding-left: 0%;
   }
@@ -657,13 +690,23 @@ main{
   position:relative;
   width: 100%;
 }
-.link-nextPage{
+.caption-group-right .link-nextPage{
+  // border: 1px solid pink;
   position: absolute;
   top: 0;
-  left: 0;
+  left: -55px;
   z-index:10;
-  cursor: pointer;
+}
+.caption-group-left .link-nextPage{
   // border: 1px solid pink;
+  position: absolute;
+  top: 0;
+  left: 90px;
+  z-index:10;
+}
+.link-nextPage{
+  
+  cursor: pointer;
   width: 300px;
   height: 60px;
   display: flex;
@@ -678,6 +721,7 @@ main{
   }
 }
 .link-nextPage a .next-text{
+  // border: 1px solid red;
    width:100px;
    margin-right: 0.4rem;
    text-transform: uppercase;
@@ -870,7 +914,7 @@ main{
   // border: 3px solid red;
   width:80%;
   height: 100%;
-  cursor: pointer;
+  // cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -879,6 +923,12 @@ main{
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
+  }
+}
+.main-footer-police-wrap .copy-light {
+  flex-basis: auto;
+  @media ( min-width: 992px){
+    flex-basis: 50%;
   }
 }
 </style>

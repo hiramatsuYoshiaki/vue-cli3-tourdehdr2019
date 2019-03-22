@@ -300,7 +300,10 @@
 .carousel-nav{
   position:fixed;
   top: 50%;
-  right: 0;
+  right: 10%;
+  @media(min-width: 996px){
+      right: 0;
+  }
   transform: translateY(-50%);
   display: flex;
   justify-content: center;
@@ -351,7 +354,8 @@
   transition: all .5s ease;
   &:hover{
     opacity: 1;
-    transition: all .5s ease;
+    // transition: all .5s ease;
+    animation: link-hoverAction .5s  ease-in ;
   }
   circle {
     fill: transparent;
