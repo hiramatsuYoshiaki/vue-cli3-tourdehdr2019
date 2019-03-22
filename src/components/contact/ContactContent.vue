@@ -21,14 +21,14 @@
               </div>
               <div class="col-block right-block">
                 <div class="section-block left-section">
-                  <p>hiramatsu3300@gmail.com</p>
-                  <p>111-222-33333</p>
+                  <p><i class="far fa-envelope"></i><span>hiramatsu3300@gmail.com</span></p>
+                  <p><i class="fas fa-phone"></i><span>111-222-33333</span></p>
                   <!-- <p></p> -->
                   <br>
                   <p>Minami 444-55</p>
                   <p>Okayama </p>
                   <p>japan</p>
-                  <!-- <p>view on map</p> -->
+                  <!-- <p><i class="fas fa-map-marker-alt"></i>view on map</p> -->
                 </div>
               </div>
             </div>
@@ -81,6 +81,7 @@ main{
   flex-wrap: wrap;
 }
 .col-block{
+  // border:  2px solid white;
   width: 100%;
   @media (min-width: 992px){
     width: 50%;
@@ -92,7 +93,7 @@ main{
   // flex-direction: column; 
   padding: 1.6rem;
   @media (min-width: 992px){
-    padding: 16rem ;
+    padding-left: 16rem ;
   }
 }
 // .left-block{
@@ -104,6 +105,7 @@ main{
   // border:  2px solid green;
 // }
 .section-block{
+  // border:  3px dotted green;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -119,6 +121,15 @@ main{
 //   width:100%;
 //   height:50%;
 // }
+.contact-title h1{
+  font-size: 2.8rem;
+  @media(min-width:992px){
+    font-size: 4rem;
+  }
+}
+i{
+  margin-right: .5rem;
+}
 // .main-footer{
 //   padding: 1rem 1rem;
 //   width:100%;

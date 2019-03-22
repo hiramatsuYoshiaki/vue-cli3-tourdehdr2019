@@ -47,6 +47,8 @@
 11. contact component 
     message email adress phone 
     
+12. about component edit
+    3d transition
 
 
 

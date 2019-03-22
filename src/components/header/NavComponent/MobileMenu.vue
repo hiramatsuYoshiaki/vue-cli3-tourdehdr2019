@@ -67,7 +67,7 @@
         <div class="m-menu-wrap m-menu-position ">
           <section class="m-menu-section m-menu-section-start" v-bind:class="{ v_tran_slide_rightIn: !active }">
             <div class="d-flex-center-center">
-              <h5>mobile menu</h5>
+              <!-- <h5>mobile menu</h5> -->
             </div>
           </section>
           <section class="m-menu-section m-menu-section-start" v-bind:class="{ v_tran_slide_rightIn: !active }">
