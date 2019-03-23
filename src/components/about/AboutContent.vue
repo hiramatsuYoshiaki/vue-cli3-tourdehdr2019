@@ -491,12 +491,12 @@ main{
 .main-header h1,  .main-header p{
   color: $header-text;
 }
-// .main-header h1{
-//   font-size: 2.5rem;
-//   @media (min-width: 992px){
-//     font-size: 4rem;
-//   }
-// }
+.main-header h1{
+  font-size: 3rem;
+  @media (min-width: 992px){
+    font-size: 4rem;
+  }
+}
 // .main-header p{
 //   font-size: 1.6rem;
 //   @media (min-width: 992){

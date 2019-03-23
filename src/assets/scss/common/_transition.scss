@@ -382,7 +382,7 @@
     transform: translateX(-25px);
 }
 .link-lineMotion-works-enter-active, .link-lineMotion-works-leave-active {
-    transition: all .5s 3.5s;
+    transition: all .5s 2s;
 }
 .link-lineMotion-works-enter, .link-lineMotion-works-leave-to {
     opacity: 0;

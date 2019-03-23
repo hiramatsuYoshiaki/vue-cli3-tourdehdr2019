@@ -234,19 +234,19 @@
 
         </div>
       </transition>
+      
+ 
       <div class="main-footer">
-        <div class="main-footer-logo-section">
-          <div class="main-footer-wrap">
+        <!-- <section class="main-footer-wrap"> -->
+        <!-- <div class="main-footer-logo-section"> -->
+          <div class="main-footer-logo-wrap">
             <a v-on:click="link_commit('home', '/')" class="menu_link" >
                 <img v-bind:src="logoSvgHWorksWhite" alt="h-works logo">
             </a>
           </div>
-        </div>
+        <!-- </div> -->
 
-        <!-- <section class="main-footer-menu"> -->
-
-          <!-- laptop menu -->
-          <nav class="laptop-menu">
+          <!-- <nav class="laptop-menu">
               <div class="m-menu-wrap  ">
                
                 <div class="menu_items " >
@@ -276,13 +276,13 @@
                   </div>
                 </div>
               </div>
-            <!-- </div> -->
-          </nav>
-        <!-- </section> -->
-        <div class="main-footer-sepalater">
+          </nav> -->
+
+        <!-- <div class="main-footer-sepalater">
           <div class="line"></div>          
-        </div>
-        <div class="main-footer-police">
+        </div> -->
+
+        <!-- <div class="main-footer-police">
           <div class="main-footer-police-wrap">
             <div class="copy-light">© 2018 h-works. All Rights Reserved</div>
             <div>Terms of Use</div>
@@ -290,8 +290,10 @@
             <div>Disclaimer</div>
             <div>Imprint</div>
           </div>
-        </div>
+        </div> -->
+        <!-- </section> -->
       </div>
+
     </main>
   </div>
 </template>
@@ -426,19 +428,21 @@ export default {
     width: 100%;
     height: auto;
     padding-top: $header-height;
+    touch-action: none;
 }
 main{
   margin: 0;
   padding: 0;
 }
 .main-header{
-  width:100%;
+  // width:100%;
   height: 35vh;
   padding: 1rem 1rem;
   // border: 1px solid green;
   //横スクロール処理
-  width: auto;
-  min-width: 100vw;
+  // width: auto;
+  // min-width: 100vw;
+  width: 100vw
 }
 .main-header-wrape{
   // border: 1px solid green;
@@ -461,12 +465,12 @@ main{
 .main-header h1,  .main-header p{
   color: $header-text;
 }
-// .main-header h1{
-//   font-size: 2.5rem;
-//   @media (min-width: 992px){
-//     font-size: 4rem;
-//   }
-// }
+.main-header h1{
+  font-size: 3rem;
+  @media (min-width: 992px){
+    font-size: 4rem;
+  }
+}
 // .main-header p{
 //   font-size: 1.6rem;
 //   @media (min-width: 992){
@@ -479,8 +483,9 @@ main{
   background-color: $main-contents-color;
   color: $main-contents-text;
   //横スクロール処理
-  width: auto;
-  min-width: 100vw;
+  // width: auto;
+  // min-width: 100vw;
+  width: 100vw;
 } 
 
 //section-2col
@@ -678,13 +683,6 @@ main{
 .image-filter-left{
   clip-path: circle(150% at 100% 100%) ;
 }
-
-
-
-
-
-
-
 // link-unit--------------------
 .link-unit{
   position:relative;
@@ -766,42 +764,65 @@ main{
 }
 
 //main-footer--------------------------------------
+
 .main-footer{
-  // border: 3px solid green;
   padding: 1rem 1rem;
-  width:100%;
-  // height: 50vh;
   background-color: $footer-color-color;
   color: $footer-color-text;
 // 横スクロール処理
-  width: auto;
-  min-width: 100vw;
+  // width: auto;
+  // min-width: 100vw;
+  width: 100vw;
+  
 }
+// .main-footer-wrape{
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: flex-start;
+//   padding: 2rem;
+// }
+
 .main-footer-logo-section{
  position: relative;
  width:100%;
  height: 20rem;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: flex-start;
+ padding: 2rem;
 //  border: 3px solid white;
 }
-.main-footer-wrap{
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  z-index:1;
-  transform: translate(-50%,-100%);
-  width: 17rem;
-  height: 7rem;
-  // border: 3px solid red;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-.main-footer-wrap a img{
+// .main-footer-wrap{
+//   position: absolute;
+//   top: 100%;
+//   left: 50%;
+//   z-index:1;
+//   transform: translate(-50%,-100%);
+//   width: 17rem;
+//   height: 7rem;
+//   border: 3px solid red;
+//   cursor: pointer;
+//   display: flex;
+//   justify-content: center;
+//   align-items: flex-end;
+// }
+.main-footer-logo-wrap a img{
   width: 15rem;
   height: auto;
   // margin:5rem 5rem 0 5rem;
 }
+// img{
+//   width: 15rem;
+//   height: auto;
+// }
+
+
+
 .laptop-menu{
   position: relative;
   width:100%;
@@ -810,6 +831,16 @@ main{
     height: 5rem;
   }
   // border: 3px solid white;
+
+
+
+
+  overflow: hidden;
+
+
+
+
+  
 }
 .m-menu-wrap{
   position: absolute;

@@ -46,6 +46,7 @@ export default {
   position: relative;
   margin: 0;
   padding:0;
+  touch-action: none;
 }
 .worksWrap{
   background-color: $works-body-color;
