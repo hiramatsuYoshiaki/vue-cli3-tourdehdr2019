@@ -177,7 +177,7 @@
                         </transition>
                       </div>
                     </div>
-                    <div class="link-group">
+                    <!-- <div class="link-group">
                       <div class="link-unit">
                         <transition name="link-lineMotion-works" >
                           <div class="link-nextPage" v-if="MaxScrollY > img2Captionblock">
@@ -204,7 +204,7 @@
                           </div>
                         </transition>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -428,7 +428,7 @@ export default {
     width: 100%;
     height: auto;
     padding-top: $header-height;
-    touch-action: none;
+    
 }
 main{
   margin: 0;
