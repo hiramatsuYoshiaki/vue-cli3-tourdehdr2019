@@ -596,12 +596,13 @@
   position: fixed;
   top: 0;
   left: 0;
-  min-width: 100%;
-  min-height: 100%;
+  // min-width: 100%;
+  // min-height: 100%;
   width: auto;
   height: auto;
   background-color: rgba(0,0,0,.6);
   //横スクロール処理
   min-width: 100vw;
+  min-height: 100vh;
 }
 </style>
