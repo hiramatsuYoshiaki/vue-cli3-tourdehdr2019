@@ -23,8 +23,8 @@
       <transition name="mainCon" appear>
         <div  class="main-content" >
           
-            <HistorySection msg="massage history section" pageView="works"/>
-<!-- 
+            <!-- <HistorySection msg="massage history section" pageView="works"/> -->
+
             <div class="col2-content">
               <div class="col-block left-block">
                 <div class="section-block caption-section">
@@ -207,7 +207,7 @@
                 </div>
               </div>
             </div>
-             -->
+            
         </div>
       </transition>
 
@@ -342,21 +342,27 @@ export default {
     },
   },
   created () {
+    // console.log('create: ');
     window.addEventListener('scroll', this.handleScroll);
+    
   },
   destroyed () {
+    // console.log('destory: ');
     window.removeEventListener('scroll', this.handleScroll);
+    
   },
   mounted: function () {
+    // console.log('mounted: ');
     // window.addEventListener('scroll', this.handleScroll);
     this.init();
   },
   
   methods: {
     handleScroll() {
-      console.log('workcomponent this.scrollY: ' + this.scrollY);
-      this.img1Captionblock = document.getElementById('img1Captionblock').getBoundingClientRect().top
-                          + window.scrollY  - (window.innerHeight*0.8) ;
+      console.log('handleScroll: ');
+      // console.log('workcomponent this.scrollY: ' + this.scrollY);
+      // this.img1Captionblock = document.getElementById('img1Captionblock').getBoundingClientRect().top
+      //                     + window.scrollY  - (window.innerHeight*0.8) ;
       this.img1Imageblock = document.getElementById('img1Imageblock').getBoundingClientRect().top
                           + window.scrollY  - (window.innerHeight*0.8)  ;
       this.img2Captionblock = document.getElementById('img2Captionblock').getBoundingClientRect().top
@@ -371,6 +377,7 @@ export default {
       // this.resize();
     },
     init(){
+      // console.log('init: ');
       this.$store.commit( 'works' );
       this.innerHeight = window.innerHeight;
       this.scrollY = window.scrollY;
@@ -378,7 +385,7 @@ export default {
       //   this.MaxScrollY = this.scrollY;
       // }
       // this.resize();
-      console.log('workcomponent Init  this.scrollY: ' + this.scrollY);
+      // console.log('workcomponent Init  this.scrollY: ' + this.scrollY);
     },
     // resize(){
     //    this.mainPos = (this.innerHeight - 300 -50 )  * -1  ;

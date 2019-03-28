@@ -6,6 +6,10 @@
     <div class="history-header" >
       <div class="col-block header-block">
         <p>HISTORY HEADER</p>
+        <div style="color:black">sec1Position: {{sec1Position}}</div>
+                  <div style="color:black">scrollTopHeight: {{scrollTopHeight}}</div>
+                  <div style="color:black">scrollY: {{scrollY}}</div>
+                  <div style="color:black">windowH: {{windowH}}</div>
       </div>
     </div>
     <div class="history-altanative" id="historyTop">
@@ -15,7 +19,7 @@
             <div class="altanative-wrap altanative-wrap-right">
 
               <div class="image-group image-group-right" 
-              v-bind:class="{fullScreenImageLeft: sec1Select}" v-if="!isHidden || sec1Select">
+                     v-bind:class="{fullScreenImageLeft: sec1Select}" v-if="!isHidden || sec1Select">
                   <div class="img-wrap" 
                       v-on:click="scrollTopSec1()"
                       v-bind:style="{ 
@@ -180,13 +184,13 @@
       }
   },
   created () {
-    window.addEventListener('scroll', this.handleScroll);
-    console.log('create this.scrollY: ' + this.scrollY);
-    console.log('create this.sec1Position: ' + this.sec1Position);
-    alert(' scrollTopHeight:' + this.scrollTopHeight +
-       ' this.sec1Position:' + this.sec1Position +
-       ' this.scrollY:' + this.scrollY
-       );
+    window.addEventListener('scroll', this.handleScroll,);
+    // console.log('create this.scrollY: ' + this.scrollY);
+    // console.log('create this.sec1Position: ' + this.sec1Position);
+    // alert(' scrollTopHeight:' + this.scrollTopHeight +
+    //    ' this.sec1Position:' + this.sec1Position +
+    //    ' this.scrollY:' + this.scrollY
+    //    );
   },
   destroyed () {
     window.removeEventListener('scroll', this.handleScroll);
@@ -208,16 +212,16 @@
       this.scrollY = window.scrollY;
       this.windowH = window.innerHeight;
       this.sec1Position = document.getElementById('historyTop').getBoundingClientRect().top + window.scrollY;
-    console.log('mmmm this.scrollY: ' + this.scrollY);
-    console.log('mmmm this.sec1Position: ' + this.sec1Position);
+    // console.log('mmmm this.scrollY: ' + this.scrollY);
+    // console.log('mmmm this.sec1Position: ' + this.sec1Position);
     },
     
     scrollTopSec1: function( ){
       this.scrollTopHeight = this.sec1Position - this.scrollY;
-      alert(' scrollTopHeight:' + this.scrollTopHeight +
-       ' this.sec1Position:' + this.sec1Position +
-       ' this.scrollY:' + this.scrollY
-       );
+      // alert(' scrollTopHeight:' + this.scrollTopHeight +
+      //  ' this.sec1Position:' + this.sec1Position +
+      //  ' this.scrollY:' + this.scrollY
+      //  );
       window.scrollBy({
         top: this.scrollTopHeight,
         behavior: "smooth",
@@ -262,8 +266,8 @@
      this.scrollY = window.scrollY;
      this.windowH = window.innerHeight;
      this.sec1Position = document.getElementById('historyTop').getBoundingClientRect().top + window.scrollY;
-    console.log('init this.scrollY: ' + this.scrollY);
-    console.log('init this.sec1Position: ' + this.sec1Position);
+    // console.log('init this.scrollY: ' + this.scrollY);
+    // console.log('init this.sec1Position: ' + this.sec1Position);
     }
   },
 }

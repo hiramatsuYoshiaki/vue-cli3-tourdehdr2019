@@ -46,6 +46,12 @@
               <div class="menu_underline"></div>
             </div>
             <div class="menu-item-box">
+              <a v-on:click="link_commit('projects', '/projects')" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'projects' }">
+                Projects
+              </a>
+              <div class="menu_underline"></div>
+            </div>
+            <div class="menu-item-box">
               <a v-on:click="link_commit('about', '/about')" class="menu_link" v-bind:class="{ menu_item_visible: menuVisible === 'about' }">
                 ABOUT
               </a>
@@ -82,6 +88,12 @@
                 <div class="menu-item-box">
                   <a v-on:click="link_commit('works', '/works')" class="menu_link" >
                     WORKS
+                  </a>
+                  <div class="menu_underline"></div>
+                </div>
+                <div class="menu-item-box">
+                  <a v-on:click="link_commit('projects', '/projects')" class="menu_link" >
+                    Projects
                   </a>
                   <div class="menu_underline"></div>
                 </div>
