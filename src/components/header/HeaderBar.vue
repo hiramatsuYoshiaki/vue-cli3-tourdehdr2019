@@ -1,7 +1,11 @@
 <template>
-  <div class="headerBar" v-bind:class="{
-                         scroll: headerScrollType,
-                         fixed: headerFixedType,
+  <!-- <div class="headerBar " v-bind:class="{
+                         scroll: headerScrollType ,
+                         fixed: headerFixedType ,
+                         fadeOut: isScroll && headerStikyType }"> -->
+  <div class="headerBar " v-bind:class="{
+                         scroll: headerFixedType ,
+                         fixed: headerFixedType ,
                          fadeOut: isScroll && headerStikyType }">
 
     <nav class="nav-side-space">
@@ -64,9 +68,9 @@
     headerFixedType: Boolean,
     headerStikyType: Boolean,
     // scroll: Number,
-    logoPositionLeft: Boolean,
-    logoPositionCenter: Boolean,
-    logoPositionRight: Boolean,
+    // logoPositionLeft: Boolean,
+    // logoPositionCenter: Boolean,
+    // logoPositionRight: Boolean,
   },
   data() {
       return{
@@ -102,8 +106,8 @@
 <style scoped lang="scss">
 @import "../../assets/scss/common/data/thema.scss";
 .headerBar{
-    position: fixed;
-    // position: absolute ;
+    // position: fixed;
+    position: absolute ;
     top: 0;
     left: 0;
     width:100%;
@@ -113,7 +117,7 @@
     background-color: transparent;
     color: $header-text;
     //確認用ライン
-    border-bottom:1px solid rgba(250,250,250,.1);
+    // border-bottom:1px solid rgba(250,250,250,.1);
 }
 .scroll{
   position: absolute !important;

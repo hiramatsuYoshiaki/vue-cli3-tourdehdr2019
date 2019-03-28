@@ -61,8 +61,12 @@
                     </transition>
                     <div class="subscription-box">
                       <div class="subscription-wrap">
-                        <div class="title">{{cardData.title}}</div>
-                        <div class="subscription">{{cardData.subscription}}</div>
+                        <transition name="spinX3d">
+                        <div class="title" v-if="MaxScrollY > cardSectionPosition[index]">{{cardData.title}}</div>
+                        </transition>
+                        <transition name="spinX3d">
+                        <div class="subscription" v-if="MaxScrollY > cardSectionPosition[index]">{{cardData.subscription}}</div>
+                        </transition>
                       </div>
                     </div>
                   </div>
@@ -253,51 +257,48 @@
 
         </div>
       </transition>
+
       <div class="main-footer">
         <div class="main-footer-logo-section">
-          <div class="main-footer-wrap">
+          <!-- <div class="main-footer-wrap"> -->
             <a v-on:click="link_commit('home', '/')" class="menu_link" >
                 <img v-bind:src="logoSvgHWorksWhite" alt="h-works logo">
             </a>
-          </div>
+          <!-- </div> -->
         </div>
 
-        <!-- <section class="main-footer-menu"> -->
-
-          <!-- laptop menu -->
-          <nav class="laptop-menu">
-              <div class="m-menu-wrap  ">
-               
-                <div class="menu_items " >
-                  <div class="menu-item-box">
-                    <a v-on:click="link_commit('works', '/works')" 
-                    class="menu_link" 
-                    v-bind:class="{ menu_item_visible: page === 'works' }">
-                      WORKS
-                    </a>
-                    <div class="menu_underline"></div>
-                  </div>
-                  <div class="menu-item-box">
-                    <a v-on:click="link_commit('about', '/about')" 
-                    class="menu_link" 
-                    v-bind:class="{ menu_item_visible: page === 'about' }">
-                      ABOUT
-                    </a>
-                    <div class="menu_underline"></div>
-                  </div>
-                  <div class="menu-item-box">
-                    <a v-on:click="link_commit('contact', '/contact')" 
-                    class="menu_link" 
-                    v-bind:class="{ menu_item_visible: page === 'contact' }">
-                      CONTACT
-                    </a>
-                    <div class="menu_underline"></div>
-                  </div>
+        <nav class="laptop-menu">
+            <div class="m-menu-wrap  ">
+              
+              <div class="menu_items " >
+                <div class="menu-item-box">
+                  <a v-on:click="link_commit('works', '/works')" 
+                  class="menu_link" 
+                  v-bind:class="{ menu_item_visible: page === 'works' }">
+                    WORKS
+                  </a>
+                  <div class="menu_underline"></div>
+                </div>
+                <div class="menu-item-box">
+                  <a v-on:click="link_commit('about', '/about')" 
+                  class="menu_link" 
+                  v-bind:class="{ menu_item_visible: page === 'about' }">
+                    ABOUT
+                  </a>
+                  <div class="menu_underline"></div>
+                </div>
+                <div class="menu-item-box">
+                  <a v-on:click="link_commit('contact', '/contact')" 
+                  class="menu_link" 
+                  v-bind:class="{ menu_item_visible: page === 'contact' }">
+                    CONTACT
+                  </a>
+                  <div class="menu_underline"></div>
                 </div>
               </div>
-            <!-- </div> -->
-          </nav>
-        <!-- </section> -->
+            </div>
+          <!-- </div> -->
+        </nav>
         <div class="main-footer-sepalater">
           <div class="line"></div>          
         </div>
@@ -309,7 +310,10 @@
             <div>Disclaimer</div>
             <div>Imprint</div>
           </div>
+       
+       
         </div>
+      
       </div>
     </main>
   </div>
@@ -462,13 +466,14 @@ main{
   padding: 0;
 }
 .main-header{
-  width:100%;
+  // width:100%;
   height: 35vh;
   padding: 1rem 1rem;
   // border: 1px solid green;
   //横スクロール処理
-  width: auto;
-  min-width: 100vw;
+  // width: auto;
+  // min-width: 100vw;
+  width: 100vw;
 }
 .main-header-wrape{
   // border: 1px solid green;
@@ -509,8 +514,9 @@ main{
   background-color: $main-contents-color;
   color: $main-contents-text;
   //横スクロール処理
-  width: auto;
-  min-width: 100vw;
+  // width: auto;
+  // min-width: 100vw;
+  width: 100vw;
 } 
 
 //section-2col
@@ -582,6 +588,12 @@ main{
   } 
   // border: 1px solid yellow;
 }
+.caption-group p, .caption-group h1, .caption-group h2{
+  color: rgba(0, 0, 0, 1);
+  text-shadow: 1px 1px 0px #fff,
+               2px 2px 0px rgba(0,0,0,0.2),
+               3px 3px 0px rgba(0,0,0,0.15);
+}
 .caption-group-right{
   left: 0%;
   padding-left: 0;
@@ -652,14 +664,21 @@ main{
   }
 }
 .card-container{
-  padding: 5rem 10rem;
+  padding: 1rem 1rem;
   // border: 1px solid green;
+  @media (min-width: 992px){
+    padding: 5rem 10rem;
+  }
 }
 .card-wrap{
   // border: 1px dotted red;
 }
 .cardMarginTop{
-  margin-top: 10rem;
+  margin-top: 0rem;
+  @media (min-width: 992px){
+    margin-top: 10rem;
+  }
+  
 }
 
 .image-box img{
@@ -758,12 +777,6 @@ main{
   clip-path: circle(150% at 100% 100%) ;
 }
 
-
-
-
-
-
-
 // link-unit--------------------
 .link-unit{
   position:relative;
@@ -786,7 +799,7 @@ main{
 .link-nextPage{
   
   cursor: pointer;
-  width: 300px;
+  width: 200px;
   height: 60px;
   display: flex;
   justify-content: flex-start;
@@ -846,37 +859,27 @@ main{
 
 //main-footer--------------------------------------
 .main-footer{
-  // border: 3px solid green;
   padding: 1rem 1rem;
   width:100%;
-  // height: 50vh;
   background-color: $footer-color-color;
   color: $footer-color-text;
 // 横スクロール処理
-  width: auto;
-  min-width: 100vw;
+  // width: auto;
+  // min-width: 100vw;
+  width: 100vw;
 }
 .main-footer-logo-section{
  position: relative;
  width:100%;
  height: 20rem;
-//  border: 3px solid white;
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-end;
+ align-items: center;
+ padding: 2rem;
 }
-.main-footer-wrap{
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  z-index:1;
-  transform: translate(-50%,-100%);
-  width: 17rem;
-  height: 7rem;
-  // border: 3px solid red;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-.main-footer-wrap a img{
+
+.main-footer-logo-section a img{
   width: 15rem;
   height: auto;
   // margin:5rem 5rem 0 5rem;
@@ -889,6 +892,7 @@ main{
     height: 5rem;
   }
   // border: 3px solid white;
+  overflow: hidden;
 }
 .m-menu-wrap{
   position: absolute;
@@ -956,7 +960,6 @@ main{
   opacity: 1;
   pointer-events: none;
 }
-
 
 .main-footer-sepalater{
  width: 100%;

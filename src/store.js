@@ -13,9 +13,9 @@ export default new Vuex.Store({
     decrement: state => state.count--,
     home: state => { state.page = "home"},
     works: state => { state.page = "works"},
+    projects: state => { state.page = "projects"},
     about: state => { state.page = "about"},
     contact: state => { state.page = "contact"},
-    // project: state => { state.page = "project"},
     // studio: state => { state.page = "studio"},
   },
   actions: {

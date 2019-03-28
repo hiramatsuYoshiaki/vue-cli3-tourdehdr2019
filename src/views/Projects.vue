@@ -1,15 +1,16 @@
 <template>
-<div class="works">
-  <div class="worksWrap">
-      <TransitionScreen msg="bgImage" v-bind:img= bgImage pageView="works"  />
+<div class="projects">
+    project 
+  <div class="projectsWrap">
+      <TransitionScreen msg="bgImage" v-bind:img= bgImage pageView="projects"  />
       <HeaderBar msg="HeaderBar"
-                 navMenu="works"
+                 navMenu="projects"
                  v-bind:headerScrollType= "true"
                  v-bind:headerFixedType= "false"
                  v-bind:headerStikyType= "false"
       />
       <BgImageFull msg="bgImage" v-bind:img= bgImage />
-      <WorksContent msg="WorksContent"/>
+      <projectsContent msg="projectsContent"/>
   </div>
 </div>
 </template>
@@ -17,15 +18,15 @@
 
 <script>
 // @ is an alias to /src
-import WorksContent from '@/components/works/WorksContent.vue'
+import projectsContent from '@/components/projects/ProjectsContent.vue'
 import HeaderBar from '@/components/header/HeaderBar.vue'
 import BgImageFull from '@/components/background/BgImageFull.vue'
 import TransitionScreen from '@/components/transition/TransitionScreen.vue'
 
 export default {
-  name: 'Works',
+  name: 'Projects',
   components: {
-    WorksContent,
+    projectsContent,
     HeaderBar,
     BgImageFull,
     TransitionScreen, 
@@ -39,13 +40,13 @@ export default {
 </script>
 <style scoped lang="scss">
 @import "../assets/scss/common/data/thema.scss";
-.works{
+.projects{
   position: relative;
   margin: 0;
   padding:0;
 }
-.worksWrap{
-  background-color: $works-body-color;
-  color: $works-body-text;
+.projectsWrap{
+  background-color: $projects-body-color;
+  color: $projects-body-text;
 }
 </style>

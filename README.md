@@ -47,8 +47,12 @@
 11. contact component 
     message email adress phone 
     
-12. about component edit
-    3d transition
+12. about component edit 
+    3d transition 
+
+13. project Content add 
+
+14. historySection add 
 
 
 

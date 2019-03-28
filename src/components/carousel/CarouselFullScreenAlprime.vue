@@ -32,7 +32,7 @@
                :key="index"
                v-for="(content, index) in contents"
                v-on:click="skip_page(index)">
-            <div class="pagination-text">{{index}}</div>
+            <div class="pagination-text">{{index + 1}}</div>
             <transition name="pagenationActiveLine">
               <div class="active-line" v-if="visible_content === content.id"></div>
             </transition>
