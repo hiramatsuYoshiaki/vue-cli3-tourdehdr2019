@@ -4,13 +4,11 @@
     <TransitionScreen msg="bgImage" v-bind:img= bgImage pageView="about"  />
       <HeaderBar msg="HeaderBar"
                  navMenu="about"
-                 v-bind:headrScrollType="true"
-                 v-bind:headrFixedType="false"
-                 v-bind:headrStikyType="false"
+                 v-bind:headerScrollType="true"
+                 v-bind:headerFixedType="false"
+                 v-bind:headerStikyType="false"
                 
-                 v-bind:logoPositionLeft="true"
-                 v-bind:logoPositionCenter="false"
-                 v-bind:logoPositionRight="false"
+                 
       />
       <BgImageFull msg="bgImage" v-bind:img= bgImage />
       <AboutContent msg="AboutContent"/>

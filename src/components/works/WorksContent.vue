@@ -21,8 +21,10 @@
         </section>
       </div>
       <transition name="mainCon" appear>
-        <div  class="main-content">
-            <!-- col2-content title  1111111111111111111111111111-->
+        <div  class="main-content" >
+          
+            <HistorySection msg="massage history section" pageView="works"/>
+<!-- 
             <div class="col2-content">
               <div class="col-block left-block">
                 <div class="section-block caption-section">
@@ -34,11 +36,6 @@
                       </transition>
                     </div>
                   </div>
-                  <!-- <div class="transiton-box ">
-                    <transition name="carousel-pop-up" appear>
-                      <p>Alprime Capital AG (“Alprime”) is a Swiss investment boutique focusing on alternative investments. It was approved as an asset manager of collective investment schemes by the Swiss Financial Market Supervisory Authority (FINMA) in summer 2018. Alprime was established in Baar (Canton Zug/Switzerland) as a spin-off from Progressive Capital Partners Ltd in April 2018. Alprime is owned entirely by its co-founders who also manage the company.</p>
-                    </transition>
-                  </div>-->
                 </div>
               </div>
               <div class="col-block right-block">
@@ -55,9 +52,6 @@
                 </div>
               </div>
             </div>
-
-            <!-- image component alternation 1111111111111111111111111111-->
-            
             <div class="alternationImage-content alternation-row">
               <div class="col-block text-block">
                 <div id="img1Captionblock" class="section-block caption-section">
@@ -118,17 +112,11 @@
                   <transition name="rippleRight" >
                     <img v-bind:src="imgURL1" v-if="MaxScrollY > img1Imageblock"  alt="img1">
                   </transition>
-                  <!-- <transition name="rippleRight" >
-                    <div class="image-filter image-filter-right" v-if="MaxScrollY > img1Imageblock">
-                      <img v-bind:src="imgURL1">
-                    </div>
-                  </transition> -->
+                 
                 </div>
               </div>
               
             </div>
-
-            <!-- col2-content title  222222222222222-->
             <div class="col2-content">
               <div class="col-block left-block">
                 <div class="section-block caption-section">
@@ -140,11 +128,7 @@
                       </transition>
                     </div>
                   </div>
-                  <!-- <div class="transiton-box ">
-                    <transition name="carousel-pop-up" appear>
-                      <p>Alprime Capital AG (“Alprime”) is a Swiss investment boutique focusing on alternative investments. It was approved as an asset manager of collective investment schemes by the Swiss Financial Market Supervisory Authority (FINMA) in summer 2018. Alprime was established in Baar (Canton Zug/Switzerland) as a spin-off from Progressive Capital Partners Ltd in April 2018. Alprime is owned entirely by its co-founders who also manage the company.</p>
-                    </transition>
-                  </div>-->
+                 
                 </div>
               </div>
               <div class="col-block right-block">
@@ -161,8 +145,6 @@
                 </div>
               </div>
             </div>
-
-            <!-- image component alternation 222222222222222222222222222222222-->
             <div class="alternationImage-content alternation-revers">
               <div id="img2Captionblock" class="col-block text-block">
                 <div  class="section-block caption-section ">
@@ -177,7 +159,7 @@
                         </transition>
                       </div>
                     </div>
-                    <!-- <div class="link-group">
+                    <div class="link-group">
                       <div class="link-unit">
                         <transition name="link-lineMotion-works" >
                           <div class="link-nextPage" v-if="MaxScrollY > img2Captionblock">
@@ -204,16 +186,14 @@
                           </div>
                         </transition>
                       </div>
-                    </div> -->
+                    </div>
                   </div>
                 </div>
               </div>
               <div id="img2Imageblock" class="col-block image-block ">
                  <div class="image-section-block  image-section image-left">
 
-                  <!-- <transition name="rippleLeft" >
-                    <img v-bind:src="imgURL2" v-if="MaxScrollY > img2Imageblock"  alt="img2">
-                  </transition> -->
+                 
 
                   <transition name="box-shadow-moveLeft" >
                     <div class="box-shadow box-shadow-left" v-if="MaxScrollY > img2Imageblock">
@@ -223,66 +203,57 @@
                   <transition name="rippleLeft" >
                     <img v-bind:src="imgURL2" v-if="MaxScrollY > img2Imageblock"  alt="img2">
                   </transition>
-                  <!-- <transition name="rippleLeft" >
-                    <div class="image-filter image-filter-left" v-if="scrollY > img2Imageblock">
-                      <img v-bind:src="imgURL2">
-                    </div>
-                  </transition> -->
+                 
                 </div>
               </div>
             </div>
-
+             -->
         </div>
       </transition>
-      
- 
-      <div class="main-footer">
-        <!-- <section class="main-footer-wrap"> -->
-        <!-- <div class="main-footer-logo-section"> -->
-          <div class="main-footer-logo-wrap">
-            <a v-on:click="link_commit('home', '/')" class="menu_link" >
-                <img v-bind:src="logoSvgHWorksWhite" alt="h-works logo">
-            </a>
-          </div>
-        <!-- </div> -->
 
-          <!-- <nav class="laptop-menu">
-              <div class="m-menu-wrap  ">
-               
-                <div class="menu_items " >
-                  <div class="menu-item-box">
-                    <a v-on:click="link_commit('works', '/works')" 
-                    class="menu_link" 
-                    v-bind:class="{ menu_item_visible: page === 'works' }">
-                      WORKS
-                    </a>
-                    <div class="menu_underline"></div>
-                  </div>
-                  <div class="menu-item-box">
-                    <a v-on:click="link_commit('about', '/about')" 
-                    class="menu_link" 
-                    v-bind:class="{ menu_item_visible: page === 'about' }">
-                      ABOUT
-                    </a>
-                    <div class="menu_underline"></div>
-                  </div>
-                  <div class="menu-item-box">
-                    <a v-on:click="link_commit('contact', '/contact')" 
-                    class="menu_link" 
-                    v-bind:class="{ menu_item_visible: page === 'contact' }">
-                      CONTACT
-                    </a>
-                    <div class="menu_underline"></div>
-                  </div>
+<!--       
+      <div class="main-footer">
+        <div class="main-footer-logo-section">
+          <a v-on:click="link_commit('home', '/')" class="menu_link" >
+              <img v-bind:src="logoSvgHWorksWhite" alt="h-works logo">
+          </a>
+        </div>
+
+        <nav class="laptop-menu">
+            <div class="m-menu-wrap  ">
+              
+              <div class="menu_items " >
+                <div class="menu-item-box">
+                  <a v-on:click="link_commit('works', '/works')" 
+                  class="menu_link" 
+                  v-bind:class="{ menu_item_visible: page === 'works' }">
+                    WORKS
+                  </a>
+                  <div class="menu_underline"></div>
+                </div>
+                <div class="menu-item-box">
+                  <a v-on:click="link_commit('about', '/about')" 
+                  class="menu_link" 
+                  v-bind:class="{ menu_item_visible: page === 'about' }">
+                    ABOUT
+                  </a>
+                  <div class="menu_underline"></div>
+                </div>
+                <div class="menu-item-box">
+                  <a v-on:click="link_commit('contact', '/contact')" 
+                  class="menu_link" 
+                  v-bind:class="{ menu_item_visible: page === 'contact' }">
+                    CONTACT
+                  </a>
+                  <div class="menu_underline"></div>
                 </div>
               </div>
-          </nav> -->
-
-        <!-- <div class="main-footer-sepalater">
+            </div>
+        </nav>
+        <div class="main-footer-sepalater">
           <div class="line"></div>          
-        </div> -->
-
-        <!-- <div class="main-footer-police">
+        </div>
+        <div class="main-footer-police">
           <div class="main-footer-police-wrap">
             <div class="copy-light">© 2018 h-works. All Rights Reserved</div>
             <div>Terms of Use</div>
@@ -290,19 +261,23 @@
             <div>Disclaimer</div>
             <div>Imprint</div>
           </div>
-        </div> -->
-        <!-- </section> -->
-      </div>
-
+        </div>
+      
+      </div> -->
     </main>
   </div>
 </template>
 
 <script>
+import HistorySection from '@/components/section/HistorySection.vue'
+
 export default {
   name: 'WorksContent',
   props: {
     msg: String,
+  },
+  components: {
+    HistorySection,
   },
      data () {
       return {
@@ -366,15 +341,20 @@ export default {
     return this.$store.state.page
     },
   },
-  mounted: function () {
+  created () {
     window.addEventListener('scroll', this.handleScroll);
-    this.init();
   },
-  destroyed: function () {
+  destroyed () {
     window.removeEventListener('scroll', this.handleScroll);
   },
+  mounted: function () {
+    // window.addEventListener('scroll', this.handleScroll);
+    this.init();
+  },
+  
   methods: {
     handleScroll() {
+      console.log('workcomponent this.scrollY: ' + this.scrollY);
       this.img1Captionblock = document.getElementById('img1Captionblock').getBoundingClientRect().top
                           + window.scrollY  - (window.innerHeight*0.8) ;
       this.img1Imageblock = document.getElementById('img1Imageblock').getBoundingClientRect().top
@@ -398,6 +378,7 @@ export default {
       //   this.MaxScrollY = this.scrollY;
       // }
       // this.resize();
+      console.log('workcomponent Init  this.scrollY: ' + this.scrollY);
     },
     // resize(){
     //    this.mainPos = (this.innerHeight - 300 -50 )  * -1  ;
@@ -487,7 +468,6 @@ main{
   // min-width: 100vw;
   width: 100vw;
 } 
-
 //section-2col
 .col2-content{
   position: relative;
@@ -521,7 +501,7 @@ main{
 .section-block{
   // border:  1px solid green;
   position: relative;
-  width:100;
+  width:100%;
   height:100%;
   padding: 1.6rem;
   @media (min-width: 992px){
@@ -557,6 +537,13 @@ main{
   } 
   // border: 1px solid yellow;
 }
+.caption-group p, .caption-group h1, .caption-group h2{
+  color: rgba(0, 0, 0, 1);
+  text-shadow: 1px 1px 0px #fff,
+               2px 2px 0px rgba(0,0,0,0.2),
+               3px 3px 0px rgba(0,0,0,0.15);
+}
+
 .caption-group-right{
   left: 0%;
   padding-left: 0;
@@ -687,6 +674,7 @@ main{
 .link-unit{
   position:relative;
   width: 100%;
+  // border: 1px solid pink;
 }
 .caption-group-right .link-nextPage{
   // border: 1px solid pink;
@@ -705,7 +693,7 @@ main{
 .link-nextPage{
   
   cursor: pointer;
-  width: 300px;
+  width: 200px;
   height: 60px;
   display: flex;
   justify-content: flex-start;
@@ -775,54 +763,20 @@ main{
   width: 100vw;
   
 }
-// .main-footer-wrape{
-//   position: relative;
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: flex-start;
-//   padding: 2rem;
-// }
-
 .main-footer-logo-section{
  position: relative;
  width:100%;
  height: 20rem;
  display: flex;
  flex-direction: column;
- justify-content: center;
- align-items: flex-start;
+ justify-content: flex-end;
+ align-items: center;
  padding: 2rem;
-//  border: 3px solid white;
 }
-// .main-footer-wrap{
-//   position: absolute;
-//   top: 100%;
-//   left: 50%;
-//   z-index:1;
-//   transform: translate(-50%,-100%);
-//   width: 17rem;
-//   height: 7rem;
-//   border: 3px solid red;
-//   cursor: pointer;
-//   display: flex;
-//   justify-content: center;
-//   align-items: flex-end;
-// }
-.main-footer-logo-wrap a img{
+.main-footer-logo-section a img{
   width: 15rem;
   height: auto;
-  // margin:5rem 5rem 0 5rem;
 }
-// img{
-//   width: 15rem;
-//   height: auto;
-// }
-
-
-
 .laptop-menu{
   position: relative;
   width:100%;
@@ -831,16 +785,7 @@ main{
     height: 5rem;
   }
   // border: 3px solid white;
-
-
-
-
   overflow: hidden;
-
-
-
-
-  
 }
 .m-menu-wrap{
   position: absolute;
@@ -908,7 +853,6 @@ main{
   opacity: 1;
   pointer-events: none;
 }
-
 
 .main-footer-sepalater{
  width: 100%;

@@ -35,16 +35,19 @@
   overflow: hidden;
 
 //横スクロール処理
-  width: auto;
-  min-width: 100vw;
+  // width: auto;
+  // min-width: 100vw;
+  width: 100vw;
 }
 .bgImage{
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  width: 100%;
-  height: 100%;
+  // width: 100%;
+  // height: 100%;
+  width: 100vw;
+  height: 100vh;
   transform-origin:  center ;
 }
 .bg_filter{

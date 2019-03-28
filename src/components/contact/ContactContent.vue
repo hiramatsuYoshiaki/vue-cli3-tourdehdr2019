@@ -53,7 +53,7 @@ export default {
     position: relative;
     width: 100%;
     height: auto;
-    padding-top: $header-height;
+    // padding-top: $header-height;
 }
 main{
   margin: 0;
@@ -63,12 +63,13 @@ main{
   width:100%;
   // height: calc( 100vh - #{ $header-height } );
   height: 100vh;
-  margin-top: -5rem;
+  // margin-top: #{ $header-height } ;
   //横スクロール処理
   width: auto;
   min-width: 100vw;
+
   padding: 1rem 1rem;
-  // border: 1px solid lightblue;
+  
   background-color: $footer-color-color;
   color: $footer-color-text;
 }

@@ -5,13 +5,11 @@
     v-bind:img= bgImage pageView="contact"  />
       <HeaderBar msg="HeaderBar"
                  navMenu="contact"
-                 v-bind:headrScrollType="true"
-                 v-bind:headrFixedType="false"
-                 v-bind:headrStikyType="false"
+                 v-bind:headerScrollType="false"
+                 v-bind:headerFixedType="true"
+                 v-bind:headerStikyType="false"
                 
-                 v-bind:logoPositionLeft="true"
-                 v-bind:logoPositionCenter="false"
-                 v-bind:logoPositionRight="false"
+                
       />
       <BgImageFull msg="bgImage"
                    v-bind:img= bgImage />

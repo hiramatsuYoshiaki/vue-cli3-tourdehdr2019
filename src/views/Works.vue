@@ -4,12 +4,9 @@
       <TransitionScreen msg="bgImage" v-bind:img= bgImage pageView="works"  />
       <HeaderBar msg="HeaderBar"
                  navMenu="works"
-                 v-bind:headrScrollType="true"
-                 v-bind:headrFixedType="false"
-                 v-bind:headrStikyType="false"
-                 v-bind:logoPositionLeft="true"
-                 v-bind:logoPositionCenter="false"
-                 v-bind:logoPositionRight="false"
+                 v-bind:headerScrollType= "true"
+                 v-bind:headerFixedType= "false"
+                 v-bind:headerStikyType= "false"
       />
       <BgImageFull msg="bgImage" v-bind:img= bgImage />
       <WorksContent msg="WorksContent"/>
@@ -46,7 +43,6 @@ export default {
   position: relative;
   margin: 0;
   padding:0;
-  touch-action: none;
 }
 .worksWrap{
   background-color: $works-body-color;
