@@ -22,117 +22,94 @@
       </div>
       <transition name="mainCon" appear>
         <div  class="main-content" >
-
-            <div> project main content</div>
-            <!-- <div style="color:black">sec1Position: {{sec1Position}}</div> -->
-            <!-- <div style="color:black">scrollTopHeight: {{scrollTopHeight}}</div> -->
-            
-            <!-- <div style="color:black">windowH: {{windowH}}</div> -->
-            <!-- <HistorySection msg="massage history section" pageView="projects"/> -->
-            <div> historySection---------------</div>
             <div class="historySection">
                 <div class="center-line"></div>
                 <div class="history-header" >
                     <div class="col-block header-block">
                         <p>HISTORY HEADER</p>
-    <div style="color:black">
-        <span style="margin: .5rem">scrollY: {{scrollY}}</span>
-        <span style="margin: .5rem">sec1SelectTop: {{sec1SelectTop}}</span>
-        <span style="margin: .5rem">sec2SelectTop: {{sec2SelectTop}}</span>
-        <span style="margin: .5rem">scrollTopHeight: {{scrollTopHeight}}</span>
-    </div>
                     </div>
                 </div>
-            </div>
-            <div class="history-altanative" >
-                <div class="grid-container">
+                <div class="history-altanative" >
+                    <div class="grid-container">
+
+                        <div class="col2-block left-block" id="sec1SelectTop">
+                            <div class="section-block section-right" >
+                                <div class="altanative-wrap"
+                                    v-bind:class="{'altanative-wrap-right'  : !sec1Select}"
+                                 >
+                                    <div class="image-group-right" 
+                                        v-bind:class="{fullScreenImageLeft: sec1Select}" v-if="!isHidden || sec1Select">
+                                        <div class="img-wrap" 
+                                            v-on:click="scrollTopSec1()"
+                                            v-bind:style="{ 
+                                                'background-image' : 'url(' + contents[1].imgURL + ')' 
+                                            }">
+                                        </div>
+                                    </div>
+                                    <div class="subscribe-group subscribe-group-right" v-if="!isHidden ">
+                                        <div class="subscribe-wrap subscribe-wrap-right" >
+                                            <div class="transition-box">
+                                                <transition name="carousel-pop-up" appear>
+                                                    <p v-on:click="scrollTopSec1()">{{contents[1].imgDate}}</p>
+                                                </transition>
+                                            </div>
+                                            <div class="transition-box">
+                                                <transition name="carousel-pop-up" appear>
+                                                    <h1 v-on:click="scrollTopSec1()">{{contents[1].imgTitle}}</h1>
+                                                </transition>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
 
-                    <div class="col2-block left-block" >
-                        <div class="section-block section-right" >
-                            <div class="altanative-wrap altanative-wrap-right">
-                                <div class="image-group image-group-right" 
-                                    v-bind:class="{fullScreenImageLeft: sec1Select}" v-if="!isHidden || sec1Select">
-                                    <div class="img-wrap" id="sec1SelectTop"
-                                        v-on:click="scrollTopSec1()"
-                                        v-bind:style="{ 
-                                            'background-image' : 'url(' + contents[1].imgURL + ')' 
+                        <div class="col2-block right-block" id="sec2SelectTop">
+                            <div class="section-block section-left" >
+                                <div class="altanative-wrap altanative-wrap-left" >
+                                    <div class="image-group-left" 
+                                            v-bind:class="{fullScreenImageRight: sec2Select}"  v-if="!isHidden || sec2Select">
+                                        <div class="img-wrap" 
+                                            v-on:click="scrollTopSec2()"
+                                            v-bind:style="{ 
+                                                'background-image' : 'url(' + contents[2].imgURL + ')' 
                                         }">
-                                    </div>
-                                </div>
-                                <div class="subscribe-group subscribe-group-right" v-if="!isHidden ">
-                                    <div class="subscribe-wrap subscribe-wrap-right" >
-                                        <div class="transition-box">
-                                            <transition name="carousel-pop-up" appear>
-                                                <p>{{contents[1].imgDate}}</p>
-                                            </transition>
-                                        </div>
-                                        <div class="transition-box">
-                                            <transition name="carousel-pop-up" appear>
-                                                <h1>{{contents[1].imgTitle}}</h1>
-                                            </transition>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="col2-block left-block" >
-                        <div class="section-block section-left">
-                            <div class="altanative-wrap altanative-wrap-left" >
-                                <div class="image-group image-group-left"
-                                        v-bind:class="{fullScreenImageRight: sec2Select}"  v-if="!isHidden || sec2Select">
-                                    <div class="img-wrap" id="sec2SelectTop"
-                                        v-on:click="scrollTopSec2()"
-                                        v-bind:style="{ 
-                                            'background-image' : 'url(' + contents[2].imgURL + ')' 
-                                    }">
-                                    </div>
-                                </div>
-                                <div class="subscribe-group subscribe-group-left" v-if="!isHidden ">
-                                    <div class="subscribe-wrap subscribe-wrap-left">
-                                        <div class="transition-box">
-                                            <transition name="carousel-pop-up" appear>
-                                                <p>{{contents[2].imgDate}}</p>
-                                            </transition>
-                                        </div>
-                                        <div class="transition-box">
-                                            <transition name="carousel-pop-up" appear>
-                                                <h1>{{contents[2].imgTitle}}</h1>
-                                            </transition>
+                                    <div class="subscribe-group subscribe-group-left" v-if="!isHidden ">
+                                        <div class="subscribe-wrap subscribe-wrap-left">
+                                            <div class="transition-box">
+                                                <transition name="carousel-pop-up" appear>
+                                                    <p v-on:click="scrollTopSec2()">{{contents[2].imgDate}}</p>
+                                                </transition>
+                                            </div>
+                                            <div class="transition-box">
+                                                <transition name="carousel-pop-up" appear>
+                                                    <h1 v-on:click="scrollTopSec2()">{{contents[2].imgTitle}}</h1>
+                                                </transition>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        
+
+
+
                     </div>
-                    
-
-
-
                 </div>
-            </div>
-
-
-
-
-
-
-            <div class="history-footer" >
-                <div class="col-block footer-block">
-                    <p>HISTORY FOOTER</p>
+                <div class="history-footer" >
+                    <div class="col-block footer-block">
+                        <p>HISTORY FOOTER</p>
+                    </div>
                 </div>
-            </div>
+                
 
 
-
-
-
-
+            </div> 
         </div>
       </transition>
       <div class="main-footer">
@@ -193,21 +170,29 @@
         </div>
       
       </div>
+      
     </main>
+    <transition appear name="tScreen">
+        <div class="tranScreen" v-if="page === pageView"></div>
+    </transition>
+    <transition  name="fade500W500">
+        <div class="bg_filter" v-if="isHidden"></div>
+    </transition>
   </div>
 </template>
 
 <script>
-import HistorySection from '@/components/section/HistorySection.vue'
+// import HistorySection from '@/components/section/HistorySection.vue'
 
 export default {
   name: 'ProjectsContent',
   props: {
     msg: String,
+    pageView: String
   },
-  components: {
-    HistorySection,
-  },
+//   components: {
+//     HistorySection,
+//   },
      data () {
       return {
         // imgURL1: require("../../assets/img/img1578.jpg"),
@@ -332,7 +317,6 @@ export default {
   created () {
     console.log('create: ');
     window.addEventListener('scroll', this.handleScroll);
-   
   },
   destroyed () {
     console.log('destory: ');
@@ -342,7 +326,6 @@ export default {
     console.log('mounted: ');
     // window.addEventListener('scroll', this.handleScroll);
      this.init();
-    
   },
   
   methods: {
@@ -350,10 +333,8 @@ export default {
     //   console.log('project content handleScroll: ' + this.scrollY);
       this.scrollY = window.scrollY;
       this.windowH = window.innerHeight;
-    //   this.sec1Position = document.getElementById('historyTop').getBoundingClientRect().top + window.scrollY;
       this.sec1SelectTop = document.getElementById('sec1SelectTop').getBoundingClientRect().top + window.scrollY;
       this.sec2SelectTop = document.getElementById('sec2SelectTop').getBoundingClientRect().top + window.scrollY;
-     
      // console.log('workcomponent this.scrollY: ' + this.scrollY);
       // this.img1Captionblock = document.getElementById('img1Captionblock').getBoundingClientRect().top
       //                     + window.scrollY  - (window.innerHeight*0.8) ;
@@ -371,50 +352,52 @@ export default {
       // this.resize();
     },
     scrollTopSec1: function( ){
-        this.scrollTopHeight = this.sec1SelectTop - this.scrollY;
-        if(this.scrollY > 0){
-             window.scrollBy({
-                top: this.scrollTopHeight,
-                behavior: "smooth",
-            });
-        }
-        // setTimeout(() => {
-        //     this.sec1Select = true;
-        //     this.isHidden = true;
-        //         setTimeout( () => {
-        //             let link = 'about';
-        //             let link_path = '/about';
-        //             this.$store.commit( link );
-        //             setTimeout( () => {
-        //                 this.$router.push({ path: link_path });
-        //                 this.sec1Select = false;
-        //                 this.isHidden = false;
-        //             }, 500);
-        //         }, 1500);
-        // },1000 );
+        this.sec1SelectTop = document.getElementById('sec1SelectTop').getBoundingClientRect().top + window.scrollY;
+        this.scrollTopHeight = this.sec1SelectTop - window.scrollY;
+    //    console.log('this.scrollTopHeight: ' + this.scrollTopHeight);
+    //    console.log('this.sec1SelectTop: ' + this.sec1SelectTop);
+    //    console.log('window.scrollY: ' + window.scrollY);
+
+        window.scrollBy({
+            top: this.scrollTopHeight,
+            behavior: "smooth",
+        });
+        setTimeout(() => {
+            this.sec1Select = true;
+            this.isHidden = true;
+                setTimeout( () => {
+                    let link = 'about';
+                    let link_path = '/about';
+                    this.$store.commit( link );
+                    setTimeout( () => {
+                        this.$router.push({ path: link_path });
+                        this.sec1Select = false;
+                        this.isHidden = false;
+                    }, 500);
+                }, 1500);
+        },1000 );
     },
     scrollTopSec2: function( ){
+        this.sec2SelectTop = document.getElementById('sec2SelectTop').getBoundingClientRect().top + window.scrollY;
         this.scrollTopHeight = this.sec2SelectTop - this.scrollY;
-        if(this.scrollY > 0){
-             window.scrollBy({
-                top: this.scrollTopHeight,
-                behavior: "smooth",
-            });
-        }
-        // setTimeout(() => {
-        //     this.sec2Select = true;
-        //     this.isHidden = true;
-        //     setTimeout( () => {
-        //         let link = 'contact';
-        //         let link_path = '/contact';
-        //         this.$store.commit( link );
-        //         setTimeout( () => {
-        //             this.$router.push({ path: link_path });
-        //             this.sec2Select = false;
-        //             this.isHidden = false;
-        //         }, 500);
-        //     }, 1500);
-        // },1000 );
+        window.scrollBy({
+            top: this.scrollTopHeight,
+            behavior: "smooth",
+        });
+        setTimeout(() => {
+            this.sec2Select = true;
+            this.isHidden = true;
+            setTimeout( () => {
+                let link = 'contact';
+                let link_path = '/contact';
+                this.$store.commit( link );
+                setTimeout( () => {
+                    this.$router.push({ path: link_path });
+                    this.sec2Select = false;
+                    this.isHidden = false;
+                }, 500);
+            }, 1500);
+        },1000 );
     },
     // resize(){
     //    this.mainPos = (this.innerHeight - 300 -50 )  * -1  ;
@@ -434,19 +417,10 @@ export default {
       }, 500);
     },
     init(){
-      // console.log('init: ');
+      console.log('init: ');
       this.$store.commit( 'projects' );
-    //   this.innerHeight = window.innerHeight;
       this.scrollY = window.scrollY;
       this.windowH = window.innerHeight;
-    //   this.sec1Position = document.getElementById('historyTop').getBoundingClientRect().top + window.scrollY;
-      this.sec1SelectTop = document.getElementById('sec1SelectTop').getBoundingClientRect().top + window.scrollY;
-      this.sec2SelectTop = document.getElementById('sec2SelectTop').getBoundingClientRect().top + window.scrollY;
-      // if(this.scrollY > this.MaxScrollY) {
-      //   this.MaxScrollY = this.scrollY;
-      // }
-      // this.resize();
-      // console.log('workcomponent Init  this.scrollY: ' + this.scrollY);
     },
   },
   
@@ -460,7 +434,6 @@ export default {
     width: 100%;
     height: auto;
     padding-top: $header-height;
-    
 }
 main{
   margin: 0;
@@ -695,7 +668,6 @@ $section-block-height: 80vh;
   position: relative;
   width: 100%;
   height: 100%;
-  // border: 5px solid red;
   @media (min-width: 992px){
     margin-bottom: calc( #{$section-block-height} / 2);
   }
@@ -765,7 +737,6 @@ $section-block-height: 80vh;
   // border:  1px solid green;
 }
 .section-block{
-  // border:  3px solid yellow;
   position: relative;
   width: 100%;
   height: $section-block-height;
@@ -776,6 +747,7 @@ $section-block-height: 80vh;
   // @media (min-width: 1200px){
   //   padding: 6rem 0 6rem 12rem ;
   // } 
+//   border:  3px solid yellow;
 }
 .hidden{
   opacity: 0;
@@ -787,119 +759,173 @@ $section-block-height: 80vh;
   width: 100%;
   height:100%;
   z-index: 10;
-  // border:  5px dotted indigo;
+//   border:  5px dotted indigo;
 }
 .altanative-wrap-right{
   margin-top: 0;
   @media (min-width: 992px){
     margin-top: calc( #{$section-block-height}  / 2);
-    
   }
   
   // background-color: rgba(0,0,0,.5);
-  //  border: 1px solid blue;
+//    border: 1px solid blue;
 }
 .altanative-wrap-left{
   margin-top: 0;
   // background-color: rgba(0,0,0,.7);
 }
-.image-group{
-  // border: 1px solid red;
+.image-group-right{
+//   border: 5px solid red;
   position: relative;
   width: 100%;
   height: 70%;
   overflow:hidden;
   @media (min-width: 992px){
     position: absolute;
-    // z-index: 0;
+    top: 50%;
+    left: 0%;
+    width: 80%;
+    height: 66.6%;
+    transform: translate(0, -50%);
+  }
+}
+.image-group-left{
+//   border: 5px solid red;
+  position: relative;
+  width: 100%;
+  height: 70%;
+  overflow:hidden;
+  @media (min-width: 992px){
+    position: absolute;
     top: 50%;
     right: 0%;
     width: 80%;
     height: 66.6%;
     transform: translate(0, -50%);
   }
-  background-color: rgba(0,0,0,1);
 }
-.image-group-right{
-  @media (min-width: 992px){
-  top: 50%;
-  left: 0%;
-  }
-}
-.image-group-left{
-  @media (min-width: 992px){
-  top: 50%;
-  right: 0%;
-  }
-}
+// .image-group-right{
+//     border: 1px solid yellow;
+//   @media (min-width: 992px){
+//   top: 50%;
+//   left: 0%;
+//   }
+// }
+// .image-group-left{
+//     border: 1px solid green;
+//   @media (min-width: 992px){
+//   top: 50%;
+//   right: 0%;
+//   }
+// }
 
 .fullScreenImageLeft{
-  // @media (min-width: 992px){
+  animation: trnLeftMobile 1.5s  ease-in forwards;
+  @media (min-width: 992px){
     animation: trnLeft 1.5s  ease-in forwards;
-  // }
+  }
 }
 @keyframes trnLeft{
+  0% {
+    top: 50%;
+    left: 0%;
+    width: 80%;
+    height: 66.6%;
+    transform: translate(0, 0);
+    }
   30% {
-    top: 0;
-    right: 0;
+    top: 0%;
+    left: 0%;
     width: 100vw;
     height: 100vh;
-    transform: translate(0, -50%);
+    transform: translate(0, 0);
+    }
+  60% {
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(0, 0);
     }
   100% {
-    top: 0;
-    right: 0;
+    top: 0%;
+    left: 0%;
     width: 100vw;
     height: 100vh;
-    transform: translate(0, -50%);
+    transform: translate(0, 0);
+    }
+}
+@keyframes trnLeftMobile{
+//   0% {
+//     top: 0%;
+//     left: 0%;
+//     width: 80%;
+//     height: 66.6%;
+//     transform: translate(0, 0);
+//     }
+//   30% {
+//     top: 0%;
+//     left: 0%;
+//     width: 100vw;
+//     height: 100vh;
+//     transform: translate(0, 0);
+//     }
+  30% {
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(0, 0);
+    }
+  100% {
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(0, 0);
     }
 }
 .fullScreenImageRight{
-  animation: trnRightMov 1.5s  ease-in forwards;
-  @media (min-width: 992px){
+//   animation: trnRightMov 1.5s  ease-in forwards;
+//   @media (min-width: 992px){
     animation: trnRight 1.5s  ease-in forwards;
-  }
+//   }
 }
 @keyframes trnRight{
   30% {
-    
-    top: 0;
-    right: 0;
+    top: 0%;
+    right: 0%;
     width: 100vw;
     height: 100vh;
-    // transform: translate(0, 0%);
-    transform: translate(0, -10rem);
+    transform: translate(0, 0);
     }
   100% {
-    margin-top: 0;
-    top: 0;
-    right: 0;
+    top: 0%;
+    right: 0%;
     width: 100vw;
     height: 100vh;
-    // transform: translate(0, 0%);
-    transform: translate(0, -10rem);
+    transform: translate(0, 0);
     }
 }
-@keyframes trnRightMov{
-  30% {
-    
-    top: 0;
-    right: 0;
-    width: 100vw;
-    height: 100vh;
+// @keyframes trnRightMov{
+//   30% {
+//     top: 0;
+//     right: 0;
+//     width: 100vw;
+//     height: 100vh;
     // transform: translate(0, 0%);
-    transform: translate(0, calc( (-10rem + #{$section-block-height}) * -1 ) );
-    }
-  100% {
-    margin-top: 0;
-    top: 0;
-    right: 0;
-    width: 100vw;
-    height: 100vh;
+    // transform: translate(0, calc( (-10rem + #{$section-block-height}) * -1 ) );
+//     }
+//   100% {
+//     // margin-top: 0;
+//     top: 0;
+//     right: 0;
+//     width: 100vw;
+//     height: 100vh;
     // transform: translate(0, 0%);
-    transform: translate(0, calc( (-10rem + #{$section-block-height}) * -1 ) );
-    }
-}
+    // transform: translate(0, calc( (-10rem + #{$section-block-height}) * -1 ) );
+//     }
+// }
 
 
 .img-wrap{
@@ -909,14 +935,16 @@ $section-block-height: 80vh;
   background-size: cover;
   background-position: center;
   cursor: pointer;
-  // &:hover{
-  //   border:3px solid red;
-  // }
+//   &:hover{
+//     opacity: .8;
+//   }
 
 }
+
+
 .subscribe-group{
   // border: 3px dotted indigo;
-  // cursor: pointer;
+  cursor: pointer;
   position: relative;
   width: 100%;
   height: 30%;
@@ -953,7 +981,6 @@ $section-block-height: 80vh;
     height: 100%;
     display:flex;
     flex-direction:column;
-    // border: 1px solid black;
     background-color:  transparent; 
   }
   
@@ -978,7 +1005,8 @@ $section-block-height: 80vh;
   width: 100%;
   overflow: hidden;
   margin-bottom: 0.5rem;
-  // cursor: pointer;
+  cursor: pointer;
+//   border: 1px solid red;
 }
 .subscribe-wrap-left .transition-box{
   text-align: center;
@@ -1011,7 +1039,7 @@ $section-block-height: 80vh;
   background-size: cover;
   background-position: center;
   background-color: $body-color;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   overflow:hidden;
   opacity: 1;

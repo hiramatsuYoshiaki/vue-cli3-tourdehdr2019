@@ -51,8 +51,12 @@
     3d transition 
 
 13. project Content add 
+    transition edit 
 
-14. historySection add 
+14. historySection delete
+ 
+
+
 
 
 

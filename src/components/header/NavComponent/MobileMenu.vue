@@ -222,7 +222,10 @@ export default {
 .log-side-space{
   margin: 1rem 1rem;
   @media (min-width: 576px){
-    margin: 1rem 10rem;
+    margin: 1rem 4rem;
+  }
+  @media (min-width: 992px) {
+    margin:1rem 8rem;
   }
 }
 .header-logo img{
@@ -236,7 +239,10 @@ export default {
   // top: 0;
   // left: 0 ;
   // right: 0 ;
-  margin:1rem 1rem;
+  margin:1rem 2rem;
+  @media (min-width: 768px) {
+    margin:1rem 4rem;
+  }
 }
 .b-menu-items-left{
   // margin: 0 auto 0 0;
