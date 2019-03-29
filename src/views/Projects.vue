@@ -2,15 +2,15 @@
 <div class="projects">
     project 
   <div class="projectsWrap">
-      <TransitionScreen msg="bgImage" v-bind:img= bgImage pageView="projects"  />
+      <TransitionScreen msg="bgImage" v-bind:img= bgImage   />
       <HeaderBar msg="HeaderBar"
                  navMenu="projects"
                  v-bind:headerScrollType= "true"
                  v-bind:headerFixedType= "false"
                  v-bind:headerStikyType= "false"
       />
-      <BgImageFull msg="bgImage" v-bind:img= bgImage />
-      <projectsContent msg="projectsContent"/>
+      <BgImageFull msg="bgImage" v-bind:img= bgImage pageView="projects" />
+      <projectsContent msg="projectsContent" pageView="projects"/>
   </div>
 </div>
 </template>

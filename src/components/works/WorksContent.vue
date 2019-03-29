@@ -269,16 +269,16 @@
 </template>
 
 <script>
-import HistorySection from '@/components/section/HistorySection.vue'
+// import HistorySection from '@/components/section/HistorySection.vue'
 
 export default {
   name: 'WorksContent',
   props: {
     msg: String,
   },
-  components: {
-    HistorySection,
-  },
+  // components: {
+  //   HistorySection,
+  // },
      data () {
       return {
         imgURL1: require("../../assets/img/img1578.jpg"),
