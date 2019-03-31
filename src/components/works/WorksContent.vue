@@ -115,7 +115,6 @@
                  
                 </div>
               </div>
-              
             </div>
             <div class="col2-content">
               <div class="col-block left-block">
@@ -192,9 +191,6 @@
               </div>
               <div id="img2Imageblock" class="col-block image-block ">
                  <div class="image-section-block  image-section image-left">
-
-                 
-
                   <transition name="box-shadow-moveLeft" >
                     <div class="box-shadow box-shadow-left" v-if="MaxScrollY > img2Imageblock">
                       <img v-bind:src="imgURL2" >
@@ -203,82 +199,35 @@
                   <transition name="rippleLeft" >
                     <img v-bind:src="imgURL2" v-if="MaxScrollY > img2Imageblock"  alt="img2">
                   </transition>
-                 
                 </div>
               </div>
             </div>
-            
         </div>
+        <!-- <FooterBar  msg="footerBar"
+                  navMenu="prpject"
+                  v-bind:footerTop= "true"
+                  v-bind:footerBottom= "true"
+                  v-bind:footerMenu= "true"
+                  v-bind:footerSepalater= "true"
+                  /> -->
       </transition>
-
-<!--       
-      <div class="main-footer">
-        <div class="main-footer-logo-section">
-          <a v-on:click="link_commit('home', '/')" class="menu_link" >
-              <img v-bind:src="logoSvgHWorksWhite" alt="h-works logo">
-          </a>
-        </div>
-
-        <nav class="laptop-menu">
-            <div class="m-menu-wrap  ">
-              
-              <div class="menu_items " >
-                <div class="menu-item-box">
-                  <a v-on:click="link_commit('works', '/works')" 
-                  class="menu_link" 
-                  v-bind:class="{ menu_item_visible: page === 'works' }">
-                    WORKS
-                  </a>
-                  <div class="menu_underline"></div>
-                </div>
-                <div class="menu-item-box">
-                  <a v-on:click="link_commit('about', '/about')" 
-                  class="menu_link" 
-                  v-bind:class="{ menu_item_visible: page === 'about' }">
-                    ABOUT
-                  </a>
-                  <div class="menu_underline"></div>
-                </div>
-                <div class="menu-item-box">
-                  <a v-on:click="link_commit('contact', '/contact')" 
-                  class="menu_link" 
-                  v-bind:class="{ menu_item_visible: page === 'contact' }">
-                    CONTACT
-                  </a>
-                  <div class="menu_underline"></div>
-                </div>
-              </div>
-            </div>
-        </nav>
-        <div class="main-footer-sepalater">
-          <div class="line"></div>          
-        </div>
-        <div class="main-footer-police">
-          <div class="main-footer-police-wrap">
-            <div class="copy-light">© 2018 h-works. All Rights Reserved</div>
-            <div>Terms of Use</div>
-            <div>Privacy Policy</div>
-            <div>Disclaimer</div>
-            <div>Imprint</div>
-          </div>
-        </div>
-      
-      </div> -->
     </main>
   </div>
 </template>
 
 <script>
 // import HistorySection from '@/components/section/HistorySection.vue'
+import FooterBar from '@/components/footer/FooterBar.vue'
 
 export default {
   name: 'WorksContent',
   props: {
     msg: String,
   },
-  // components: {
-  //   HistorySection,
-  // },
+  components: {
+    // HistorySection,
+    FooterBar,
+  },
      data () {
       return {
         imgURL1: require("../../assets/img/img1578.jpg"),
@@ -359,7 +308,7 @@ export default {
   
   methods: {
     handleScroll() {
-      console.log('handleScroll: ');
+      // console.log('handleScroll: ');
       // console.log('workcomponent this.scrollY: ' + this.scrollY);
       // this.img1Captionblock = document.getElementById('img1Captionblock').getBoundingClientRect().top
       //                     + window.scrollY  - (window.innerHeight*0.8) ;
@@ -474,6 +423,7 @@ main{
   // width: auto;
   // min-width: 100vw;
   width: 100vw;
+  padding-bottom:20rem;
 } 
 //section-2col
 .col2-content{

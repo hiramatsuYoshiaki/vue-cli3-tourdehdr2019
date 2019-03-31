@@ -13,13 +13,13 @@
       </div>
     </div>
     <div class="history-altanative" id="historyTop">
-        <div class="grid-container">
+      <div class="grid-container">
         <div class="col2-block left-block" >
           <div class="section-block section-right" >
             <div class="altanative-wrap altanative-wrap-right">
 
               <div class="image-group image-group-right" 
-                     v-bind:class="{fullScreenImageLeft: sec1Select}" v-if="!isHidden || sec1Select">
+                    v-bind:class="{fullScreenImageLeft: sec1Select}" v-if="!isHidden || sec1Select">
                   <div class="img-wrap" 
                       v-on:click="scrollTopSec1()"
                       v-bind:style="{ 
@@ -183,6 +183,11 @@
         ],
       }
   },
+  computed: {
+    page () {
+    return this.$store.state.page;
+    },
+  },
   created () {
     window.addEventListener('scroll', this.handleScroll,);
     // console.log('create this.scrollY: ' + this.scrollY);
@@ -201,11 +206,6 @@
     
   },
   
-  computed: {
-    page () {
-    return this.$store.state.page;
-    },
-  },
   methods: {
 
     handleScroll() {

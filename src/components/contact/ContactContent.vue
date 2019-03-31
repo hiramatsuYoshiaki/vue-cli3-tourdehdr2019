@@ -92,7 +92,7 @@ main{
   justify-content: flex-start;
   align-items: center;
   // flex-direction: column; 
-  padding: 1.6rem;
+  padding: 3.2rem 1.6rem;
   @media (min-width: 992px){
     padding-left: 16rem ;
   }
@@ -111,6 +111,7 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  
 }
 .left-section{
   // border:  3px dotted red;

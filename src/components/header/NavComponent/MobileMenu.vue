@@ -173,6 +173,7 @@ export default {
 <style scoped lang="scss">
 @import "../../../assets/scss/common/data/thema.scss";
 .MobileMenu{
+  position: fixed;
     width:100%;
     height: 100%;
     // height:$header-height; //5rem;
@@ -189,7 +190,7 @@ export default {
   height: 100%;
   top: 0;
   left :0;
-  background-color: gray;
+  background-color: $footer-color-color;
   color: #fff;
 }
 .v_open_menu{
@@ -412,6 +413,8 @@ export default {
   left:0; 
   width:100%;
   height:100%;
+  // width:100vw;
+  // height:100vh;
 }
 .m-menu-wrap{
   position:relative;
